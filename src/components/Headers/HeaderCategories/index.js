@@ -3,7 +3,7 @@ import cn from "classnames";
 import './styles.css'
 
 
-const HeaderCategories = ({ activeCategory, setActiveCategory, setCurrentPage }) => {
+const HeaderCategories = ({ activeCategory, setActiveCategory, setCurrentPage, setSearchText }) => {
 
   const categories = ['Жидкости', 'Одноразки', 'Поды', 'Картриджи', 'Испарители'];
   const cssActive = (categoryName) => cn({ 'selected': activeCategory === categoryName });
@@ -11,6 +11,7 @@ const HeaderCategories = ({ activeCategory, setActiveCategory, setCurrentPage })
   const onClickActiveCategory = (category) => {
     setActiveCategory(category);
     setCurrentPage(0);
+    setSearchText('');
   }
 
   return (

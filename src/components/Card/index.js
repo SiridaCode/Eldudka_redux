@@ -3,16 +3,20 @@ import Battery from "../Battery";
 import './styles.css'
 
 const Card = ({ data, id }) => {
+
+    const nameCard = data.name.split('(');
+    const nameCardNoBracket = nameCard[0];
+
     return (
         <div className="product-item">
             <div className="product-item-main-info">
-                <p id="product-name" className="product-item-name">{data.name}</p>
+                <p id="product-name" className="product-item-name">{nameCardNoBracket}</p>
                 <div className="product-item-image">
                     <img src='../image-card.png' className="product-item-image-text"></img>
                 </div>
 
                 <div className="product-item-availability" id="product-item-availability-galery">
-                    <div>Галерея:</div>
+                    <div>Галерея: </div>
                     <div className="battery-galery">
                         <Battery productValue={data.availability && data.availability.galery} />
                     </div>

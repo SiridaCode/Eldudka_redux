@@ -17,11 +17,18 @@
   }
   
   .js-data-example-ajax {
+    text-decoration: none;
     display: block!important;
-      height: 40px!important;
-      white-space: nowrap!important;
-      line-height: 26px!important;
+    height: 40px!important;
+    white-space: nowrap!important;
+    line-height: 26px!important;
     width: 483px;
     font-family: "Times New Roman", Georgia, Serif;
     border-radius: 5px;
+  }
+
+  .search {
+    overflow: scroll;
+    
+
   }
