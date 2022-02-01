@@ -1,5 +1,6 @@
 import * as React from 'react';
 import cn from "classnames";
+import './styles.css'
 
 
 const HeaderCategories = ({ activeCategory, setActiveCategory, setCurrentPage }) => {

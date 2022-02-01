@@ -1,0 +1,27 @@
+.logo {
+    font-family: Roboto, 'Comic Sans MS', normal;
+    font-weight:  400px;
+    font-size: 40px;
+    line-height: 64px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .header-second {
+    padding: 0px 360px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #BD1616;
+    color: #fff;
+  }
+  
+  .js-data-example-ajax {
+    display: block!important;
+      height: 40px!important;
+      white-space: nowrap!important;
+      line-height: 26px!important;
+    width: 483px;
+    font-family: "Times New Roman", Georgia, Serif;
+    border-radius: 5px;
+  }

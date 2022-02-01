@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Container from "./components/Container";
-import Header from './components/Header/Header';
+import Header from './components/Headers/';
 import Pagination from './components/Pagination';
-import HeaderPhoneBottom from './components/Header/HeaderPhoneBottom';
+import HeaderPhoneBottom from './components/Headers/HeaderPhoneBottom';
 
 const App = () => {
   const [fullData, setFullData] = React.useState(null);

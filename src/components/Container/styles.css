@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 44px;
+    padding-bottom: 24px;
+    width: 1200px;
+    font-family: "Rubik", sans-serif;
+  }

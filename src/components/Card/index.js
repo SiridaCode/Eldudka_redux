@@ -1,12 +1,14 @@
 import * as React from 'react';
-import Battery from "./Battery";
+import Battery from "../Battery";
+import './styles.css'
+
 const Card = ({ data, id }) => {
     return (
         <div className="product-item">
             <div className="product-item-main-info">
                 <p id="product-name" className="product-item-name">{data.name}</p>
                 <div className="product-item-image">
-                    <div className="product-item-image-text">EL'DUDKA</div>
+                    <img src='../image-card.png' className="product-item-image-text"></img>
                 </div>
 
                 <div className="product-item-availability" id="product-item-availability-galery">

@@ -1,7 +1,6 @@
 import * as React from "react";
-import Card from "./Card";
-import Pagination from './Pagination';
-import HeaderCategories from "./Header/HeaderCategories";
+import Card from "../Card";
+import './styles.css'
 
 const Container = ({ currentPage, currentData }) => {
 

@@ -1,8 +1,9 @@
 import React from "react";
+import './styles.css'
 
 const BatteryRender = ({ productValue }) => {
     let productCount = '';
-    let parts = [];
+    const parts = [];
 
     const productCountToProperies = {
         'none': {
