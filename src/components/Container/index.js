@@ -2,7 +2,7 @@ import * as React from "react";
 import Card from "../Card";
 import './styles.css'
 
-const Container = ({ currentPage, currentData }) => {
+const Container = ({ currentPage, currentData, setCurrentData, fullData }) => {
 
     return (
         <div className="wrapper">

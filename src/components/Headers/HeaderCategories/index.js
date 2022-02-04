@@ -3,13 +3,15 @@ import cn from "classnames";
 import './styles.css'
 
 
-const HeaderCategories = ({ activeCategory, setActiveCategory, setCurrentPage, setSearchText }) => {
+const HeaderCategories = ({ fullData, currentData, setCurrentData, setCurrentPage, setSearchText, activeCategory, setActiveCategory }) => {
 
   const categories = ['Жидкости', 'Одноразки', 'Поды', 'Картриджи', 'Испарители'];
-  const cssActive = (categoryName) => cn({ 'selected': activeCategory === categoryName });
-
+  const cssActive = (category) => cn({ 'selected': category === activeCategory });
   const onClickActiveCategory = (category) => {
     setActiveCategory(category);
+    const filteredProductsByCategory = fullData.filter((value) => value.name.toLowerCase().includes(category.toLowerCase().slice(0, 3)));
+    setCurrentData(filteredProductsByCategory);
+    console.log(currentData)
     setCurrentPage(0);
     setSearchText('');
   }

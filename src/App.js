@@ -6,56 +6,57 @@ import HeaderPhoneBottom from './components/Headers/HeaderPhoneBottom';
 
 const App = () => {
   const [fullData, setFullData] = React.useState(null);
+  const [currentData, setCurrentData] = React.useState(null);
   const [activeCategory, setActiveCategory] = React.useState('default');
-  const [currentPage, setCurrentPage] = React.useState(null);
   const [searchText, setSearchText] = React.useState('');
+  const [currentPage, setCurrentPage] = React.useState(null);
 
+  // let currentData = activeCategory === 'default' ? filteredProductsByAvailability : filteredProductsByCategory;
   React.useEffect(() => {
     fetch('http://localhost:5195/Product/GetList')
       .then(response => response.json())
       .then((data) => {
-        setFullData(data);
+
+        const filterData = data.filter((value) => {
+          return (
+            value.availability &&
+            value.availability.galery &&
+            value.availability.tuhach &&
+            value.availability.kulakova &&
+            value.availability.shokolad
+          );
+        });
+
+        setFullData(filterData);
+        setCurrentData(filterData);
       });
   }, []);
-
-  const filteredProductsByCategory = fullData && fullData.filter((value) => value.name.includes(activeCategory.slice(0, 3)));
-  const filteredProductsBySearch = fullData && fullData.filter((value) => value.name.toLowerCase().includes(searchText.toLowerCase()));
-  const filteredProductsByAvailability = fullData && fullData.filter((value) => {
-    return (
-      value.availability &&
-      value.availability.galery !== 0 &&
-      value.availability.tuhach !== 0 &&
-      value.availability.kulakova !== 0 &&
-      value.availability.shokolad !== 0
-    );
-  });
-  let currentData = null;
-  if (searchText !== '') {
-    currentData = filteredProductsBySearch;
-  } else {
-    currentData = activeCategory === 'default' ? filteredProductsByAvailability : filteredProductsByCategory;
-  }
-  // currentData = searchText === '' ? fullData : filteredProductsBySearch;
 
   return (
     <div>
       <Header
+        fullData={fullData}
+        currentData={currentData}
+        setCurrentData={setCurrentData}
         searchText={searchText}
         setSearchText={setSearchText}
-        fullData={fullData}
+        setCurrentPage={setCurrentPage}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
-        setCurrentPage={setCurrentPage}
       />
 
       <Container
-        currentPage={currentPage}
+        fullData={fullData}
         currentData={currentData}
+        setCurrentData={setCurrentData}
+        currentPage={currentPage}
       />
 
       <Pagination
-        setCurrentPage={setCurrentPage}
+        fullData={fullData}
         currentData={currentData}
+        setCurrentData={setCurrentData}
+        setCurrentPage={setCurrentPage}
       />
       <HeaderPhoneBottom />
     </div>

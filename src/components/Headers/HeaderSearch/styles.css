@@ -16,19 +16,73 @@
     color: #fff;
   }
   
+  input, input:focus{
+    outline:0px !important;
+    -webkit-appearance:none;
+  }
+
   .js-data-example-ajax {
-    text-decoration: none;
-    display: block!important;
-    height: 40px!important;
-    white-space: nowrap!important;
-    line-height: 26px!important;
+    display: block;
+    background: #F5F5F5;
+    border-radius: 6px;
+    outline: none;
+    line-height: 26px;
     width: 483px;
-    font-family: "Times New Roman", Georgia, Serif;
-    border-radius: 5px;
+    height: 40px;
+  }
+
+  .input-wrapper {
+    position: relative;
   }
 
   .search {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    display: block;
+    width: 483px;
+    height: 327px;
     overflow: scroll;
-    
-
+    background: #FFFFFF;
+    z-index: 3;
+    overflow-x:hidden;
   }
+
+  .element-search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 466px;
+    height: 50px;
+    color: black;
+    padding: 30px;
+    cursor: pointer;
+    background: #FFFFFF;
+  }
+
+  .element-search:hover {
+    background: #FFE6E6;
+  }
+
+  .delete-target {
+    background: #d6d6d6;
+    color: #CC051A;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    width: 483px;
+    height: 33px;
+    position: absolute;
+    left: 0px;
+    top: 370px;
+    border-radius: 0px 0px 6px 6px;
+    padding-left: 32px;
+    cursor: pointer;
+    }
+
+    .vector {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+    }
