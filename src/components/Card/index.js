@@ -20,7 +20,7 @@ const Card = ({ data, id }) => {
           <div>Галерея</div>
           <div className="battery-wrapper">
             <Battery
-              items={
+              colors={
                 data.availability.galery < 1
                   ? []
                   : data.availability.galery >= 1 && data.availability.galery <= 3
@@ -42,7 +42,7 @@ const Card = ({ data, id }) => {
           <div>Тухачевского</div>
           <div className="battery-wrapper">
             <Battery
-              items={
+              colors={
                 data.availability.tuhach < 1
                   ? []
                   : data.availability.tuhach >= 1 && data.availability.tuhach <= 3
@@ -64,7 +64,7 @@ const Card = ({ data, id }) => {
           <div>Кулакова</div>
           <div className="battery-wrapper">
             <Battery
-              items={
+              colors={
                 data.availability.kulakova < 1
                   ? []
                   : data.availability.kulakova >= 1 && data.availability.kulakova <= 3
@@ -86,7 +86,7 @@ const Card = ({ data, id }) => {
           <div>Шоколад</div>
           <div className="battery-wrapper">
             <Battery
-              items={
+              colors={
                 data.availability.shokolad < 1
                   ? []
                   : data.availability.shokolad >= 1 && data.availability.shokolad <= 3

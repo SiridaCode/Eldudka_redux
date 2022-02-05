@@ -2,11 +2,11 @@ import React from 'react';
 
 import './styles.css';
 
-const Battery = ({ items }) => {
+const Battery = ({ colors }) => {
   return (
     <div className="battery">
-      {items.map((item, index) => (
-        <div style={{ background: item }} key={index} className="battery__item"></div>
+      {colors.map((color, index) => (
+        <div style={{ background: color }} key={index} className="battery__item"></div>
       ))}
     </div>
   );
