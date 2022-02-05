@@ -1,0 +1,29 @@
+.Pages {
+    padding: 0px 350px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  
+  .Page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #BD1616;
+    color: #FFE6E6;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-right: 7px;
+    margin-bottom: 7px;
+    font-family: "Roboto", sans-serif;
+    border: 0;
+    scroll-behavior: smooth;
+    cursor: pointer;
+    
+  }
+  
+  .Page:hover {
+  background:#e24141;
+  }
