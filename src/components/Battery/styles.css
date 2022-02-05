@@ -1,29 +1,19 @@
-.battery-red {
-    margin-left: 1px;
-    width: 4px;
-    height: 11px;
-    border-radius: 4px;
-    background: #BD1616;
-   }
-   .battery-yellow {
-     margin-left: 1px;
-    width: 4px;
-    height: 11px;
-    border-radius: 4px;
-    background: #BD8E16;
-   }
-  .battery-dark-green {
-    margin-left: 1px;
-    width: 4px;
-    height: 11px;
-    border-radius: 4px;
-    background: #9CBD16;
-  }
-  
-  .battery-green {
-    margin-left: 1px;
-    width: 4px;
-    height: 11px;
-    border-radius: 4px;
-    background: #23BD16;
-  }
+.battery {
+  display: flex;
+  align-items: center;
+  width: 23px;
+  height: 15px;
+  background: #000000;
+  border-radius: 4px;
+}
+
+.battery__item {
+  margin-left: 1px;
+  width: 4px;
+  height: 11px;
+  border-radius: 4px;
+}
+
+.battery__item:first-child {
+  margin-left: 2px;
+}
