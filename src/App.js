@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Container from "./components/Container";
+import Container from './components/Container';
 import Header from './components/Headers/';
 import Pagination from './components/Pagination';
-import HeaderPhoneBottom from './components/Headers/HeaderPhoneBottom';
+import './App.css';
 
 const App = () => {
   const [fullData, setFullData] = React.useState(null);
@@ -11,13 +11,11 @@ const App = () => {
   const [searchText, setSearchText] = React.useState('');
   const [currentPage, setCurrentPage] = React.useState(null);
 
-  // let currentData = activeCategory === 'default' ? filteredProductsByAvailability : filteredProductsByCategory;
   React.useEffect(() => {
-    fetch('http://localhost:5195/Product/GetList')
+    fetch('http://82.148.28.22/Product/GetList')
       .then(response => response.json())
-      .then((data) => {
-
-        const filterData = data.filter((value) => {
+      .then(data => {
+        const filterData = data.filter(value => {
           return (
             value.availability &&
             value.availability.galery &&
@@ -58,10 +56,8 @@ const App = () => {
         setCurrentData={setCurrentData}
         setCurrentPage={setCurrentPage}
       />
-      <HeaderPhoneBottom />
     </div>
-
   );
-}
+};
 
 export default App;

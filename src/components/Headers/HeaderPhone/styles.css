@@ -1,28 +1,18 @@
-.logo-mobile {
-    display: none;
-    padding-left: 25px;
-    font-size: 24px;
-    font-family: Roboto, 'Comic Sans MS', normal;
-    color: #FFFFFF;
-  }
-  
-  .header-first {
-    padding: 0px 360px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 30px;
-    top: 0px;
-    left: 0px;
-    background: #212121
-  }
+.header-first {
+  padding: 0px 360px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 30px;
+  top: 0px;
+  left: 0px;
+  background: #212121;
+}
 
-  .call{
-    text-decoration: none;
-    color: #FFFFFF;
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 11px;
-    line-height: 13px;
-  }
+.call {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 11px;
+  font-weight: 400;
+}
