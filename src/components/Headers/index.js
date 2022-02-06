@@ -22,6 +22,7 @@ const Header = ({
         setCurrentData={setCurrentData}
         searchText={searchText}
         setSearchText={setSearchText}
+        setActiveCategory={setActiveCategory}
       />
       <HeaderCategories
         fullData={fullData}
