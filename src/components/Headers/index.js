@@ -13,6 +13,7 @@ const Header = ({
   activeCategory,
   setActiveCategory,
 }) => {
+
   return (
     <React.Fragment>
       <HeaderPhone />
@@ -23,6 +24,7 @@ const Header = ({
         searchText={searchText}
         setSearchText={setSearchText}
         setActiveCategory={setActiveCategory}
+        setCurrentPage={setCurrentPage}
       />
       <HeaderCategories
         fullData={fullData}

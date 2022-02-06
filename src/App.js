@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Container from './components/Container';
+import CardsBlock from './components/CardsBlock';
 import Header from './components/Headers/';
 import Pagination from './components/Pagination';
 import './App.css';
@@ -24,7 +24,6 @@ const App = () => {
             value.availability.shokolad
           );
         });
-
         setFullData(filterData);
         setCurrentData(filterData);
       });
@@ -41,9 +40,10 @@ const App = () => {
         setCurrentPage={setCurrentPage}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
+        setCurrentPage={setCurrentPage}
       />
 
-      <Container
+      <CardsBlock
         fullData={fullData}
         currentData={currentData}
         setCurrentData={setCurrentData}

@@ -1,5 +1,7 @@
-.Pages {
-    padding: 0px 350px;
+.pages-block {
+
+}
+.pages {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;

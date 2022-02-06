@@ -1,11 +1,13 @@
 .header-second {
-  height: 60px;
-  padding: 0px 360px;
+  background: #bd1616;
+  color: #fff;
+  }
+
+  .header-second-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #bd1616;
-  color: #fff;
+  height: 60px;
   }
   
   .js-data-example-ajax {
