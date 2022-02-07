@@ -12,7 +12,8 @@ const App = () => {
   const [currentPage, setCurrentPage] = React.useState(null);
 
   React.useEffect(() => {
-    fetch('http://82.148.28.22/Product/GetList')
+    // fetch('http://82.148.28.22/Product/GetList')
+    fetch('http://localhost:5195/product/getList')
       .then(response => response.json())
       .then(data => {
         const filterData = data.filter(value => {
