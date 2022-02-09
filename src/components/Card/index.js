@@ -19,7 +19,7 @@ const Card = ({ data, id }) => {
                 {showDescription && <div className='show-description'>{data.description}</div>}
                 <p id="product-name" className="product-item-name">{nameCardNoBracket}</p>
                 <div className="product-item-image">
-                    <img src={data.pic} className="product-item-image-text"></img>
+                    <img src={data.pic ? data.pic : '../image-card.png'} className="product-item-image-text"></img>
                 </div>
 
                 <div className="product-item-availability" id="product-item-availability-galery">
