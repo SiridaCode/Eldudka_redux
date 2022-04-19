@@ -1,19 +1,24 @@
 .battery {
   display: flex;
   align-items: center;
-  width: 23px;
-  height: 15px;
-  background: #000000;
-  border-radius: 4px;
+  width: 30px;
+  height: 10px;
+  border-radius: 30%;
+  background: #212121;
 }
 
 .battery__item {
+  transition: transform .2s linear;
   margin-left: 1px;
-  width: 4px;
-  height: 11px;
-  border-radius: 4px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.battery__item:hover {
+  transform: "rotate(150deg)"
 }
 
 .battery__item:first-child {
-  margin-left: 2px;
+  margin-left: 3px;
 }
