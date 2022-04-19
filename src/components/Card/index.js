@@ -17,7 +17,7 @@ const Card = ({ data, id }) => {
         </div>
 
         <div className="product-item-availability">
-          <div>Галерея</div>
+          <div>Галерея:</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -39,7 +39,7 @@ const Card = ({ data, id }) => {
         </div>
 
         <div className="product-item-availability">
-          <div>Тухачевского</div>
+          <div>Тухачевского:</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -61,29 +61,7 @@ const Card = ({ data, id }) => {
         </div>
 
         <div className="product-item-availability">
-          <div>Кулакова</div>
-          <div className="battery-wrapper">
-            <Battery
-              colors={
-                data.availability.kulakova < 1
-                  ? []
-                  : data.availability.kulakova >= 1 && data.availability.kulakova <= 3
-                  ? ['#BD1616']
-                  : data.availability.kulakova >= 4 && data.availability.kulakova <= 5
-                  ? ['#BD8E16', '#BD8E16']
-                  : data.availability.kulakova >= 6 && data.availability.kulakova <= 9
-                  ? ['#9CBD16', '#9CBD16', '#9CBD16']
-                  : ['#23BD16', '#23BD16', '#23BD16', '#23BD16']
-              }
-            />
-          </div>
-          {/* <div className="availability">
-            {data.availability && data.availability.kulakova ? data.availability.kulakova : 'Нет'}
-          </div> */}
-        </div>
-
-        <div className="product-item-availability">
-          <div>Шоколад</div>
+          <div>Шоколад:</div>
           <div className="battery-wrapper">
             <Battery
               colors={
