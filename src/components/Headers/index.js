@@ -3,33 +3,13 @@ import HeaderPhone from './HeaderPhone';
 import HeaderSearch from './HeaderSearch';
 import HeaderCategories from './HeaderCategories';
 
-const Header = ({
-  currentData,
-  setCurrentData,
-  setCurrentPage,
-  searchText,
-  setSearchText,
-  activeCategory,
-  setActiveCategory,
-}) => {
+const Header = () => {
   return (
-    <React.Fragment>
+    <>
       <HeaderPhone />
-      <HeaderSearch
-        currentData={currentData}
-        setCurrentData={setCurrentData}
-        searchText={searchText}
-        setSearchText={setSearchText}
-      />
-      <HeaderCategories
-        currentData={currentData}
-        setCurrentData={setCurrentData}
-        setSearchText={setSearchText}
-        setCurrentPage={setCurrentPage}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-      />
-    </React.Fragment>
+      <HeaderSearch />
+      <HeaderCategories />
+    </>
   );
 };
 

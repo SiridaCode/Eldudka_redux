@@ -41,7 +41,7 @@
 
 .product-item-availability {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-left: 20px;
   font-family: Roboto, 'Comic Sans MS', normal;
   font-size: 14px;
@@ -65,5 +65,5 @@
 }
 
 .battery-wrapper {
-  margin-left: 4px;
+  margin-right: 25px;
 }

@@ -1,13 +1,10 @@
 export const filterData = data => {
-  const newData = data.filter(
-    value =>
-      value.availability &&
-      value.availability.galery &&
-      value.availability.tuhach &&
-      value.availability.kulakova &&
-      value.availability.shokolad
-  );
-
+  const newData = data.filter(value => {
+    if (value.availability) {
+      const { galery, kulakova, tuhach, shokolad } = value.availability;
+      return galery || kulakova || tuhach || shokolad;
+    }
+  });
   return newData;
 };
 

@@ -33,9 +33,9 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          <div className="availability">
+          {/* <div className="availability">
             {data.availability && data.availability.galery ? data.availability.galery : 'Нет'}
-          </div>
+          </div> */}
         </div>
 
         <div className="product-item-availability">
@@ -55,9 +55,9 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          <div className="availability">
+          {/* <div className="availability">
             {data.availability && data.availability.tuhach ? data.availability.tuhach : 'Нет'}
-          </div>
+          </div> */}
         </div>
 
         <div className="product-item-availability">
@@ -77,9 +77,9 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          <div className="availability">
+          {/* <div className="availability">
             {data.availability && data.availability.kulakova ? data.availability.kulakova : 'Нет'}
-          </div>
+          </div> */}
         </div>
 
         <div className="product-item-availability">
@@ -99,9 +99,9 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          <div className="availability">
+          {/* <div className="availability">
             {data.availability && data.availability.shokolad ? data.availability.shokolad : 'Нет'}
-          </div>
+          </div> */}
         </div>
 
         <p className="product-item-price">{data.price + ' ₽'}</p>

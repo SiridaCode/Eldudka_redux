@@ -3,20 +3,21 @@ import './styles.css';
 import cn from 'classnames';
 import { useSelector } from 'react-redux';
 
-const HeaderSearch = ({ searchText, setSearchText }) => {
+const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
   const { fullData } = useSelector(state => state);
 
   const onChangeSearch = ({ target }) => {
-    setSearchText(target.value);
+    setOpenSearch(!openSearch);
+    // setSearchText(target.value);
   };
 
   const onClickElementSearch = (value, index) => {
-    setSearchText(value);
+    // setSearchText(value);
   };
 
   const onClickDeleteTarget = () => {
-    setSearchText('');
+    // setSearchText('');
   };
 
   const onClickSelectAll = () => {};
@@ -34,7 +35,7 @@ const HeaderSearch = ({ searchText, setSearchText }) => {
         <input
           onClick={onClickSearch}
           onChange={onChangeSearch}
-          value={searchText}
+          // value={searchText}
           type="text"
           className="js-data-example-ajax"
           name="state"
@@ -57,12 +58,12 @@ const HeaderSearch = ({ searchText, setSearchText }) => {
               );
             })}
         </div>
-        {searchText !== '' && openSearch === true && (
+        {openSearch === true && (
           <div onClick={onClickSelectAll} className="delete-target">
             Выбрать все
           </div>
         )}
-        {searchText !== '' && openSearch === true && (
+        {openSearch === true && (
           <img onClick={onClickDeleteTarget} className="vector" src="../Vector.png" />
         )}
       </div>

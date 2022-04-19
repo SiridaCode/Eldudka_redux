@@ -1,28 +1,28 @@
 import * as React from 'react';
 import cn from 'classnames';
 import './styles.css';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
-
-const HeaderCategories = ({
-  currentData,
-  setCurrentData,
+import {
+  setFilterData,
+  setActiveCategory,
   setCurrentPage,
   setSearchText,
-  activeCategory,
-  setActiveCategory,
-}) => {
-  const { fullData } = useSelector(state => state);
+} from '../../../redux/fullData/dataActions';
 
+const HeaderCategories = () => {
+  const { activeCategory, fullData } = useSelector(({ data }) => data);
+  const dispatch = useDispatch();
   const categories = ['Жидкости', 'Одноразки', 'Поды', 'Картриджи', 'Испарители'];
+
   const cssActive = category => cn({ selected: category === activeCategory });
+
   const onClickActiveCategory = category => {
-    setActiveCategory(category);
-    filteredProductsByCategory(fullData, category);
-    setCurrentData(filteredProductsByCategory);
-    console.log(currentData);
-    setCurrentPage(0);
-    setSearchText('');
+    const filter = filteredProductsByCategory(fullData, category);
+    dispatch(setActiveCategory(category));
+    dispatch(setFilterData(filter));
+    dispatch(setCurrentPage(1));
+    dispatch(setSearchText(''));
   };
 
   return (
