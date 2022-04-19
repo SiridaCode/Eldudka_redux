@@ -7,7 +7,7 @@ import {
   setFilterData,
   setActiveCategory,
   setCurrentPage,
-  setSearchText,
+  setSearchData,
 } from '../../../redux/fullData/dataActions';
 
 const HeaderCategories = () => {
@@ -22,7 +22,7 @@ const HeaderCategories = () => {
     dispatch(setActiveCategory(category));
     dispatch(setFilterData(filter));
     dispatch(setCurrentPage(1));
-    dispatch(setSearchText(''));
+    dispatch(setSearchData(''));
   };
 
   return (

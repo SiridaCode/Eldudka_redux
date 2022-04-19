@@ -3,9 +3,17 @@ import {
   SET_FULL_DATA,
   SET_ACTIVE_CATEGORY,
   SET_CURRENT_PAGE,
-  SET_SEARCH_TEXT,
+  SET_SEARCH_DATA,
 } from './dataTypes';
+
 import { filterData } from '../../utils/filter';
+
+export const setFullData = payload => {
+  return {
+    type: SET_FULL_DATA,
+    payload,
+  };
+};
 
 export const setFilterData = payload => {
   return {
@@ -14,9 +22,9 @@ export const setFilterData = payload => {
   };
 };
 
-export const setFullData = payload => {
+export const setSearchData = payload => {
   return {
-    type: SET_FULL_DATA,
+    type: SET_SEARCH_DATA,
     payload,
   };
 };
@@ -35,15 +43,9 @@ export const setCurrentPage = payload => {
   };
 };
 
-export const setSearchText = payload => {
-  return {
-    type: SET_SEARCH_TEXT,
-    payload,
-  };
-};
-
 export const fetchData = () => async dispatch => {
   const data = await fetch(process.env.REACT_APP_URL_CORE).then(response => response.json());
   dispatch(setFullData(filterData(data)));
   dispatch(setFilterData(filterData(data)));
+  dispatch(setSearchData(filterData(data)));
 };

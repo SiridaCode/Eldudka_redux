@@ -1,23 +1,39 @@
 import * as React from 'react';
 import './styles.css';
 import cn from 'classnames';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectedCard, filteredProductsBySearch } from '../../../utils/filter';
+import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/fullData/dataActions';
 
 const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
-  const { fullData } = useSelector(state => state);
+  const [searchText, setSearchText] = React.useState('');
+  const { fullData, searchData } = useSelector(({ data }) => data);
+  const dispatch = useDispatch();
 
   const onChangeSearch = ({ target }) => {
-    setOpenSearch(!openSearch);
-    // setSearchText(target.value);
+    const filter = filteredProductsBySearch(fullData, target.value);
+    setSearchText(target.value);
+    dispatch(setSearchData(filter));
   };
 
+  React.useEffect(() => {
+    searchText ? setOpenSearch(true) : setOpenSearch(false);
+  }, [searchText]);
+
   const onClickElementSearch = (value, index) => {
-    // setSearchText(value);
+    const selected = selectedCard(fullData, index);
+    setSearchText('');
+    dispatch(setSearchData(fullData));
+    dispatch(setFilterData(selected));
+    dispatch(setCurrentPage(0));
   };
 
   const onClickDeleteTarget = () => {
-    // setSearchText('');
+    setSearchText('');
+    setOpenSearch(false);
+    dispatch(setFilterData(fullData));
+    dispatch(setSearchData(fullData));
   };
 
   const onClickSelectAll = () => {};
@@ -35,16 +51,16 @@ const HeaderSearch = () => {
         <input
           onClick={onClickSearch}
           onChange={onChangeSearch}
-          // value={searchText}
+          value={searchText}
           type="text"
           className="js-data-example-ajax"
           name="state"
           placeholder="Поиск..."
         />
         <div className={cn({ search: openSearch === true })}>
-          {openSearch === true &&
-            fullData &&
-            fullData.map((value, id) => {
+          {openSearch &&
+            searchData &&
+            searchData.map((value, id) => {
               const nameCard = value.name.split('(');
               const nameCardNoBracket = nameCard[0];
               return (
