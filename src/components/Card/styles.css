@@ -8,11 +8,25 @@
   box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
 }
 
+.product-item-select {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-bottom: 16px;
+    width: 600px;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
+}
+
 .product-item-name {
+  display: block;
   width: 198px;
   height: 30px;
   color: #001a34;
   word-break: break-word;
+  text-decoration: none;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.4px;
@@ -21,6 +35,13 @@
   font-style: normal;
   font-weight: normal;
   text-align: center;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 300ms;
+}
+
+.product-item-name:hover {
+  color: #cab2b2;
 }
 
 .shop-name {

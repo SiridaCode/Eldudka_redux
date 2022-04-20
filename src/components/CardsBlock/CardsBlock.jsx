@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import Card from '../Card';
+import Card from '../Card/Card';
 import Container from '../Container/Container';
 import './styles.css';
 
@@ -13,7 +13,7 @@ const CardsBlock = () => {
           {filterData &&
             filterData
               .slice(currentPage * 10, (currentPage + 1) * 10)
-              .map((item, index) => <Card data={item} key={index} />)}
+              .map((item, index) => <Card data={item} key={index} id={index} />)}
           {filterData.length < 1 && <div className="lds-dual-ring"></div>}
         </div>
       </Container>

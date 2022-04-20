@@ -1,16 +1,16 @@
 import * as React from 'react';
-import Battery from '../Battery';
+import Battery from '../Battery/Battery';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
-
   return (
     <div className="product-item">
       <div className="product-item-main-info">
-        <p id="product-name" className="product-item-name">
+        <Link className="product-item-name" to={`/card/${id}`}>
           {eng}
-        </p>
+        </Link>
         <div className="product-item-image">
           <img
             src={data.pic ? data.pic : '../image-card.png'}
