@@ -67,15 +67,14 @@ const HeaderSearch = () => {
               {openSearch &&
                 searchData &&
                 searchData.map((value, id) => {
-                  const nameCard = value.name.split('(');
-                  const nameCardNoBracket = nameCard[0];
+                  const [eng, rus] = value.name.split('(');
                   return (
                     <div
                       key={id}
-                      onClick={() => onClickElementSearch(nameCardNoBracket, id)}
+                      onClick={() => onClickElementSearch(eng, id)}
                       className="element-search"
                     >
-                      {nameCardNoBracket}
+                      {eng}
                     </div>
                   );
                 })}

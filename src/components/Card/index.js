@@ -3,21 +3,23 @@ import Battery from '../Battery';
 import './styles.css';
 
 const Card = ({ data, id }) => {
-  const nameCard = data.name.split('(');
-  const nameCardNoBracket = nameCard[0];
+  const [eng, rus] = data.name.split('(');
 
   return (
     <div className="product-item">
       <div className="product-item-main-info">
         <p id="product-name" className="product-item-name">
-          {nameCardNoBracket}
+          {eng}
         </p>
         <div className="product-item-image">
-          <img src="../image-card.png" className="product-item-image-text"></img>
+          <img
+            src={data.pic ? data.pic : '../image-card.png'}
+            className="product-item-image-text"
+          ></img>
         </div>
 
         <div className="product-item-availability">
-          <div className="shop-name">{'Галерея: ' + data.availability.galery}</div>
+          <div className="shop-name">{'Галерея: ' + data.availability.galery ?? 'Нет'}</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -33,13 +35,10 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          {/* <div className="availability">
-            {data.availability && data.availability.galery ? data.availability.galery : 'Нет'}
-          </div> */}
         </div>
 
         <div className="product-item-availability">
-          <div className="shop-name">{'Тухачевского: ' + data.availability.tuhach}</div>
+          <div className="shop-name">{'Тухачевского: ' + data.availability.tuhach ?? 'Нет'}</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -55,13 +54,10 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          {/* <div className="availability">
-            {data.availability && data.availability.tuhach ? data.availability.tuhach : 'Нет'}
-          </div> */}
         </div>
 
         <div className="product-item-availability">
-          <div className="shop-name">{'Шоколад: ' + data.availability.shokolad}</div>
+          <div className="shop-name">{'Шоколад: ' + data.availability.shokolad ?? 'Нет'}</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -77,9 +73,6 @@ const Card = ({ data, id }) => {
               }
             />
           </div>
-          {/* <div className="availability">
-            {data.availability && data.availability.shokolad ? data.availability.shokolad : 'Нет'}
-          </div> */}
         </div>
 
         <p className="product-item-price">{data.price + ' ₽'}</p>
