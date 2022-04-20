@@ -10,7 +10,7 @@ const Pagination = () => {
   let pages = [];
   const pagesNumber = filterData && Math.ceil(filterData.length / 10);
 
-  for (let i = 0; i < pagesNumber; i++) {
+  for (let i = 0; i < pagesNumber - 1; i++) {
     pages.push(i);
   }
 

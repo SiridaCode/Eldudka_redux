@@ -14,6 +14,7 @@ const CardsBlock = () => {
             filterData
               .slice(currentPage * 10, (currentPage + 1) * 10)
               .map((item, index) => <Card data={item} key={index} />)}
+          {filterData.length < 1 && <div className="lds-dual-ring"></div>}
         </div>
       </Container>
     </div>

@@ -17,7 +17,7 @@ const Card = ({ data, id }) => {
         </div>
 
         <div className="product-item-availability">
-          <div className="shop-name">Галерея:</div>
+          <div className="shop-name">{'Галерея: ' + data.availability.galery}</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -39,7 +39,7 @@ const Card = ({ data, id }) => {
         </div>
 
         <div className="product-item-availability">
-          <div className="shop-name">Тухачевского:</div>
+          <div className="shop-name">{'Тухачевского: ' + data.availability.tuhach}</div>
           <div className="battery-wrapper">
             <Battery
               colors={
@@ -61,7 +61,7 @@ const Card = ({ data, id }) => {
         </div>
 
         <div className="product-item-availability">
-          <div className="shop-name">Шоколад:</div>
+          <div className="shop-name">{'Шоколад: ' + data.availability.shokolad}</div>
           <div className="battery-wrapper">
             <Battery
               colors={
