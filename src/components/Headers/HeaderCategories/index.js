@@ -3,6 +3,7 @@ import cn from 'classnames';
 import './styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
+import Container from '../../Container/Container';
 import {
   setFilterData,
   setActiveCategory,
@@ -22,26 +23,28 @@ const HeaderCategories = () => {
     dispatch(setActiveCategory(category));
     dispatch(setFilterData(filter));
     dispatch(setCurrentPage(1));
-    dispatch(setSearchData(''));
+    dispatch(setSearchData(fullData));
   };
 
   return (
     <header className="header-third">
-      <div className="categories">
-        {categories.map((category, index) => {
-          return (
-            <div
-              onClick={() => onClickActiveCategory(category)}
-              className="categories-item"
-              data-category-name={category}
-              key={index}
-            >
-              <p className="categories-item-name">{category}</p>
-              <div className={cssActive(category)}></div>
-            </div>
-          );
-        })}
-      </div>
+      <Container>
+        <div className="categories">
+          {categories.map((category, index) => {
+            return (
+              <div
+                onClick={() => onClickActiveCategory(category)}
+                className="categories-item"
+                data-category-name={category}
+                key={index}
+              >
+                <p className="categories-item-name">{category}</p>
+                <div className={cssActive(category)}></div>
+              </div>
+            );
+          })}
+        </div>
+      </Container>
     </header>
   );
 };

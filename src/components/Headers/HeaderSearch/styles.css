@@ -1,11 +1,13 @@
 .header-second {
+  background: #bd1616;
+  color: #fff;
+}
+
+.header-second-wrapper {
   height: 60px;
-  padding: 0px 360px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #bd1616;
-  color: #fff;
 }
 
 .js-data-example-ajax {
@@ -49,21 +51,25 @@
 
 .element-search:hover {
   background: #ffe6e6;
+  transition-property: background-color, color;
+  transition-duration: 500ms;
 }
 
 .delete-target {
   background: #d6d6d6;
-  color: #cc051a;
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
+  color: #CC051A;
+  display: block;
+  font-weight: 700;
+  font-size: 12px;
+  text-align: left;
+  padding: 8px 8px;
   width: 483px;
   height: 33px;
   position: absolute;
   left: 0px;
   top: 370px;
-  border-radius: 0px 0px 6px 6px;
-  padding-left: 32px;
+  border-radius: 0px 0px 12px 12px;
+  padding-left: 25px;
   cursor: pointer;
 }
 

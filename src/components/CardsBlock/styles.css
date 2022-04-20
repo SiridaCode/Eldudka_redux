@@ -1,0 +1,10 @@
+
+  .cards-block {
+    margin-top: 44px;
+    margin-bottom: 24px;
+}
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

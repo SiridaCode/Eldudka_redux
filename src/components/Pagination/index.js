@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
 import { setCurrentPage } from '../../redux/fullData/dataActions';
+import Container from '../Container/Container';
 
 const Pagination = () => {
   const dispatch = useDispatch();
@@ -18,12 +19,16 @@ const Pagination = () => {
   };
 
   return (
-    <div className="Pages">
-      {pages.map(id => (
-        <div onClick={() => onPageNumberClick(id)} key={id} className="Page">
-          {id + 1}
+    <div className="pages-block">
+      <Container>
+        <div className="pages">
+          {pages.map(id => (
+            <div onClick={() => onPageNumberClick(id)} key={id} className="Page">
+              {id + 1}
+            </div>
+          ))}
         </div>
-      ))}
+      </Container>
     </div>
   );
 };
