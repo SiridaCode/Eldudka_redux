@@ -4,17 +4,35 @@
   width: 225px;
   height: 368px;
   background: #ffffff;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
 }
 
 .product-item-name {
   width: 198px;
   height: 30px;
+  color: #001a34;
+  word-break: break-word;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 20px;
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 13px;
+  text-align: center;
+}
+
+.shop-name {
+  color: #001a34;
+  word-break: break-word;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 20px;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
   text-align: center;
 }
 

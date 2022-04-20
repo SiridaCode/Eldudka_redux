@@ -11,7 +11,7 @@ const INITIAL_STATE = {
   fullData: [],
   searchData: [],
   activeCategory: 'default',
-  currentPage: 1,
+  currentPage: 0,
 };
 
 const dataReducer = (state = INITIAL_STATE, action) => {

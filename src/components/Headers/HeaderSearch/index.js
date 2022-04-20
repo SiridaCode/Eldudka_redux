@@ -2,7 +2,7 @@ import * as React from 'react';
 import './styles.css';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectedCard, filteredProductsBySearch } from '../../../utils/filter';
+import { selectedCard, filteredProductsBySearch, filterData } from '../../../utils/filter';
 import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/fullData/dataActions';
 import Container from '../../Container/Container';
 
@@ -11,7 +11,7 @@ const HeaderSearch = () => {
   const [searchText, setSearchText] = React.useState('');
   const { fullData, searchData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
-  console.log(searchData);
+
   const onChangeSearch = ({ target }) => {
     const filter = filteredProductsBySearch(fullData, target.value);
     setSearchText(target.value);
@@ -23,7 +23,7 @@ const HeaderSearch = () => {
   }, [searchText]);
 
   const onClickElementSearch = (value, index) => {
-    const selected = selectedCard(fullData, index);
+    const selected = selectedCard(searchData, index);
     setSearchText('');
     dispatch(setSearchData(fullData));
     dispatch(setFilterData(selected));

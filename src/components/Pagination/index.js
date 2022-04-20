@@ -15,21 +15,23 @@ const Pagination = () => {
   }
 
   const onPageNumberClick = id => {
-    dispatch(setCurrentPage(id));
+    dispatch(setCurrentPage(id + 1));
   };
 
   return (
-    <div className="pages-block">
-      <Container>
-        <div className="pages">
-          {pages.map(id => (
-            <div onClick={() => onPageNumberClick(id)} key={id} className="Page">
-              {id + 1}
-            </div>
-          ))}
-        </div>
-      </Container>
-    </div>
+    filterData.length > 10 && (
+      <div className="pages-block">
+        <Container>
+          <div className="pages">
+            {pages.map(id => (
+              <div onClick={() => onPageNumberClick(id)} key={id} className="Page">
+                {id + 1}
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
+    )
   );
 };
 

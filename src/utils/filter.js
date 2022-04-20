@@ -17,16 +17,18 @@ export const filteredProductsByCategory = (fullData, category) => {
   return filterCategory;
 };
 
+export const filteredProductsBySearch = (fullData, value) => {
+  const filteredProducts = fullData.filter((item, index) => {
+    const lowerItem = item.name.toLowerCase();
+    const lowerValue = value.toLowerCase();
+    return lowerItem.includes(lowerValue);
+  });
+  return filteredProducts;
+};
+
 export const selectedCard = (fullData, id) => {
   const selectSearch = fullData.filter((item, index) => {
     return id === index;
   });
   return selectSearch;
-};
-
-export const filteredProductsBySearch = (fullData, value) => {
-  const filteredProducts = fullData.filter((item, index) => {
-    return item.name.includes(value);
-  });
-  return filteredProducts;
 };
