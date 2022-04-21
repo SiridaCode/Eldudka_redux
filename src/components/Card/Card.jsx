@@ -3,6 +3,18 @@ import Battery from '../Battery/Battery';
 import './styles.css';
 import { Link } from 'react-router-dom';
 
+const colors = shop => {
+  return shop < 1
+    ? []
+    : shop >= 1 && shop <= 3
+    ? ['#BD1616']
+    : shop >= 4 && shop <= 5
+    ? ['#BD8E16', '#BD8E16']
+    : shop >= 6 && shop <= 9
+    ? ['#9CBD16', '#9CBD16', '#9CBD16']
+    : ['#23BD16', '#23BD16', '#23BD16', '#23BD16'];
+};
+
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
   return (
@@ -21,57 +33,21 @@ const Card = ({ data, id }) => {
         <div className="product-item-availability">
           <div className="shop-name">{'Галерея: ' + data.availability.galery ?? 'Нет'}</div>
           <div className="battery-wrapper">
-            <Battery
-              colors={
-                data.availability.galery < 1
-                  ? []
-                  : data.availability.galery >= 1 && data.availability.galery <= 3
-                  ? ['#BD1616']
-                  : data.availability.galery >= 4 && data.availability.galery <= 5
-                  ? ['#BD8E16', '#BD8E16']
-                  : data.availability.galery >= 6 && data.availability.galery <= 9
-                  ? ['#9CBD16', '#9CBD16', '#9CBD16']
-                  : ['#23BD16', '#23BD16', '#23BD16', '#23BD16']
-              }
-            />
+            <Battery colors={colors(data.availability.galery)} />
           </div>
         </div>
 
         <div className="product-item-availability">
           <div className="shop-name">{'Тухачевского: ' + data.availability.tuhach ?? 'Нет'}</div>
           <div className="battery-wrapper">
-            <Battery
-              colors={
-                data.availability.tuhach < 1
-                  ? []
-                  : data.availability.tuhach >= 1 && data.availability.tuhach <= 3
-                  ? ['#BD1616']
-                  : data.availability.tuhach >= 4 && data.availability.tuhach <= 5
-                  ? ['#BD8E16', '#BD8E16']
-                  : data.availability.tuhach >= 6 && data.availability.tuhach <= 9
-                  ? ['#9CBD16', '#9CBD16', '#9CBD16']
-                  : ['#23BD16', '#23BD16', '#23BD16', '#23BD16']
-              }
-            />
+            <Battery colors={colors(data.availability.tuhach)} />
           </div>
         </div>
 
         <div className="product-item-availability">
           <div className="shop-name">{'Шоколад: ' + data.availability.shokolad ?? 'Нет'}</div>
           <div className="battery-wrapper">
-            <Battery
-              colors={
-                data.availability.shokolad < 1
-                  ? []
-                  : data.availability.shokolad >= 1 && data.availability.shokolad <= 3
-                  ? ['#BD1616']
-                  : data.availability.shokolad >= 4 && data.availability.shokolad <= 5
-                  ? ['#BD8E16', '#BD8E16']
-                  : data.availability.shokolad >= 6 && data.availability.shokolad <= 9
-                  ? ['#9CBD16', '#9CBD16', '#9CBD16']
-                  : ['#23BD16', '#23BD16', '#23BD16', '#23BD16']
-              }
-            />
+            <Battery colors={colors(data.availability.shokolad)} />
           </div>
         </div>
 
