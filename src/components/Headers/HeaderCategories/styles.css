@@ -22,6 +22,7 @@
   
   .categories-item {
     display: block;
+    text-decoration: none;
     position: relative;
     width: 240px;
     height: 63px;

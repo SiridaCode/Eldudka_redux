@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectedCard, filteredProductsBySearch, filterData } from '../../../utils/filter';
 import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/fullData/dataActions';
 import Container from '../../Container/Container';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
   const [searchText, setSearchText] = React.useState('');
   const { fullData, searchData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const onChangeSearch = ({ target }) => {
     const filter = filteredProductsBySearch(fullData, target.value);
@@ -23,14 +24,17 @@ const HeaderSearch = () => {
     searchText ? setOpenSearch(true) : setOpenSearch(false);
   }, [searchText]);
 
-  const onClickElementSearch = () => {
+  const onClickElementSearch = id => {
     setSearchText('');
+    setOpenSearch(false);
     dispatch(setSearchData(fullData));
     dispatch(setCurrentPage(0));
+    history.push('search' + id);
   };
 
   const onClickDeleteTarget = () => {
     setSearchText('');
+    setOpenSearch(false);
     dispatch(setFilterData(fullData));
     dispatch(setSearchData(fullData));
   };
@@ -38,6 +42,8 @@ const HeaderSearch = () => {
   const onClickSelectAll = () => {
     dispatch(setFilterData(searchData));
     setSearchText('');
+    setOpenSearch(false);
+    history.push('/');
   };
 
   const onClickSearch = () => {
@@ -67,15 +73,13 @@ const HeaderSearch = () => {
                 searchData.map((value, id) => {
                   const [eng, rus] = value.name.split('(');
                   return (
-                    <Link
-                      exact
-                      to={id}
+                    <div
                       key={id}
-                      onClick={onClickElementSearch}
+                      onClick={() => onClickElementSearch(id)}
                       className="element-search"
                     >
                       {eng}
-                    </Link>
+                    </div>
                   );
                 })}
             </div>

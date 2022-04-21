@@ -29,7 +29,7 @@ const HeaderCategories = () => {
     const filter = filteredProductsByCategory(fullData, category);
     dispatch(setActiveCategory(category));
     dispatch(setFilterData(filter));
-    dispatch(setCurrentPage(1));
+    dispatch(setCurrentPage(0));
     dispatch(setSearchData(fullData));
   };
 

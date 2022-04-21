@@ -8,10 +8,10 @@ import './styles.css';
 const SelectCard = () => {
   let { card } = useParams();
   const { filterData, currentPage } = useSelector(({ data }) => data);
-  const numberCard = currentPage + Number(card);
+  const numberCard = Number(card);
   const value = filterData[numberCard];
-  console.log(numberCard);
   const [eng, rus] = value.name.split('(');
+  console.log(numberCard);
 
   return (
     <>

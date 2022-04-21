@@ -8,7 +8,7 @@ const Card = ({ data, id }) => {
   return (
     <div className="product-item">
       <div className="product-item-main-info">
-        <Link className="product-item-name" to={`card/${id}`} replace>
+        <Link className="product-item-name" to={`card${id}`} replace>
           {eng}
         </Link>
         <div className="product-item-image">

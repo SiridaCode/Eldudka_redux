@@ -5,7 +5,7 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { fetchData } from './redux/fullData/dataActions';
 import CardsBlock from './components/CardsBlock/CardsBlock';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import SelectCard from './components/Card/SelectCard';
 import SelectCardSearch from './components/Card/SelectCardSearch';
 
@@ -25,10 +25,10 @@ const App = () => {
               <CardsBlock />
               <Pagination />
             </Route>
-            <Route path="/card/:card">
+            <Route path="/card:card">
               <SelectCard />
             </Route>
-            <Route path="/search/:search">
+            <Route path="/search:search">
               <SelectCardSearch />
             </Route>
           </Switch>
