@@ -10,6 +10,7 @@ import {
   setCurrentPage,
   setSearchData,
 } from '../../../redux/fullData/dataActions';
+import { NavLink } from 'react-router-dom';
 
 const HeaderCategories = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
@@ -38,7 +39,8 @@ const HeaderCategories = () => {
         <div className="categories">
           {categories.map((category, index) => {
             return (
-              <div
+              <NavLink
+                to="/"
                 onClick={() => onClickActiveCategory(category.name)}
                 className="categories-item"
                 data-category-name={category.name}
@@ -46,7 +48,7 @@ const HeaderCategories = () => {
               >
                 <p className="categories-item-name">{category.name}</p>
                 <div className={cssActive(category.name)}></div>
-              </div>
+              </NavLink>
             );
           })}
         </div>
