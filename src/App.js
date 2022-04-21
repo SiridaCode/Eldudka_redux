@@ -5,9 +5,9 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { fetchData } from './redux/fullData/dataActions';
 import CardsBlock from './components/CardsBlock/CardsBlock';
-import { BrowserRouter, Route, Switch, useParams } from 'react-router-dom';
-import { filterData } from './utils/filter';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SelectCard from './components/Card/SelectCard';
+import SelectCardSearch from './components/Card/SelectCardSearch';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Layout>
           <Switch>
             <Route exact path="/">
@@ -28,9 +28,12 @@ const App = () => {
             <Route path="/card/:card">
               <SelectCard />
             </Route>
+            <Route path="/search/:search">
+              <SelectCardSearch />
+            </Route>
           </Switch>
         </Layout>
-      </BrowserRouter>
+      </Router>
     </>
   );
 };

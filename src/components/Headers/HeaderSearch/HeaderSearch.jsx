@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectedCard, filteredProductsBySearch, filterData } from '../../../utils/filter';
 import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/fullData/dataActions';
 import Container from '../../Container/Container';
+import { Link } from 'react-router-dom';
 
 const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
@@ -22,24 +23,21 @@ const HeaderSearch = () => {
     searchText ? setOpenSearch(true) : setOpenSearch(false);
   }, [searchText]);
 
-  const onClickElementSearch = (value, index) => {
-    const selected = selectedCard(searchData, index);
+  const onClickElementSearch = () => {
     setSearchText('');
     dispatch(setSearchData(fullData));
-    dispatch(setFilterData(selected));
     dispatch(setCurrentPage(0));
   };
 
   const onClickDeleteTarget = () => {
     setSearchText('');
-    setOpenSearch(false);
     dispatch(setFilterData(fullData));
     dispatch(setSearchData(fullData));
   };
 
   const onClickSelectAll = () => {
     dispatch(setFilterData(searchData));
-    setOpenSearch(false);
+    setSearchText('');
   };
 
   const onClickSearch = () => {
@@ -69,13 +67,15 @@ const HeaderSearch = () => {
                 searchData.map((value, id) => {
                   const [eng, rus] = value.name.split('(');
                   return (
-                    <div
+                    <Link
+                      exact
+                      to={id}
                       key={id}
-                      onClick={() => onClickElementSearch(eng, id)}
+                      onClick={onClickElementSearch}
                       className="element-search"
                     >
                       {eng}
-                    </div>
+                    </Link>
                   );
                 })}
             </div>

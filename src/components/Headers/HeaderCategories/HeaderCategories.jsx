@@ -14,7 +14,13 @@ import {
 const HeaderCategories = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
-  const categories = ['Жидкости', 'Одноразки', 'Поды', 'Картриджи', 'Испарители'];
+  const categories = [
+    { name: 'Жидкости', link: '/liquid' },
+    { name: 'Одноразки', link: '/disposable' },
+    { name: 'Поды', link: '/pod' },
+    { name: 'Картриджи', link: '/cartridge' },
+    { name: 'Испарители', link: 'evaporator' },
+  ];
 
   const cssActive = category => cn({ selected: category === activeCategory });
 
@@ -33,13 +39,13 @@ const HeaderCategories = () => {
           {categories.map((category, index) => {
             return (
               <div
-                onClick={() => onClickActiveCategory(category)}
+                onClick={() => onClickActiveCategory(category.name)}
                 className="categories-item"
-                data-category-name={category}
+                data-category-name={category.name}
                 key={index}
               >
-                <p className="categories-item-name">{category}</p>
-                <div className={cssActive(category)}></div>
+                <p className="categories-item-name">{category.name}</p>
+                <div className={cssActive(category.name)}></div>
               </div>
             );
           })}

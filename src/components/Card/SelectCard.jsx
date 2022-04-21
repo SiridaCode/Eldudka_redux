@@ -1,23 +1,28 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+import { setFullData } from '../../redux/fullData/dataActions';
 import Container from '../Container/Container';
+import './styles.css';
 
 const SelectCard = () => {
   let { card } = useParams();
-  console.log(card);
-  const { filterData } = useSelector(({ data }) => data);
-  console.log(filterData[card]);
-  const value = filterData[card];
+  const { filterData, currentPage } = useSelector(({ data }) => data);
+  const numberCard = currentPage + Number(card);
+  const value = filterData[numberCard];
+  console.log(numberCard);
+  const [eng, rus] = value.name.split('(');
 
   return (
     <>
       <div className="product-item-select">
-        <div>{value.name}</div>
-        <div>{value.price}</div>
+        <div>{eng}</div>
+        <div>{'(' + rus}</div>
+        <div>{value.price + ' ₽'}</div>
         <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
         <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
         <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
+        <div className="to-order">Заказать</div>
       </div>
     </>
   );
