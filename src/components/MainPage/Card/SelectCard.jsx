@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { setFullData } from '../../redux/fullData/dataActions';
-import Container from '../Container/Container';
 import './styles.css';
 
 const SelectCard = () => {

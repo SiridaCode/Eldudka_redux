@@ -1,5 +1,6 @@
 .product-item {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 16px;
   width: 225px;
   height: 368px;

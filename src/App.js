@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Layout from './components/Headers/Headers';
-import Pagination from './components/Pagination/Pagination';
+import Pagination from './components/MainPage/Pagination/Pagination';
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { fetchData } from './redux/fullData/dataActions';
-import CardsBlock from './components/CardsBlock/CardsBlock';
+import CardsBlock from './components/MainPage/CardsBlock/CardsBlock';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import SelectCard from './components/Card/SelectCard';
-import SelectCardSearch from './components/Card/SelectCardSearch';
+import SelectCard from './components/MainPage/Card/SelectCard';
+import SelectCardSearch from './components/MainPage/Card/SelectCardSearch';
 
 const App = () => {
   const dispatch = useDispatch();

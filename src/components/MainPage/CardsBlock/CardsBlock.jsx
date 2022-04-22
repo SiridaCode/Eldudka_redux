@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
-import Container from '../Container/Container';
+import Container from '../../Container/Container';
 import './styles.css';
 
 const CardsBlock = () => {

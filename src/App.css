@@ -30,14 +30,35 @@
     font-size: 12px !important;
   }
 
-  .Pages {
-    padding: 0px !important;
-    margin: 0px !important;
+  .pages {
     justify-content: center !important;
   }
   .container {
     justify-content: center !important;
+    width: auto !important;
   }
+
+  .cards-wrapper {
+    justify-content: center !important;
+  }
+
+  .js-data-example-ajax {
+    width: auto !important;
+    height: auto !important;
+  }
+  .categories-item {
+    margin: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .search {
+    width: auto !important;
+  }
+  .element-search {
+    width: auto !important;
+    height: auto !important;
+  }
+
 }
 
 body {
