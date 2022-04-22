@@ -29,7 +29,6 @@ const HeaderSearch = () => {
     setSearchText('');
     setOpenSearch(false);
     history.push('search' + id);
-    // dispatch(setSearchData(fullData));
     dispatch(setCurrentPage(0));
   };
 

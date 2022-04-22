@@ -4,9 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const SelectCardSearch = () => {
   let { search } = useParams();
-  console.log(search);
   const { searchData } = useSelector(({ data }) => data);
-  console.log(searchData);
   const value = searchData[search];
   const [eng, rus] = value.name.split('(');
 
