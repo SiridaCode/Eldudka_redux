@@ -7,11 +7,11 @@ import './styles.css';
 
 const SelectCard = () => {
   let { card } = useParams();
+  console.log(card)
   const { filterData, currentPage } = useSelector(({ data }) => data);
   const numberCard = Number(card);
-  const value = filterData[numberCard];
+  const value = filterData.slice(currentPage * 10, (currentPage + 1) * 10)[numberCard];
   const [eng, rus] = value.name.split('(');
-  console.log(numberCard);
 
   return (
     <>
@@ -22,7 +22,7 @@ const SelectCard = () => {
         <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
         <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
         <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
-        <div className="to-order">Заказать</div>
+        <a href="https://vk.com/vapestav" className="to-order">Заказать</a>
       </div>
     </>
   );

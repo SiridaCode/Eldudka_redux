@@ -10,26 +10,27 @@ import { Link, useHistory } from 'react-router-dom';
 const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
   const [searchText, setSearchText] = React.useState('');
+  const [elementSearch, setElementSearch] = React.useState('')
   const { fullData, searchData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const onChangeSearch = ({ target }) => {
-    const filter = filteredProductsBySearch(fullData, target.value);
+  const onChangeSearch = ({target}) => {
+    dispatch(setSearchData(filteredProductsBySearch(fullData, target.value)))
     setSearchText(target.value);
-    dispatch(setSearchData(filter));
+    history.push('/')
   };
 
   React.useEffect(() => {
     searchText ? setOpenSearch(true) : setOpenSearch(false);
   }, [searchText]);
 
-  const onClickElementSearch = id => {
+  const onClickElementSearch = (eng, id) => {
     setSearchText('');
     setOpenSearch(false);
-    dispatch(setSearchData(fullData));
-    dispatch(setCurrentPage(0));
     history.push('search' + id);
+    // dispatch(setSearchData(fullData));
+    dispatch(setCurrentPage(0));
   };
 
   const onClickDeleteTarget = () => {
@@ -42,6 +43,7 @@ const HeaderSearch = () => {
   const onClickSelectAll = () => {
     dispatch(setFilterData(searchData));
     setSearchText('');
+    dispatch(setCurrentPage(0));
     setOpenSearch(false);
     history.push('/');
   };
@@ -74,8 +76,9 @@ const HeaderSearch = () => {
                   const [eng, rus] = value.name.split('(');
                   return (
                     <div
+                      id={id}
                       key={id}
-                      onClick={() => onClickElementSearch(id)}
+                      onClick={() => onClickElementSearch(eng, id)}
                       className="element-search"
                     >
                       {eng}

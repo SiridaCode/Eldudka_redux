@@ -4,8 +4,8 @@
   width: 225px;
   height: 368px;
   background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
+  /* border-radius: 15px; */
+  box-shadow: 0 25px 25px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
 }
 
 .product-item-select {
@@ -22,6 +22,8 @@
     background: #ffffff;
     border-radius: 50px;
     box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
+    transition-property: background-color, color;
+    transition-duration: 2s;
 }
 .product-item-select>div {
   margin: 10px;
@@ -116,9 +118,11 @@
 }
 
 .to-order {
+  text-decoration: none;
   width: 150px;
-  height: 35px;
+  height: 30px;
   background: #bd1616;
-  color: #000000;
+  color: #ffffff;
   border-radius: 40px;
+  cursor: pointer;
 }

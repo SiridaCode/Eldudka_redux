@@ -18,7 +18,7 @@ const colors = shop => {
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
   return (
-    <div className="product-item">
+    <div key={id} className="product-item">
       <div className="product-item-main-info">
         <Link className="product-item-name" to={`card${id}`} replace>
           {eng}
