@@ -10,7 +10,6 @@ import { Link, useHistory } from 'react-router-dom';
 const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
   const [searchText, setSearchText] = React.useState('');
-  const [elementSearch, setElementSearch] = React.useState('')
   const { fullData, searchData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
   const history = useHistory();

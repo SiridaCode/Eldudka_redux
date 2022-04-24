@@ -18,11 +18,11 @@ const colors = shop => {
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
   return (
-    <div key={id} className="product-item">
+    <Link to={`card${id}`} replace key={id} className="product-item">
       <div className="product-item-main-info">
-        <Link className="product-item-name" to={`card${id}`} replace>
+        <div className="product-item-name">
           {eng}
-        </Link>
+        </div>
         <div className="product-item-image">
           <img
             src={data.pic ? data.pic : '../image-card.png'}
@@ -53,7 +53,7 @@ const Card = ({ data, id }) => {
 
         <p className="product-item-price">{data.price + ' ₽'}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
