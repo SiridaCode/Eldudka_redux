@@ -2,18 +2,7 @@ import * as React from 'react';
 import Battery from '../Battery/Battery';
 import './styles.css';
 import { Link } from 'react-router-dom';
-
-const colors = shop => {
-  return shop < 1
-    ? []
-    : shop >= 1 && shop <= 3
-    ? ['#BD1616']
-    : shop >= 4 && shop <= 5
-    ? ['#BD8E16', '#BD8E16']
-    : shop >= 6 && shop <= 9
-    ? ['#9CBD16', '#9CBD16', '#9CBD16']
-    : ['#23BD16', '#23BD16', '#23BD16', '#23BD16'];
-};
+import { colors } from '../../../utils/filter';
 
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
