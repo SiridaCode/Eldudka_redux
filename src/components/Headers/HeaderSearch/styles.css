@@ -47,13 +47,13 @@
   padding: 30px;
   cursor: pointer;
   background: #ffffff;
-  border-bottom: 1px solid rgb(218, 218, 218);
 }
 
 .element-search:hover {
   background: #ffe6e6;
   transition-property: background-color, color;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
+
 }
 
 .delete-target {
