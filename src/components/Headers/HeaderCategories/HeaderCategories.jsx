@@ -3,6 +3,7 @@ import cn from 'classnames';
 import './styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
+import { categories } from '../../../utils/utils';
 import Container from '../../Container/Container';
 import {
   setFilterData,
@@ -15,13 +16,6 @@ import { NavLink } from 'react-router-dom';
 const HeaderCategories = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
-  const categories = [
-    { name: 'Жидкости', link: '/liquid' },
-    { name: 'Одноразки', link: '/disposable' },
-    { name: 'Поды', link: '/pod' },
-    { name: 'Картриджи', link: '/cartridge' },
-    { name: 'Испарители', link: 'evaporator' },
-  ];
 
   const cssActive = category => cn({ selected: category === activeCategory });
 

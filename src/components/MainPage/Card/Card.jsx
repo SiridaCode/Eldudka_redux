@@ -2,16 +2,14 @@ import * as React from 'react';
 import Battery from '../Battery/Battery';
 import './styles.css';
 import { Link } from 'react-router-dom';
-import { colors } from '../../../utils/filter';
+import { colors } from '../../../utils/utils';
 
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
   return (
     <Link to={`card${id}`} replace key={id} className="product-item">
       <div className="product-item-main-info">
-        <div className="product-item-name">
-          {eng}
-        </div>
+        <div className="product-item-name">{eng}</div>
         <div className="product-item-image">
           <img
             src={data.pic ? data.pic : '../image-card.png'}

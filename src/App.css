@@ -44,7 +44,6 @@
 
   .js-data-example-ajax {
     width: auto !important;
-    margin-right: 10px !important;
   }
   .categories-item {
     width: auto !important;
@@ -58,7 +57,7 @@
     height: auto !important;
   }
   .delete-target {
-    width: 100%;
+    width: 100% !important;
   }
 }
 
