@@ -17,7 +17,9 @@ const SelectCardSearch = () => {
         <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
         <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
         <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
-        <div className="to-order">Заказать</div>
+        <a href="https://vk.com/vapestav" className="to-order">
+          Заказать
+        </a>
       </div>
     </>
   );

@@ -28,6 +28,7 @@
     top: 30%;
     width: 100%;
     background: #ffffff;
+    color: #444444;
     border-radius: 50px;
     box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
     transition-property: background-color, color;
@@ -122,11 +123,18 @@
 }
 
 .to-order {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
   text-decoration: none;
-  width: 150px;
+  width: 130px;
   height: 30px;
   background: #bd1616;
   color: #ffffff;
   border-radius: 40px;
   cursor: pointer;
+}
+.to-order:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
