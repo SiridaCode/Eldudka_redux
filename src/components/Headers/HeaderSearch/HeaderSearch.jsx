@@ -2,10 +2,10 @@ import * as React from 'react';
 import './styles.css';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectedCard, filteredProductsBySearch, filterData } from '../../../utils/filter';
+import { filteredProductsBySearch } from '../../../utils/filter';
 import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/fullData/dataActions';
 import Container from '../../Container/Container';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const HeaderSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
@@ -14,10 +14,10 @@ const HeaderSearch = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const onChangeSearch = ({target}) => {
-    dispatch(setSearchData(filteredProductsBySearch(fullData, target.value)))
+  const onChangeSearch = ({ target }) => {
+    dispatch(setSearchData(filteredProductsBySearch(fullData, target.value)));
     setSearchText(target.value);
-    history.push('/')
+    history.push('/');
   };
 
   React.useEffect(() => {

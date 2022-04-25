@@ -27,9 +27,7 @@ export const filteredProductsBySearch = (fullData, value) => {
 };
 
 export const selectedCard = (fullData, id) => {
-  const selectSearch = fullData.filter((item, index) => {
-    return id === index;
-  });
+  const selectSearch = fullData.filter((item, index) => id === index);
   return selectSearch;
 };
 

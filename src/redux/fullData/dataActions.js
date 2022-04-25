@@ -1,3 +1,4 @@
+import { filterData } from '../../utils/filter';
 import {
   SET_FILTER_DATA,
   SET_FULL_DATA,
@@ -5,8 +6,6 @@ import {
   SET_CURRENT_PAGE,
   SET_SEARCH_DATA,
 } from './dataTypes';
-
-import { filterData } from '../../utils/filter';
 
 export const setFullData = payload => {
   return {
