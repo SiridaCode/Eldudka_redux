@@ -5,7 +5,6 @@ import './styles.css';
 
 const SelectCard = () => {
   let { card } = useParams();
-  console.log(card)
   const { filterData, currentPage } = useSelector(({ data }) => data);
   const numberCard = Number(card);
   const value = filterData.slice(currentPage * 10, (currentPage + 1) * 10)[numberCard];
@@ -20,7 +19,9 @@ const SelectCard = () => {
         <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
         <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
         <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
-        <a href="https://vk.com/vapestav" className="to-order">Заказать</a>
+        <a href="https://vk.com/vapestav" className="to-order">
+          Заказать
+        </a>
       </div>
     </>
   );

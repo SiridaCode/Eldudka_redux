@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+@media(max-width: 600px) {
+  .lds-dual-ring {
+    top: 30%;
+    left: 40%;
+  }
+}
