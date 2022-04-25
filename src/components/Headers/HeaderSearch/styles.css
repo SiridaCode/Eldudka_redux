@@ -3,6 +3,7 @@
   color: #fff;
 }
 
+
 .header-second-wrapper {
   height: 60px;
   display: flex;
@@ -80,4 +81,14 @@
   top: 15px;
   right: 15px;
   cursor: pointer;
+}
+
+.logo {
+  display: block;
+}
+
+@media (max-width: 400px) {
+  .logo {
+    display: none;
+  }
 }

@@ -2,6 +2,10 @@
   background: #212121;
 }
 
+.logo-mobile {
+  display: none;
+}
+
 .call {
   text-decoration: none;
   color: #ffffff;
@@ -12,7 +16,14 @@
 
 .header-first-wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row-reverse;
   align-items: center;
   height: 30px;
+}
+
+@media (max-width: 400px) {
+  .logo-mobile {
+    display: block;
+  }
 }
