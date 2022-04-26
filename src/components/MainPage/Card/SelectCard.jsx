@@ -21,9 +21,8 @@ const SelectCard = () => {
         <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
         <img
           src={value.pic ? value.pic : '../image-card.png'}
-          width={1200}
           className="product-item-image-text"
-        ></img>
+        />
         <a href="https://vk.com/vapestav" className="to-order">
           Заказать
         </a>

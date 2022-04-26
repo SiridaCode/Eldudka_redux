@@ -20,7 +20,7 @@ const SelectCardSearch = () => {
         <img
           src={value.pic ? value.pic : '../image-card.png'}
           className="product-item-image-text"
-        ></img>
+        />
         <a href="https://vk.com/vapestav" className="to-order">
           Заказать
         </a>
