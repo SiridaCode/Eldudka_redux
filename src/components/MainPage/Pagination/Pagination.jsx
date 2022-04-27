@@ -20,11 +20,11 @@ const Pagination = () => {
 
   return (
     filterData.length > 10 && (
-      <div className="pages-block">
+      <div className="pages-wrapper">
         <Container>
           <div className="pages">
             {pages.map(id => (
-              <div onClick={() => onPageNumberClick(id)} key={id} className="Page">
+              <div onClick={() => onPageNumberClick(id)} key={id} className="page">
                 {id + 1}
               </div>
             ))}
