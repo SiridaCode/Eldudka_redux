@@ -2,21 +2,17 @@
   display: flex;
   align-items: center;
   width: 30px;
-  height: 9px;
+  height: 7px;
   border-radius: 30%;
   background: #000000;
+  margin-top: 5px;
 }
 
 .battery__item {
-  transition: transform .2s linear;
-  margin-left: 1px;
+  /* margin-left: 1px; */
   width: 5px;
   height: 5px;
-  border-radius: 50%;
-}
-
-.battery__item:hover {
-  transform: "rotate(150deg)"
+  /* border-radius: 50%; */
 }
 
 .battery__item:first-child {

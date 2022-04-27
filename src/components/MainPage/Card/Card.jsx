@@ -1,8 +1,7 @@
 import * as React from 'react';
-import Battery from '../Battery/Battery';
 import './styles.css';
+import Battery from '../Battery/Battery';
 import { Link } from 'react-router-dom';
-import { colors } from '../../../utils/utils';
 
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
@@ -20,21 +19,21 @@ const Card = ({ data, id }) => {
         <div className="product-item-availability">
           <div className="shop-name">{'Галерея: ' + data.availability.galery ?? 'Нет'}</div>
           <div className="battery-wrapper">
-            <Battery colors={colors(data.availability.galery)} />
+            <Battery item={data.availability.galery} />
           </div>
         </div>
 
         <div className="product-item-availability">
           <div className="shop-name">{'Тухачевского: ' + data.availability.tuhach ?? 'Нет'}</div>
           <div className="battery-wrapper">
-            <Battery colors={colors(data.availability.tuhach)} />
+            <Battery item={data.availability.tuhach} />
           </div>
         </div>
 
         <div className="product-item-availability">
           <div className="shop-name">{'Шоколад: ' + data.availability.shokolad ?? 'Нет'}</div>
           <div className="battery-wrapper">
-            <Battery colors={colors(data.availability.shokolad)} />
+            <Battery item={data.availability.shokolad} />
           </div>
         </div>
 
