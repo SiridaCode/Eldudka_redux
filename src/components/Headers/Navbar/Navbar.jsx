@@ -5,15 +5,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
 import { categories } from '../../../utils/utils';
 import Container from '../../Container/Container';
+import { NavLink } from 'react-router-dom';
 import {
   setFilterData,
   setActiveCategory,
   setCurrentPage,
   setSearchData,
 } from '../../../redux/fullData/dataActions';
-import { NavLink } from 'react-router-dom';
 
-const HeaderCategories = () => {
+const Navbar = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
 
@@ -51,4 +51,4 @@ const HeaderCategories = () => {
   );
 };
 
-export default HeaderCategories;
+export default Navbar;
