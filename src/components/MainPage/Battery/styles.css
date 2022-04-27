@@ -1,4 +1,4 @@
-.battery {
+/* .battery {
   display: flex;
   align-items: center;
   width: 30px;
@@ -9,12 +9,31 @@
 }
 
 .battery__item {
-  /* margin-left: 1px; */
   width: 5px;
   height: 5px;
-  /* border-radius: 50%; */
 }
 
 .battery__item:first-child {
   margin-left: 3px;
+} */
+
+.battery {
+  display: flex;
+  align-items: center;
+  width: 23px;
+  height: 13px;
+  background: #000000;
+  border-radius: 4px;
 }
+
+.battery__item {
+  margin-left: 1px;
+  width: 4px;
+  height: 11px;
+  border-radius: 4px;
+}
+
+.battery__item:first-child {
+  margin-left: 2px;
+}
+
