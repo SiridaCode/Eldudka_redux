@@ -39,6 +39,7 @@
 .product-item-select>div {
   width: 100%;
   margin: 10px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #e0d8d8;
 }
 
@@ -136,11 +137,12 @@
   height: 30px;
   background: #bd1616;
   color: #ffffff;
-  border-radius: 40px;
+  border-radius: 15px;
   cursor: pointer;
 }
 .to-order:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: #af1515;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
 }
 
 .cards-wrapper {
