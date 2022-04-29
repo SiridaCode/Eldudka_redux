@@ -87,7 +87,7 @@
   display: block;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 350px) {
   .logo {
     display: none;
   }

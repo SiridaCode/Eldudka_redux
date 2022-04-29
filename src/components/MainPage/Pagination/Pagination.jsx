@@ -7,8 +7,8 @@ import Container from '../../Container/Container';
 const Pagination = () => {
   const dispatch = useDispatch();
   const { filterData } = useSelector(({ data }) => data);
-  let pages = [];
   const pagesNumber = filterData && Math.ceil(filterData.length / 10);
+  let pages = [];
 
   for (let i = 0; i < pagesNumber - 1; i++) {
     pages.push(i);

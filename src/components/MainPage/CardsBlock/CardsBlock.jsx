@@ -10,11 +10,13 @@ const CardsBlock = () => {
     <div className="cards-block">
       <Container>
         <div className="cards-wrapper">
-          {filterData &&
+          {filterData.length > 1 ? (
             filterData
               .slice(currentPage * 10, (currentPage + 1) * 10)
-              .map((item, index) => <Card data={item} key={index} id={index} />)}
-          {filterData.length < 1 && <div className="lds-dual-ring"></div>}
+              .map((item, index) => <Card data={item} key={index} id={index} />)
+          ) : (
+            <div className="lds-dual-ring"></div>
+          )}
         </div>
       </Container>
     </div>
