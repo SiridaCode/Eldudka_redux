@@ -127,26 +127,12 @@
   margin-right: 25px;
 }
 
-.to-order {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
-  text-decoration: none;
-  width: 130px;
-  height: 30px;
-  background: #bd1616;
-  color: #ffffff;
-  border-radius: 15px;
-  cursor: pointer;
-}
-.to-order:hover {
-  background: #af1515;
-  box-shadow: 0 3px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
-}
-
 .cards-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
 }

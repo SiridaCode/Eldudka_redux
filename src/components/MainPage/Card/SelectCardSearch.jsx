@@ -1,12 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Container from '../../Container/Container';
+import Button from 'mui-button';
+import MainPage from '../MainPage';
 
 const SelectCardSearch = () => {
   let { search } = useParams();
   const { searchData } = useSelector(({ data }) => data);
   const value = searchData[search];
+  let history = useHistory();
+
+  if (!value) {
+    history.push('/');
+    return MainPage;
+  }
   const [eng, rus] = value.name.split('(');
 
   return (
@@ -27,9 +35,10 @@ const SelectCardSearch = () => {
             className="product-item-image-text"
             alt="Нет картинки"
           />
-          <a href="https://vk.com/vapestav" className="to-order">
+          <Button color="success" variant="outlined">
             Заказать
-          </a>
+            <a href="https://vk.com/vapestav" className="to-order"></a>
+          </Button>
         </div>
       </Container>
     </div>

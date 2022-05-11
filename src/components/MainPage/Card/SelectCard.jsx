@@ -1,14 +1,22 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import Container from '../../Container/Container';
+import Button from 'mui-button';
 import './styles.css';
+import MainPage from '../MainPage';
 
 const SelectCard = () => {
   let { card } = useParams();
-  const { filterData, currentPage } = useSelector(({ data }) => data);
+  let history = useHistory();
   const numberCard = Number(card);
+  const { filterData, currentPage } = useSelector(({ data }) => data);
   const value = filterData.slice(currentPage * 10, (currentPage + 1) * 10)[numberCard];
+
+  if (!value) {
+    history.push('/');
+    return MainPage;
+  }
   const [eng, rus] = value.name.split('(');
 
   return (
@@ -30,7 +38,9 @@ const SelectCard = () => {
             alt="Нет картинки"
           />
           <a href="https://vk.com/vapestav" className="to-order">
-            Заказать
+            <Button color="error" variant="outlined">
+              Заказать
+            </Button>
           </a>
         </div>
       </Container>
