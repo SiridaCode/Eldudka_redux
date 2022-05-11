@@ -18,6 +18,9 @@ const SelectCard = () => {
           <div>{eng}</div>
           <div>{'(' + rus}</div>
           <div>{`Цена ${value.price} ₽`}</div>
+          {/* {value.map((item, index) => (
+            <div>{`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}</div>
+          ))} */}
           <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
           <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
           <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>

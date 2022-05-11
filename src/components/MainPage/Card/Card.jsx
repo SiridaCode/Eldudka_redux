@@ -13,7 +13,8 @@ const Card = ({ data, id }) => {
           <img
             src={data.pic ? data.pic : '../image-card.png'}
             className="product-item-image-text"
-          ></img>
+            alt="Нет картинки"
+          />
         </div>
         {/* {data.availability.map((item, index) => {
           <div className="product-item-availability">
