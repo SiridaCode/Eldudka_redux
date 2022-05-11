@@ -25,6 +25,7 @@ const SelectCardSearch = () => {
           <img
             src={value.pic ? value.pic : '../image-card.png'}
             className="product-item-image-text"
+            alt="Нет картинки"
           />
           <a href="https://vk.com/vapestav" className="to-order">
             Заказать
