@@ -23,6 +23,7 @@ const SelectCardSearch = () => {
         <div className="product-item-select">
           <div>{eng}</div>
           <div>{'(' + rus}</div>
+          <div>{value.description ?? 'Нет описания'}</div>
           <div>{`Цена ${value.price} ₽`}</div>
           {/* {value.map((item, index) => (
             <div>{`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}</div>
