@@ -15,7 +15,16 @@ const Card = ({ data, id }) => {
             className="product-item-image-text"
           ></img>
         </div>
-
+        {/* {data.availability.map((item, index) => {
+          <div className="product-item-availability">
+            <div className="shop-name">
+              {`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}
+            </div>
+            <div className="battery-wrapper">
+              <Battery item={item.count} />
+            </div>
+          </div>;
+        })} */}
         <div className="product-item-availability">
           <div className="shop-name">{'Галерея: ' + data.availability.galery ?? 'Нет'}</div>
           <div className="battery-wrapper">
