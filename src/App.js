@@ -2,7 +2,7 @@ import * as React from 'react';
 import Layout from './components/Layout/Layout';
 import './App.css';
 import { useDispatch } from 'react-redux';
-import { fetchData } from './redux/fullData/dataActions';
+import { fetchData } from './redux/data/dataActions';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SelectCard from './components/MainPage/Card/SelectCard';
 import SelectCardSearch from './components/MainPage/Card/SelectCardSearch';

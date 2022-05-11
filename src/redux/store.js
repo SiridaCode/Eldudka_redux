@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import dataReducer from './fullData/dataReducer';
+import dataReducer from './data/dataReducer';
 
 const reducers = combineReducers({
   data: dataReducer,

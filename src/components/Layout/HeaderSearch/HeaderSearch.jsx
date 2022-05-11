@@ -3,7 +3,7 @@ import './styles.css';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { filteredProductsBySearch } from '../../../utils/filter';
-import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/fullData/dataActions';
+import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/data/dataActions';
 import Container from '../../Container/Container';
 import { useHistory } from 'react-router-dom';
 

@@ -10,7 +10,7 @@ import {
   setActiveCategory,
   setCurrentPage,
   setSearchData,
-} from '../../../redux/fullData/dataActions';
+} from '../../../redux/data/dataActions';
 
 const Navbar = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);

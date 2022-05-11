@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './styles.css';
-import { setCurrentPage } from '../../../redux/fullData/dataActions';
+import { setCurrentPage } from '../../../redux/data/dataActions';
 import Container from '../../Container/Container';
 
 const Pagination = () => {
