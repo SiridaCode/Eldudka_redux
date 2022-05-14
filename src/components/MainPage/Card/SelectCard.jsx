@@ -24,6 +24,11 @@ const SelectCard = () => {
       <Container>
         <div className="product-item-select">
           <div>{eng}</div>
+          <img
+            src={value.pic ? value.pic : '../image-card.png'}
+            className="product-item-image-text"
+            alt="Нет картинки"
+          />
           <div>{'(' + rus}</div>
           <div>{value.description ?? 'Нет описания'}</div>
           <div>{`Цена ${value.price} ₽`}</div>
@@ -33,11 +38,6 @@ const SelectCard = () => {
           <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
           <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
           <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
-          <img
-            src={value.pic ? value.pic : '../image-card.png'}
-            className="product-item-image-text"
-            alt="Нет картинки"
-          />
           <a href="https://vk.com/vapestav" className="to-order">
             <Button color="error" variant="outlined">
               Заказать

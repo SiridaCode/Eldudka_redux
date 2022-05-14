@@ -21,7 +21,8 @@ const HeaderSearch = () => {
   };
 
   React.useEffect(() => {
-    searchText ? setOpenSearch(true) : setOpenSearch(false);
+    const isOpen = searchText ? true : false;
+    setOpenSearch(isOpen)
   }, [searchText]);
 
   const onClickElementSearch = (eng, id) => {
