@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 
 const ContactPage = () => {
+  const src = [
+    { href: 'https://vk.com/vapestav', src: './icon-vk.png' },
+    { href: 'https://instagram.com/eldudka_vapeshop?igshid=YmMyMTA2M2Y=', src: './icon-inst.png' },
+    { href: 'https://t.me/eldudka', src: './icon-telegram.png' },
+  ];
+
   return (
     <div className="cards-wrapper">
       <Container>
@@ -24,9 +30,6 @@ const ContactPage = () => {
             <br /> Серова 468/5
             <br /> 10:00 - 20:00
           </div>
-          {/* {value.map((item, index) => (
-          <div>{`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}</div>
-        ))} */}
           <div>
             <span>ЖК ШОКОЛАД</span>
             <br /> Крупской 29
@@ -36,24 +39,18 @@ const ContactPage = () => {
             <span>Макарова 22 1 этаж</span>
             <br /> 11:00-20:00
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', width: '400px' }}>
-            <a href="https://vk.com/vapestav">
-              <img className="icon" src="./icon-vk.png" alt="no image" />
-            </a>
-            <img className="icon" src="./icon-inst.png" alt="no image" />
-            <img className="icon" src="./icon-telegram.png" alt="no image" />
+          <div className="icon-container">
+            {src.map(({ href, src }) => (
+              <a href={href}>
+                <img className="icon" src={src} alt="no image" />
+              </a>
+            ))}
           </div>
-          <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
-            <Button color="success" variant="outlined">
-              Заказать
-              <a href="https://vk.com/vapestav" className="to-order"></a>
+          <Link to="/">
+            <Button color="error" variant="outlined">
+              Вернуться
             </Button>
-            <Link to="/">
-              <Button color="error" variant="outlined">
-                Вернуться
-              </Button>
-            </Link>
-          </span>
+          </Link>
         </div>
       </Container>
     </div>
