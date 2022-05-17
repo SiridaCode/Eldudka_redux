@@ -10,12 +10,12 @@ const HeaderPhone = () => {
       <Container>
         <div className="header-first-wrapper">
           <div className="logo-mobile">
-            <img width={100} src="./logo.png" alt="no image" />
+            <img width={100} src="./logo.png" alt="logo" />
           </div>
           <div className="header-icon-container">
             {src.map(({ href, mainSrc }) => (
               <a href={href}>
-                <img className="main-icon" src={mainSrc} alt="no image" />
+                <img className="main-icon" src={mainSrc} alt="icon" />
               </a>
             ))}
             <a className="call" href="tel:+79620100577">

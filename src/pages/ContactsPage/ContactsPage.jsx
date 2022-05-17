@@ -9,7 +9,7 @@ const ContactPage = () => {
   return (
     <div className="cards-wrapper">
       <Container>
-        <div className="product-item-select-contacts">
+        <div className="contacts-container">
           <div className="header-contacts">Режим работы:</div>
           <div>
             <span>ТЦ Галерея 2 этаж</span>
@@ -36,7 +36,7 @@ const ContactPage = () => {
           <div className="icon-container">
             {src.map(({ href, src }) => (
               <a href={href}>
-                <img className="icon" src={src} alt="no image" />
+                <img className="icon" src={src} alt="icon" />
               </a>
             ))}
           </div>
