@@ -4,14 +4,9 @@ import MainPage from '../../components/MainPage/MainPage';
 import Container from '../../components/Container/Container';
 import { Link } from 'react-router-dom';
 import './styles.css';
+import { src } from '../../utils/utils';
 
 const ContactPage = () => {
-  const src = [
-    { href: 'https://vk.com/vapestav', src: './icon-vk.png' },
-    { href: 'https://instagram.com/eldudka_vapeshop?igshid=YmMyMTA2M2Y=', src: './icon-inst.png' },
-    { href: 'https://t.me/eldudka', src: './icon-telegram.png' },
-  ];
-
   return (
     <div className="cards-wrapper">
       <Container>

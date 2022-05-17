@@ -6,6 +6,17 @@
   display: none;
 }
 
+.main-icon {
+  width: 23px;
+  height: 23px;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .call {
   text-decoration: none;
   color: #ffffff;
