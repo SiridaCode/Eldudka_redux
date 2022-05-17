@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from 'mui-button';
-import MainPage from '../../components/MainPage/MainPage';
 import Container from '../../components/Container/Container';
 import { Link } from 'react-router-dom';
 import './styles.css';
