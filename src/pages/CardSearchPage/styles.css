@@ -1,0 +1,31 @@
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+.product-item-select {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 22px;
+    max-width: 600px;
+    width: 100%;
+    border-radius: 20px;
+    background: #ffffff;
+    color: #444444;
+    box-shadow: 0 1px 1px rgba(82, 81, 81, 0.25), 0 10px 10px rgba(83, 83, 83, 0.22);
+    transition-property: background-color, color;
+    transition-duration: 2s;
+}
+
+.product-item-image-text {
+    width: 136px;
+    height: 30px;
+  }

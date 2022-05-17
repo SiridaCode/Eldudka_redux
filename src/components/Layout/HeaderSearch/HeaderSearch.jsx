@@ -22,7 +22,7 @@ const HeaderSearch = () => {
 
   React.useEffect(() => {
     const isOpen = searchText ? true : false;
-    setOpenSearch(isOpen)
+    setOpenSearch(isOpen);
   }, [searchText]);
 
   const onClickElementSearch = (eng, id) => {
@@ -56,7 +56,7 @@ const HeaderSearch = () => {
       <Container>
         <div className="header-second-wrapper">
           <div className="logo">
-            <img src="../logo.png" className="logo"></img>
+            <img src="../logo.png" className="logo" alt="no image"></img>
           </div>
           <div className="input-wrapper">
             <input
@@ -91,7 +91,12 @@ const HeaderSearch = () => {
               </div>
             )}
             {openSearch === true && (
-              <img onClick={onClickDeleteTarget} className="vector" src="../Vector.png" />
+              <img
+                onClick={onClickDeleteTarget}
+                className="vector"
+                src="../Vector.png"
+                alt="no image"
+              />
             )}
           </div>
         </div>

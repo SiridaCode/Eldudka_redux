@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-import Container from '../../Container/Container';
+import Container from '../../components/Container/Container';
 import Button from 'mui-button';
-import MainPage from '../MainPage';
+import MainPage from '../../components/MainPage/MainPage';
+import { Link } from 'react-router-dom';
 
-const SelectCardSearch = () => {
+const CardSearchPage = () => {
   let { search } = useParams();
   const { searchData } = useSelector(({ data }) => data);
   const value = searchData[search];
@@ -36,14 +37,21 @@ const SelectCardSearch = () => {
             className="product-item-image-text"
             alt="Нет картинки"
           />
-          <Button color="success" variant="outlined">
-            Заказать
-            <a href="https://vk.com/vapestav" className="to-order"></a>
-          </Button>
+          <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
+            <Button color="success" variant="outlined">
+              Заказать
+              <a href="https://vk.com/vapestav" className="to-order"></a>
+            </Button>
+            <Link to="/">
+              <Button color="error" variant="outlined">
+                Вернуться
+              </Button>
+            </Link>
+          </span>
         </div>
       </Container>
     </div>
   );
 };
 
-export default SelectCardSearch;
+export default CardSearchPage;
