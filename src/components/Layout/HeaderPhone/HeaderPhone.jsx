@@ -12,7 +12,7 @@ const HeaderPhone = () => {
           <div className="logo-mobile">
             <img width={100} src="./logo.png" alt="no image" />
           </div>
-          <div className="icon-container">
+          <div className="header-icon-container">
             {src.map(({ href, mainSrc }) => (
               <a href={href}>
                 <img className="main-icon" src={mainSrc} alt="no image" />

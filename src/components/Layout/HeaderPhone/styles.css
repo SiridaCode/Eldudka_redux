@@ -11,10 +11,11 @@
   height: 23px;
 }
 
-.icon-container {
+.header-icon-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  width: 200px;
 }
 
 .call {
