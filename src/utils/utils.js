@@ -15,3 +15,10 @@ export const src = [
     mainSrc: './main-icon-telegram.png',
   },
 ];
+
+export const breadcrumbNameMap = [
+  { path: '/repair-requests', desc: 'breadcrumbs.repairRequests' },
+  { path: 'client-chat', desc: 'breadcrumbs.clientChat' },
+  { path: 'clients', desc: 'breadcrumbs.clients' },
+  { path: 'loyalty-program', desc: 'breadcrumbs.loyaltyProgram' },
+];

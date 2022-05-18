@@ -56,7 +56,7 @@ const HeaderSearch = () => {
       <Container>
         <div className="header-second-wrapper">
           <div className="logo">
-            <img src="../logo.png" className="logo" alt="no image"></img>
+            <img src="../logo.png" className="logo" alt="logo"></img>
           </div>
           <div className="input-wrapper">
             <input

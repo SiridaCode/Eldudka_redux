@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
 import Container from '../../components/Container/Container';
-import Button from 'mui-button';
+import Button from '@mui/material/Button';
 import MainPage from '../../components/MainPage/MainPage';
 import { Link } from 'react-router-dom';
 

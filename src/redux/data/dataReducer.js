@@ -4,6 +4,7 @@ import {
   SET_ACTIVE_CATEGORY,
   SET_CURRENT_PAGE,
   SET_SEARCH_DATA,
+  SET_BREADCRUMBS,
 } from './dataTypes';
 
 const INITIAL_STATE = {
@@ -12,6 +13,7 @@ const INITIAL_STATE = {
   searchData: [],
   activeCategory: 'default',
   currentPage: 0,
+  breadcrumbs: [],
 };
 
 const dataReducer = (state = INITIAL_STATE, action) => {
@@ -26,6 +28,8 @@ const dataReducer = (state = INITIAL_STATE, action) => {
       return { ...state, activeCategory: action.payload };
     case SET_CURRENT_PAGE:
       return { ...state, currentPage: action.payload };
+    case SET_BREADCRUMBS:
+      return { ...state, breadcrumbs: action.payload };
     default:
       return state;
   }

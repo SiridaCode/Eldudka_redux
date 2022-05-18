@@ -1,9 +1,10 @@
 import React from 'react';
-import Button from 'mui-button';
+import Button from '@mui/material/Button';
 import Container from '../../components/Container/Container';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import { src } from '../../utils/utils';
+import SimpleAccordion from './Accordion';
 
 const ContactPage = () => {
   return (
@@ -33,6 +34,7 @@ const ContactPage = () => {
             <span>Макарова 22 1 этаж</span>
             <br /> 11:00-20:00
           </div>
+          <SimpleAccordion />
           <div className="icon-container">
             {src.map(({ href, src }) => (
               <a href={href}>
