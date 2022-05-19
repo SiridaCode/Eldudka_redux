@@ -1,21 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
-import Container from '../../components/Container/Container';
-import Button from '@mui/material/Button';
 import './styles.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { useParams, useHistory, Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import Container from '../../components/Container/Container';
 import MainPage from '../../components/MainPage/MainPage';
-import { Link } from 'react-router-dom';
+import { setBreadcrumbs } from '../../redux/data/dataActions';
 
 const SelectCardPage = () => {
   let { card } = useParams();
   let history = useHistory();
+  const dispatch = useDispatch();
   const numberCard = Number(card);
   const { filterData, currentPage } = useSelector(({ data }) => data);
   const value = filterData.slice(currentPage * 10, (currentPage + 1) * 10)[numberCard];
 
   if (!value) {
     history.push('/');
+    dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]));
     return MainPage;
   }
   const [eng, rus] = value.name.split('(');
@@ -45,7 +47,10 @@ const SelectCardPage = () => {
                 Заказать
                 <a href="https://vk.com/vapestav" className="to-order"></a>
               </Button>
-              <Link to="/">
+              <Link
+                onClick={() => dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]))}
+                to="/"
+              >
                 <Button color="error" variant="outlined">
                   Вернуться
                 </Button>

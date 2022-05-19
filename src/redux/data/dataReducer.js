@@ -13,7 +13,7 @@ const INITIAL_STATE = {
   searchData: [],
   activeCategory: 'default',
   currentPage: 0,
-  breadcrumbs: [],
+  breadcrumbs: [{ name: 'Главная', href: '/' }],
 };
 
 const dataReducer = (state = INITIAL_STATE, action) => {

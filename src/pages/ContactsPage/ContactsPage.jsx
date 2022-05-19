@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 import { src } from '../../utils/utils';
 import SimpleAccordion from './Accordion';
+import { useDispatch } from 'react-redux';
+import { setBreadcrumbs } from '../../redux/data/dataActions';
 
 const ContactPage = () => {
+  const dispatch = useDispatch();
   return (
     <div className="cards-wrapper">
       <Container>
@@ -34,7 +37,7 @@ const ContactPage = () => {
             <span>Макарова 22 1 этаж</span>
             <br /> 11:00-20:00
           </div>
-          <SimpleAccordion />
+          {/* <SimpleAccordion /> */}
           <div className="icon-container">
             {src.map(({ href, src }) => (
               <a href={href}>
@@ -42,7 +45,7 @@ const ContactPage = () => {
               </a>
             ))}
           </div>
-          <Link to="/">
+          <Link onClick={() => dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]))} to="/">
             <Button color="error" variant="outlined">
               Вернуться
             </Button>

@@ -1,10 +1,22 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setBreadcrumbs } from '../../../redux/data/dataActions';
 import Container from '../../Container/Container';
 import { src } from '../../../utils/utils';
 import './styles.css';
 
 const HeaderPhone = () => {
+  const dispatch = useDispatch();
+  const breadHandler = () => {
+    dispatch(
+      setBreadcrumbs([
+        { name: 'Главная', href: '/' },
+        { name: 'Контакты', href: '/contacts' },
+      ])
+    );
+  };
+
   return (
     <header className="header-first">
       <Container>
@@ -22,7 +34,7 @@ const HeaderPhone = () => {
               8 (962) 010 05-77
             </a>
           </div>
-          <Link className="contacts-link" to="/contacts">
+          <Link onClick={breadHandler} className="contacts-link" to="/contacts">
             Контакты
           </Link>
         </div>

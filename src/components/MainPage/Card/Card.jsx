@@ -2,11 +2,28 @@ import * as React from 'react';
 import './styles.css';
 import Battery from '../Battery/Battery';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setBreadcrumbs } from '../../../redux/data/dataActions';
 
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
+  const dispatch = useDispatch();
+  const breadHandler = href => {
+    dispatch(
+      setBreadcrumbs([
+        { name: 'Главная', href: '/' },
+        { name: 'Карточка товара', href: href },
+      ])
+    );
+  };
   return (
-    <Link to={`card${id}`} replace key={id} className="product-item">
+    <Link
+      onClick={() => breadHandler(`card${id}`)}
+      to={`card${id}`}
+      replace
+      key={id}
+      className="product-item"
+    >
       <div className="product-item-main-info">
         <div className="product-item-name">{eng}</div>
         <div className="product-item-image">

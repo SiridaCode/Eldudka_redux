@@ -2,28 +2,25 @@ import * as React from 'react';
 import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Link from '@mui/material/Link';
-import { useLocation } from 'react-router-dom';
-
-function handleClick(event) {
-  event.preventDefault();
-  console.info('You clicked a breadcrumb.');
-}
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function BasicBreadcrumbs() {
-  const location = useLocation();
-  const pathnames = location.pathname.split('/').filter(x => x);
-  console.log(pathnames);
+  const { breadcrumbs } = useSelector(({ data }) => data);
+  const history = useHistory();
+  function handleClick(event) {
+    event.preventDefault();
+    history.push(event.target.name);
+  }
 
   return (
-    <div role="presentation" onClick={handleClick}>
+    <div style={{ marginTop: '10px' }} role="presentation" onClick={handleClick}>
       <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          MUI
-        </Link>
-        <Link underline="hover" color="inherit" href="/material-ui/getting-started/installation/">
-          Core
-        </Link>
-        <Typography color="text.primary">Breadcrumbs</Typography>
+        {breadcrumbs.map(({ name, href }) => (
+          <Link name={href} underline="hover" color="inherit" href={href}>
+            {name}
+          </Link>
+        ))}
       </Breadcrumbs>
     </div>
   );

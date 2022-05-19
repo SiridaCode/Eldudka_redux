@@ -26,14 +26,14 @@
     transition-duration: 2s;
 }
 
-.product-item-select-contacts>div {
+.contacts-container>div {
     width: 100%;
     margin: 10px;
     padding-bottom: 20px;
     border-bottom: 1px solid #e0d8d8;
   }
 
-  .product-item-select-contacts>div>span {
+  .contacts-container>div>span {
       font-weight: 600;
   }
 

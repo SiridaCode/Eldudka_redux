@@ -3,7 +3,12 @@ import './styles.css';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { filteredProductsBySearch } from '../../../utils/filter';
-import { setFilterData, setCurrentPage, setSearchData } from '../../../redux/data/dataActions';
+import {
+  setFilterData,
+  setCurrentPage,
+  setSearchData,
+  setBreadcrumbs,
+} from '../../../redux/data/dataActions';
 import Container from '../../Container/Container';
 import { useHistory } from 'react-router-dom';
 
@@ -18,6 +23,7 @@ const HeaderSearch = () => {
     dispatch(setSearchData(filteredProductsBySearch(fullData, target.value)));
     setSearchText(target.value);
     history.push('/');
+    dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]));
   };
 
   React.useEffect(() => {
@@ -29,6 +35,13 @@ const HeaderSearch = () => {
     setSearchText('');
     setOpenSearch(false);
     history.push('search' + id);
+    dispatch(
+      setBreadcrumbs([
+        { name: 'Главная', href: '/' },
+        { name: 'Карточка товара', href: `/search${id}` },
+      ])
+    );
+
     dispatch(setCurrentPage(0));
   };
 
@@ -45,6 +58,7 @@ const HeaderSearch = () => {
     dispatch(setCurrentPage(0));
     setOpenSearch(false);
     history.push('/');
+    dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]));
   };
 
   const onClickSearch = () => {
