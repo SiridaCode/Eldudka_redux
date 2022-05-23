@@ -18,7 +18,7 @@ const Card = ({ data, id }) => {
   };
   return (
     <Link
-      onClick={() => breadHandler(`card${id}`)}
+      onClick={() => breadHandler(`/card${id}`)}
       to={`card${id}`}
       replace
       key={id}

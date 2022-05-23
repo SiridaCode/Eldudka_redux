@@ -46,9 +46,7 @@ const ContactPage = () => {
           </Paper>
           <Paper>
             <Link onClick={() => dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]))} to="/">
-              <Button color="error" variant="outlined">
-                Вернуться
-              </Button>
+              <Button color="error">Вернуться</Button>
             </Link>
           </Paper>
         </div>

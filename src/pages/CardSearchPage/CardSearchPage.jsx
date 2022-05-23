@@ -41,14 +41,12 @@ const CardSearchPage = () => {
             alt="Нет картинки"
           />
           <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
-            <Button color="success" variant="outlined">
+            <Button color="success">
               Заказать
               <a href="https://vk.com/vapestav" className="to-order"></a>
             </Button>
             <Link onClick={() => dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]))} to="/">
-              <Button color="error" variant="outlined">
-                Вернуться
-              </Button>
+              <Button color="error">Вернуться</Button>
             </Link>
           </span>
         </div>
