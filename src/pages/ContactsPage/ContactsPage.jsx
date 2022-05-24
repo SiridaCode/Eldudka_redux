@@ -38,8 +38,8 @@ const ContactPage = () => {
             <br /> 11:00-20:00
           </Paper>
           <Paper className="icon-container">
-            {src.map(({ href, src }) => (
-              <a href={href}>
+            {src.map(({ href, src }, index) => (
+              <a key={index} href={href}>
                 <img className="icon" src={src} alt="icon" />
               </a>
             ))}

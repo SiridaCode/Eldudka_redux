@@ -21,7 +21,6 @@ const SelectCardPage = () => {
     return MainPage;
   }
   const [eng, rus] = value.name.split('(');
-  console.log(value);
   return (
     <div className="cards-wrapper">
       <Container>
