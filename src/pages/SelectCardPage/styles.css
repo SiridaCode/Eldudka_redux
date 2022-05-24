@@ -8,7 +8,7 @@
     margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
-    padding: 25px;
+    /* padding: 25px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,12 @@
     transition-duration: 2s;
 }
 
-.product-item-image-text {
-    width: 136px;
-    height: 30px;
+.product-item-image-select {
+  width: 100%;
+  height: 100%;
+  }
+
+  .product-item-image-div {
+    padding: 0px 0px;
+    margin: 0px 0px;
   }

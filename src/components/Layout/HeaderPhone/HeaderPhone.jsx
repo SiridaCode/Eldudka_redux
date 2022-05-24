@@ -25,8 +25,8 @@ const HeaderPhone = () => {
             <img width={100} src="./logo.png" alt="logo" />
           </div>
           <div className="header-icon-container">
-            {src.map(({ href, mainSrc }) => (
-              <a href={href}>
+            {src.map(({ href, mainSrc }, index) => (
+              <a key={index} href={href}>
                 <img className="main-icon" src={mainSrc} alt="icon" />
               </a>
             ))}

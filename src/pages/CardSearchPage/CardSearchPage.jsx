@@ -25,21 +25,19 @@ const CardSearchPage = () => {
     <div className="cards-wrapper">
       <Container>
         <div className="product-item-select">
-          <div>{eng}</div>
-          <div>{'(' + rus}</div>
+          <div>{eng + ' ' + rus}</div>
+          <div className="product-item-image-div">
+            <img
+              src={value.images ? value.images : '../image-card.png'}
+              className="product-item-image-select"
+              alt="Нет картинки"
+            />
+          </div>
           <div>{value.description ?? 'Нет описания'}</div>
           <div>{`Цена ${value.price} ₽`}</div>
-          {/* {value.map((item, index) => (
-            <div>{`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}</div>
-          ))} */}
-          <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
-          <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
-          <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
-          <img
-            src={value.pic ? value.pic : '../image-card.png'}
-            className="product-item-image-text"
-            alt="Нет картинки"
-          />
+          {value.availability.map(({ shop, count }) => (
+            <div key={shop.id}>{`${shop.name}: ` + (count === 0 ? 'Нет' : count)}</div>
+          ))}
           <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
             <Button color="success">
               Заказать

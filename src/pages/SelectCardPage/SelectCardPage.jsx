@@ -21,26 +21,24 @@ const SelectCardPage = () => {
     return MainPage;
   }
   const [eng, rus] = value.name.split('(');
-
+  console.log(value);
   return (
     <div className="cards-wrapper">
       <Container>
         <div className="product-item-select">
-          <div>{eng}</div>
-          <img
-            src={value.pic ? value.pic : '../image-card.png'}
-            className="product-item-image-text"
-            alt="Нет картинки"
-          />
-          <div>{'(' + rus}</div>
+          <div>{eng + ' ' + rus}</div>
+          <div className="product-item-image-div">
+            <img
+              src={value.images ? value.images : '../image-card.png'}
+              className="product-item-image-select"
+              alt="Нет картинки"
+            />
+          </div>
           <div>{value.description ?? 'Нет описания'}</div>
           <div>{`Цена ${value.price} ₽`}</div>
-          {/* {value.map((item, index) => (
-            <div>{`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}</div>
-          ))} */}
-          <div>{'Кулакова: ' + value.availability.kulakova ?? 'Нет'}</div>
-          <div>{'Тухачевского: ' + value.availability.tuhach ?? 'Нет'}</div>
-          <div>{'Шоколад: ' + value.availability.shokolad ?? 'Нет'}</div>
+          {value.availability.map(({ shop, count }) => (
+            <div key={shop.id}>{`${shop.name}: ` + (count === 0 ? 'Нет' : count)}</div>
+          ))}
           <a href="https://vk.com/vapestav" className="to-order">
             <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
               <Button color="success">
