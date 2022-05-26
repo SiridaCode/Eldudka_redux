@@ -45,7 +45,7 @@ const SelectCardPage = () => {
             </div>
           ))}
           <a href="https://vk.com/vapestav" className="to-order">
-            <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
+            <span style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
               <Button color="success">
                 Заказать
                 <a href="https://vk.com/vapestav" className="to-order"></a>

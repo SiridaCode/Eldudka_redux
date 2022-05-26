@@ -45,8 +45,8 @@ const CardSearchPage = () => {
               <span className="font-weight">{count === 0 ? 'Нет' : count}</span>
             </div>
           ))}
-          <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
-          <a href="https://vk.com/vapestav" className="to-order">
+          <span style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
+          <a href="https://vk.com/vapestav">
             <Button color="success">
               Заказать
             </Button>
