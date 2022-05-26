@@ -49,6 +49,10 @@
   padding: 30px;
   cursor: pointer;
   background: #ffffff;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
 }
 
 .element-search:hover {
