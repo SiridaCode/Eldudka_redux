@@ -19,6 +19,7 @@
   line-height: 26px;
   width: 483px;
   height: 40px;
+  padding-left: 40px;
 }
 
 .input-wrapper {
@@ -81,6 +82,15 @@
   top: 15px;
   right: 15px;
   cursor: pointer;
+}
+
+.search-icon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
 }
 
 .logo {

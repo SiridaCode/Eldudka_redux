@@ -10,6 +10,7 @@ import {
   setBreadcrumbs,
 } from '../../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
+import searchIcon from '../../../image/search-icon.png'
 
 const SelectSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
@@ -66,6 +67,7 @@ const SelectSearch = () => {
 
   return (
     <div className="input-wrapper">
+      <img className="search-icon" src={searchIcon} alt="no image" />
       <input
         onClick={onClickSearch}
         onChange={onChangeSearch}
