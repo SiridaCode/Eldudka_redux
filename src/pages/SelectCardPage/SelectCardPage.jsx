@@ -44,11 +44,12 @@ const SelectCardPage = () => {
               <span className="font-weight">{count === 0 ? 'Нет' : count}</span>
             </div>
           ))}
-          <a href="https://vk.com/vapestav">
             <span style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
+          <a href="https://vk.com/vapestav">
               <Button color="success">
                 Заказать
               </Button>
+              </a>
               <Link
                 onClick={() => dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]))}
                 to="/"
@@ -56,7 +57,6 @@ const SelectCardPage = () => {
                 <Button color="error">Вернуться</Button>
               </Link>
             </span>
-          </a>
         </div>
       </Container>
     </div>
