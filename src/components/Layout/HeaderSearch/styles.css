@@ -29,7 +29,7 @@
 .search {
   position: absolute;
   left: 0px;
-  top: 40px;
+  top: 44px;
   display: block;
   width: 483px;
   height: 327px;
@@ -63,7 +63,7 @@
 }
 
 .delete-target {
-  background: #d6d6d6;
+  background: #f0f0f0;
   color: #CC051A;
   display: block;
   font-weight: 700;
