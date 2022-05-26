@@ -35,7 +35,7 @@
   }
   .container {
     justify-content: center !important;
-    width: auto !important;
+    width: 100% !important;
   }
 
   .cards-wrapper {
@@ -50,7 +50,7 @@
     height: auto !important;
   }
   .search {
-    width: auto !important;
+    width: 100% !important;
   }
   .element-search {
     width: auto !important;
