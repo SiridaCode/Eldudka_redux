@@ -34,3 +34,14 @@
     padding: 0px 0px;
     margin: 0px 0px;
   }
+
+  .product-item-image-none {
+    width: 160px;
+    height: 160px;
+    opacity: 0.2;
+  }
+
+  .font-weight {
+    font-weight: 500;
+    color: #D32F2F;
+  }

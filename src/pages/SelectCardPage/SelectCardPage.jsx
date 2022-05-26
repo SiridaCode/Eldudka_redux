@@ -27,16 +27,22 @@ const SelectCardPage = () => {
         <div className="product-item-select">
           <div>{eng + ' ' + rus}</div>
           <div className="product-item-image-div">
-            <img
-              src={value.images ? value.images : '../image-card.png'}
-              className="product-item-image-select"
-              alt="Нет картинки"
-            />
+            {value.images.length > 0 ? (
+              <img src={value.images[0]} className="product-item-image-select" alt="Нет картинки" />
+            ) : (
+              <img src={'Нет картинки'} className="product-item-image-none" alt="Нет картинки" />
+            )}
           </div>
-          <div>{value.description ?? 'Нет описания'}</div>
-          <div>{`Цена ${value.price} ₽`}</div>
+          <div>{value.description ? value.description : 'Нет описания'}</div>
+          <div>
+            {`Цена: `}
+            <span className="font-weight">{`${value.price} ₽`}</span>
+          </div>
           {value.availability.map(({ shop, count }) => (
-            <div key={shop.id}>{`${shop.name}: ` + (count === 0 ? 'Нет' : count)}</div>
+            <div key={shop.id}>
+              {`${shop.name}: `}
+              <span className="font-weight">{count === 0 ? 'Нет' : count}</span>
+            </div>
           ))}
           <a href="https://vk.com/vapestav" className="to-order">
             <span style={{ display: 'flex', justifyContent: 'space-around', width: '400px' }}>
