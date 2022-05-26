@@ -9,17 +9,18 @@ import eldudkaIcon from '../../../image/eldudka-icon.png';
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
   const dispatch = useDispatch();
-  const breadHandler = href => {
+
+  const breadHandler = (href, rus) => {
     dispatch(
       setBreadcrumbs([
         { name: 'Главная', href: '/' },
-        { name: 'Карточка товара', href: href },
+        { name: eng, href: href },
       ])
     );
   };
   return (
     <Link
-      onClick={() => breadHandler(`/card${id}`)}
+      onClick={() => breadHandler(`/card${id}`, rus)}
       to={`card${id}`}
       replace
       key={id}

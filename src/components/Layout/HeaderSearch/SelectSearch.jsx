@@ -38,7 +38,7 @@ const SelectSearch = () => {
     dispatch(
       setBreadcrumbs([
         { name: 'Главная', href: '/' },
-        { name: 'Карточка товара', href: `/search${id}` },
+        { name: eng, href: `/search${id}` },
       ])
     );
 

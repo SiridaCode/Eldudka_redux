@@ -20,6 +20,7 @@
   width: 483px;
   height: 40px;
   padding-left: 40px;
+  outline: none;
 }
 
 .input-wrapper {
@@ -52,7 +53,7 @@
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .element-search:hover {
