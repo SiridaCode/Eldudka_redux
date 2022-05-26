@@ -1,4 +1,3 @@
-import { Container } from '@mui/system';
 import * as React from 'react';
 import BasicBreadcrumbs from './Breadcrumbs/Breadcrumbs';
 import HeaderPhone from './HeaderPhone/HeaderPhone';
@@ -11,9 +10,7 @@ const Header = ({ children }) => {
       <HeaderPhone />
       <HeaderSearch />
       <Navbar />
-      <Container>
-        <BasicBreadcrumbs />
-      </Container>
+      <BasicBreadcrumbs />
       {children}
     </>
   );

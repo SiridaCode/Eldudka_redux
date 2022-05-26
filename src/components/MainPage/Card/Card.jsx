@@ -7,7 +7,6 @@ import { setBreadcrumbs } from '../../../redux/data/dataActions';
 import eldudkaIcon from '../../../image/eldudka-icon.png';
 
 const Card = ({ data, id }) => {
-  console.log(data);
   const [eng, rus] = data.name.split('(');
   const dispatch = useDispatch();
   const breadHandler = href => {
