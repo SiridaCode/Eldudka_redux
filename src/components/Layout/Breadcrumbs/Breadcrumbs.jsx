@@ -21,7 +21,7 @@ export default function BasicBreadcrumbs() {
   return (
     <Container>
       <div style={{ marginTop: '10px' }} role="presentation" onClick={handleClick}>
-        <Breadcrumbs aria-label="breadcrumb">
+        <Breadcrumbs className='breadcrumbs' aria-label="breadcrumb">
           {breadcrumbs.map(({ name, href }, index) => (
             <Link key={index} id={index} name={href} underline="hover" color="inherit" href={href}>
               {name}

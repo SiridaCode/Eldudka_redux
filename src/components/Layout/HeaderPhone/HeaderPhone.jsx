@@ -21,9 +21,6 @@ const HeaderPhone = () => {
     <header className="header-first">
       <Container>
         <div className="header-first-wrapper">
-          <div className="logo-mobile">
-            <img width={100} src="./logo.png" alt="logo" />
-          </div>
           <div className="header-icon-container">
             {src.map(({ href, mainSrc }, index) => (
               <a key={index} href={href}>
