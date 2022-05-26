@@ -73,7 +73,7 @@ const SelectSearch = () => {
         type="text"
         className="js-data-example-ajax"
         name="state"
-        autocomplete="off"
+        autoComplete="off"
         placeholder="Поиск..."
       />
       <div className={cn({ search: openSearch === true })}>
