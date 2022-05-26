@@ -38,6 +38,7 @@
   background: #ffffff;
   z-index: 3;
   overflow-x: hidden;
+  border-radius: 6px 0px 0px 0px;
 }
 
 .element-search {
@@ -52,7 +53,7 @@
   background: #ffffff;
   font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
 }
 
@@ -67,7 +68,7 @@
   background: #f0f0f0;
   color: #CC051A;
   display: block;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 12px;
   text-align: left;
   padding: 8px 8px;
@@ -80,6 +81,8 @@
   padding-left: 25px;
   cursor: pointer;
   z-index: 1000;
+  font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 500;
 }
 
 .vector {
