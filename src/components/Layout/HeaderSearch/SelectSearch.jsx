@@ -93,7 +93,7 @@ const SelectSearch = () => {
             );
           })}
       </div>
-      {openSearch && searchText && (
+      {openSearch && (
         <div onClick={onClickSelectAll} className="delete-target">
           Выбрать все
         </div>
