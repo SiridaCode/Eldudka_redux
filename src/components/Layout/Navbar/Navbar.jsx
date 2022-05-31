@@ -10,6 +10,7 @@ import {
   setActiveCategory,
   setCurrentPage,
   setSearchData,
+  setBreadcrumbs,
 } from '../../../redux/data/dataActions';
 
 const Navbar = () => {
@@ -30,6 +31,12 @@ const Navbar = () => {
     dispatch(setFilterData(filter));
     dispatch(setCurrentPage(0));
     dispatch(setSearchData(fullData));
+    dispatch(
+      setBreadcrumbs([
+        { name: 'Главная', href: '/' },
+        { name: category, href: '/' },
+      ])
+    );
   };
 
   return (
