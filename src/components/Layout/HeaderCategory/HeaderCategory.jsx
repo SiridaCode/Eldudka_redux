@@ -13,17 +13,18 @@ import {
   setBreadcrumbs,
 } from '../../../redux/data/dataActions';
 
+const categories = [
+  { name: 'Жидкости', link: '/liquid' },
+  { name: 'Одноразки', link: '/disposable' },
+  { name: 'Поды', link: '/pod' },
+  { name: 'Картриджи', link: '/cartridge' },
+  { name: 'Испарители', link: 'evaporator' },
+];
+
 const HeaderCategory = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
   const cssActive = category => cn({ selected: category === activeCategory });
-  const categories = [
-    { name: 'Жидкости', link: '/liquid' },
-    { name: 'Одноразки', link: '/disposable' },
-    { name: 'Поды', link: '/pod' },
-    { name: 'Картриджи', link: '/cartridge' },
-    { name: 'Испарители', link: 'evaporator' },
-  ];
 
   const onClickActiveCategory = category => {
     const filter = filteredProductsByCategory(fullData, category);

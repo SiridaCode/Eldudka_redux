@@ -21,7 +21,7 @@ const CardSearchPage = () => {
     return MainPage;
   }
   const [eng, rus] = value.name.split('(');
-
+  
   return (
     <div className="cards-wrapper">
       <Container>
