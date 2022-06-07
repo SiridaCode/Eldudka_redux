@@ -1,4 +1,3 @@
-import { filterData } from '../../utils/filter';
 import {
   SET_FILTER_DATA,
   SET_FULL_DATA,

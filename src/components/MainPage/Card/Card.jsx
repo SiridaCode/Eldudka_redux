@@ -18,6 +18,7 @@ const Card = ({ data, id }) => {
       ])
     );
   };
+
   return (
     <Link
       onClick={() => breadHandler(`/card${id}`, rus)}
