@@ -13,7 +13,7 @@ import {
   setBreadcrumbs,
 } from '../../../redux/data/dataActions';
 
-const Navbar = () => {
+const HeaderCategory = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
   const cssActive = category => cn({ selected: category === activeCategory });
@@ -63,4 +63,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default HeaderCategory;
