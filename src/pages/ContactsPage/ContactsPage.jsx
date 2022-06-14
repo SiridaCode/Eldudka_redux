@@ -3,7 +3,7 @@ import Button from '@mui/material/Button';
 import Container from '../../components/Container/Container';
 import { Link } from 'react-router-dom';
 import './styles.css';
-import { src } from '../../utils/utils';
+import { src } from '../../utils/utils.ts';
 import { useDispatch } from 'react-redux';
 import { setBreadcrumbs } from '../../redux/data/dataActions';
 import Paper from '@mui/material/Paper';

@@ -2,7 +2,7 @@ import * as React from 'react';
 import cn from 'classnames';
 import './styles.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { filteredProductsByCategory } from '../../../utils/filter';
+import { filteredProductsByCategory } from '../../../utils/filter.ts';
 import Container from '../../Container/Container';
 import { NavLink } from 'react-router-dom';
 import {

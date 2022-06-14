@@ -2,7 +2,7 @@ import * as React from 'react';
 import './styles.css';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import { filteredProductsBySearch } from '../../../utils/filter';
+import { filteredProductsBySearch } from '../../../utils/filter.ts';
 import {
   setFilterData,
   setCurrentPage,
@@ -10,7 +10,7 @@ import {
   setBreadcrumbs,
 } from '../../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
-import searchIcon from '../../../image/search-icon.png'
+import searchIcon from '../../../image/search-icon.png';
 
 const SelectSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);

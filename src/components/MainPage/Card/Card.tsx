@@ -5,23 +5,29 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBreadcrumbs } from '../../../redux/data/dataActions';
 import eldudkaIcon from '../../../image/eldudka-icon.png';
+import {IDataProps} from '../../../types/types'
 
-const Card = ({ data, id }) => {
+type ICardProps = {
+  data: IDataProps,
+  id: number,
+}
+
+const Card: React.FC<ICardProps> = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
   const dispatch = useDispatch();
 
-  const breadHandler = (href, rus) => {
+  const breadHandler = (href: string, eng: string): void => {
     dispatch(
       setBreadcrumbs([
         { name: 'Главная', href: '/' },
         { name: eng, href: href },
       ])
     );
-  };
+  };  
 
   return (
     <Link
-      onClick={() => breadHandler(`/card${id}`, rus)}
+      onClick={() => breadHandler(`/card${id}`, eng)}
       to={`card${id}`}
       replace
       key={id}

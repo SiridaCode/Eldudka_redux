@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBreadcrumbs } from '../../../redux/data/dataActions';
 import Container from '../../Container/Container';
-import { src } from '../../../utils/utils';
+import { src } from '../../../utils/utils.ts';
 import './styles.css';
 
 const HeaderPhone = () => {

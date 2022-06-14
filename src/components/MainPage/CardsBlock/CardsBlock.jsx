@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import Card from '../Card/Card';
+import Card from '../Card/Card.tsx';
 import Container from '../../Container/Container';
 import './styles.css';
 

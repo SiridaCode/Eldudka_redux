@@ -5,7 +5,7 @@ import {
   SET_CURRENT_PAGE,
   SET_SEARCH_DATA,
   SET_BREADCRUMBS,
-} from './dataTypes';
+} from './dataTypes.ts';
 
 export const setFullData = payload => {
   return {

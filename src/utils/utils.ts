@@ -1,4 +1,15 @@
-export const src = [
+type Src = {
+  href: string,
+  src: string,
+  mainSrc: string,
+}[];
+
+type breadcrumbNameMap = {
+  path: string,
+  desc: string,
+}[]
+
+export const src: Src = [
   {
     href: 'https://vk.com/vapestav',
     src: './icon-vk.png',

@@ -1,3 +1,4 @@
+import { IInitialState, ActionProps } from './types';
 import {
   SET_FILTER_DATA,
   SET_FULL_DATA,
@@ -5,9 +6,9 @@ import {
   SET_CURRENT_PAGE,
   SET_SEARCH_DATA,
   SET_BREADCRUMBS,
-} from './dataTypes';
+} from './dataTypes.ts';
 
-const INITIAL_STATE = {
+export const INITIAL_STATE: IInitialState = {
   filterData: [],
   fullData: [],
   searchData: [],
@@ -16,7 +17,7 @@ const INITIAL_STATE = {
   breadcrumbs: [{ name: 'Главная', href: '/' }],
 };
 
-const dataReducer = (state = INITIAL_STATE, action) => {
+const dataReducer = (state = INITIAL_STATE, action: ActionProps) => {
   switch (action.type) {
     case SET_FILTER_DATA:
       return { ...state, filterData: action.payload };
