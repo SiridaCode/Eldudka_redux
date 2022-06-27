@@ -13,7 +13,7 @@ type ICardProps = {
 }
 
 const Card: React.FC<ICardProps> = ({ data, id }) => {
-  const [eng, rus] = data.name.split('(');
+  const [eng,]: string[] = data.name.split('(');
   const dispatch = useDispatch();
 
   const breadHandler = (href: string, eng: string): void => {

@@ -1,13 +1,13 @@
 type Src = {
-  href: string,
-  src: string,
-  mainSrc: string,
+  href: string;
+  src: string;
+  mainSrc: string;
 }[];
 
-type breadcrumbNameMap = {
-  path: string,
-  desc: string,
-}[]
+type TbreadcrumbNameMap = {
+  path: string;
+  desc: string;
+}[];
 
 export const src: Src = [
   {
@@ -27,7 +27,7 @@ export const src: Src = [
   },
 ];
 
-export const breadcrumbNameMap = [
+export const breadcrumbNameMap: TbreadcrumbNameMap = [
   { path: '/repair-requests', desc: 'breadcrumbs.repairRequests' },
   { path: 'client-chat', desc: 'breadcrumbs.clientChat' },
   { path: 'clients', desc: 'breadcrumbs.clients' },
