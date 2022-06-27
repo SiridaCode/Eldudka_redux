@@ -10,7 +10,7 @@ import {
   setBreadcrumbs,
 } from '../../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
-import searchIcon from '../../../image/search-icon.png'
+import searchIcon from '../../../image/search-icon.png';
 
 const SelectSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
@@ -67,7 +67,7 @@ const SelectSearch = () => {
 
   return (
     <div className="input-wrapper">
-      <img className="search-icon" src={searchIcon} alt="no image" />
+      <img className="search-icon" src={searchIcon} alt="Иконка поиска" />
       <input
         onClick={onClickSearch}
         onChange={onChangeSearch}
@@ -82,7 +82,7 @@ const SelectSearch = () => {
         {openSearch &&
           searchData &&
           searchData.map((value, id) => {
-            const [eng, rus] = value.name.split('(');
+            const [eng] = value.name.split('(');
             return (
               <div
                 id={id}
@@ -101,7 +101,12 @@ const SelectSearch = () => {
         </div>
       )}
       {openSearch && searchText && (
-        <img onClick={onClickDeleteTarget} className="vector" src="../Vector.png" alt="no image" />
+        <img
+          onClick={onClickDeleteTarget}
+          className="vector"
+          src="../Vector.png"
+          alt="Стереть поиск"
+        />
       )}
     </div>
   );
