@@ -1,17 +1,17 @@
 import * as React from 'react';
-import './styles.css';
 import Container from '../../Container/Container';
-import SelectSearch from './SelectSearch';
+import CustomSearch from '../../UI/CustomSearch';
+import classes from './HeaderSearch.module.scss';
 
 const HeaderSearch = () => {
   return (
-    <header className="header-second">
+    <header className={classes.headerSecond}>
       <Container>
-        <div className="header-second-wrapper">
-          <div className="logo">
-            <img src="../logo.png" className="logo" alt="logo"></img>
+        <div className={classes.headerSecondWrapper}>
+          <div className={classes.logo}>
+            <img src="../logo.png" className={classes.logo} alt="logo"></img>
           </div>
-          <SelectSearch />
+          <CustomSearch />
         </div>
       </Container>
     </header>

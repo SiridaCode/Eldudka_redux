@@ -1,10 +1,10 @@
 import * as React from 'react';
-import './styles.css';
 import Battery from '../Battery/Battery';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBreadcrumbs } from '../../../redux/data/dataActions';
 import eldudkaIcon from '../../../image/eldudka-icon.png';
+import classes from './Card.module.scss';
 
 const Card = ({ data, id }) => {
   const [eng, rus] = data.name.split('(');
@@ -25,28 +25,36 @@ const Card = ({ data, id }) => {
       to={`card${id}`}
       replace
       key={id}
-      className="product-item"
+      className={classes['product-item']}
     >
-      <div className="product-item-main-info">
-        <div className="product-item-name">{eng}</div>
-        <div className="product-item-image">
+      <div className={classes['product-item-main-info']}>
+        <div className={classes['product-item-name']}>{eng}</div>
+        <div className={classes['product-item-image']}>
           {data.images.length > 0 ? (
-            <img src={data.images[0]} className="product-item-image-select" alt="Нет картинки" />
+            <img
+              src={data.images[0]}
+              className={classes['product-item-image-select']}
+              alt="Нет картинки"
+            />
           ) : (
-            <img src={eldudkaIcon} className="product-item-image-none" alt="Нет картинки" />
+            <img
+              src={eldudkaIcon}
+              className={classes['product-item-image-none']}
+              alt="Нет картинки"
+            />
           )}
         </div>
         {data.availability.map((item, index) => (
-          <div key={index} className="product-item-availability">
-            <div className="shop-name">
+          <div key={index} className={classes['product-item-availability']}>
+            <div className={classes['shop-name']}>
               {`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}
             </div>
-            <div className="battery-wrapper">
+            <div className={classes['battery-wrapper']}>
               <Battery item={item.count} />
             </div>
           </div>
         ))}
-        <p className="product-item-price">{data.price + ' ₽'}</p>
+        <p className={classes['product-item-price']}>{data.price + ' ₽'}</p>
       </div>
     </Link>
   );

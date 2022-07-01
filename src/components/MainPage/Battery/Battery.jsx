@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import classes from './Battery.module.scss';
 
 const Battery = ({ item }) => {
   const colors = item => {
@@ -15,9 +15,9 @@ const Battery = ({ item }) => {
   };
 
   return (
-    <div className="battery">
+    <div className={classes['battery']}>
       {colors(item).map((color, index) => (
-        <div style={{ background: color }} key={index} className="battery__item" />
+        <div style={{ background: color }} key={index} className={classes['battery__item']} />
       ))}
     </div>
   );

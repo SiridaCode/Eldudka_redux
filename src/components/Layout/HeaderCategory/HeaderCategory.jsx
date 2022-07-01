@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cn from 'classnames';
-import './styles.css';
+import classes from './HeaderCategory.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
 import Container from '../../Container/Container';
@@ -41,20 +41,20 @@ const HeaderCategory = () => {
   };
 
   return (
-    <header className="header-third">
+    <header className={classes.headerThird}>
       <Container>
-        <div className="categories">
+        <div className={classes.categories}>
           {categories.map((category, index) => {
             return (
               <NavLink
                 to="/"
                 onClick={() => onClickActiveCategory(category.name)}
-                className="categories-item"
+                className={classes.categoriesItem}
                 data-category-name={category.name}
                 key={index}
               >
-                <p className="categories-item-name">{category.name}</p>
-                <div className={cssActive(category.name)}></div>
+                <p className={classes.categoriesItemName}>{category.name}</p>
+                <div className={classes[cssActive(category.name)]}></div>
               </NavLink>
             );
           })}

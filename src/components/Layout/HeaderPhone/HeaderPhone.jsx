@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setBreadcrumbs } from '../../../redux/data/dataActions';
 import Container from '../../Container/Container';
 import { src } from '../../../utils/utils';
-import './styles.css';
+import classes from './HeaderPhone.module.scss';
 
 const HeaderPhone = () => {
   const dispatch = useDispatch();
@@ -18,20 +18,20 @@ const HeaderPhone = () => {
   };
 
   return (
-    <header className="header-first">
+    <header className={classes.headerFirst}>
       <Container>
-        <div className="header-first-wrapper">
-          <div className="header-icon-container">
+        <div className={classes.headerFirstWrapper}>
+          <div className={classes.headerIconContainer}>
             {src.map(({ href, mainSrc }, index) => (
               <a key={index} href={href}>
-                <img className="main-icon" src={mainSrc} alt="icon" />
+                <img className={classes.mainIcon} src={mainSrc} alt="icon" />
               </a>
             ))}
-            <a className="call" href="tel:+79620100577">
+            <a className={classes.call} href="tel:+79620100577">
               8 (962) 010 05-77
             </a>
           </div>
-          <Link onClick={breadHandler} className="contacts-link" to="/contacts">
+          <Link onClick={breadHandler} className={classes.contactsLink} to="/contacts">
             Контакты
           </Link>
         </div>

@@ -1,16 +1,16 @@
 import * as React from 'react';
-import './styles.css';
 import cn from 'classnames';
+import classes from './CustomSearch.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { filteredProductsBySearch } from '../../../utils/filter';
 import {
   setFilterData,
   setCurrentPage,
   setSearchData,
   setBreadcrumbs,
-} from '../../../redux/data/dataActions';
+} from '../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
-import searchIcon from '../../../image/search-icon.png';
+import searchIcon from '../../image/search-icon.png';
+import { filteredProductsBySearch } from '../../utils/filter';
 
 const SelectSearch = () => {
   const [openSearch, setOpenSearch] = React.useState(false);
@@ -66,19 +66,19 @@ const SelectSearch = () => {
   };
 
   return (
-    <div className="input-wrapper">
-      <img className="search-icon" src={searchIcon} alt="Иконка поиска" />
+    <div className={classes['input-wrapper']}>
+      <img className={classes['search-icon']} src={searchIcon} alt="Иконка поиска" />
       <input
         onClick={onClickSearch}
         onChange={onChangeSearch}
         value={searchText}
         type="text"
-        className="js-data-example-ajax"
+        className={classes['js-data-example-ajax']}
         name="state"
         autoComplete="off"
         placeholder="Поиск..."
       />
-      <div className={cn({ search: openSearch === true })}>
+      <div className={classes[cn({ search: openSearch === true })]}>
         {openSearch &&
           searchData &&
           searchData.map((value, id) => {
@@ -88,7 +88,7 @@ const SelectSearch = () => {
                 id={id}
                 key={id}
                 onClick={() => onClickElementSearch(eng, id)}
-                className="element-search"
+                className={classes['element-search']}
               >
                 {eng}
               </div>
@@ -96,14 +96,14 @@ const SelectSearch = () => {
           })}
       </div>
       {openSearch && (
-        <div onClick={onClickSelectAll} className="delete-target">
+        <div onClick={onClickSelectAll} className={classes['delete-target']}>
           Выбрать все
         </div>
       )}
       {openSearch && searchText && (
         <img
           onClick={onClickDeleteTarget}
-          className="vector"
+          className={classes['vector']}
           src="../Vector.png"
           alt="Стереть поиск"
         />

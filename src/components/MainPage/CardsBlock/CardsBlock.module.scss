@@ -1,12 +1,11 @@
-
-  .cards-block {
-    margin-top: 44px;
-    margin-bottom: 24px;
+.cards-block {
+  margin-top: 44px;
+  margin-bottom: 24px;
 }
 .cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .lds-dual-ring {
@@ -18,7 +17,7 @@
   height: 80px;
 }
 .lds-dual-ring:after {
-  content: " ";
+  content: ' ';
   display: block;
   width: 64px;
   height: 64px;
@@ -37,15 +36,9 @@
   }
 }
 
-@media(max-width: 600px) {
+@media (max-width: 600px) {
   .lds-dual-ring {
     top: 30%;
     left: 40%;
-  }
-}
-
-@media(max-width: 350px) {
-  .breadcrumbs {
-    display: none !important;
   }
 }

@@ -2,19 +2,21 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import Container from '../../components/Container/Container';
 import { Link } from 'react-router-dom';
-import './styles.css';
 import { src } from '../../utils/utils';
 import { useDispatch } from 'react-redux';
 import { setBreadcrumbs } from '../../redux/data/dataActions';
 import Paper from '@mui/material/Paper';
+import classes from './ContactsPage.module.scss';
 
 const ContactPage = () => {
   const dispatch = useDispatch();
   return (
-    <div className="cards-wrapper">
+    <div className={classes['cards-wrapper']}>
       <Container>
-        <div className="contacts-container">
-          <div className="header-contacts">Режим Работы офлайн магазинов в Ставрополе:</div>
+        <div className={classes['contacts-container']}>
+          <div className={classes['header-contacts']}>
+            Режим Работы офлайн магазинов в Ставрополе:
+          </div>
           <Paper>
             <span>ТЦ Галерея 2 этаж</span>
             <br /> ул.Маршала Жукова 8<br /> 10:30 - 20:30
@@ -37,10 +39,10 @@ const ContactPage = () => {
             <span>Макарова 22 1 этаж</span>
             <br /> 11:00-20:00
           </Paper>
-          <Paper className="icon-container">
+          <Paper className={classes['icon-container']}>
             {src.map(({ href, src }, index) => (
               <a key={index} href={href}>
-                <img className="icon" src={src} alt="icon" />
+                <img className={classes['icon']} src={src} alt="icon" />
               </a>
             ))}
           </Paper>

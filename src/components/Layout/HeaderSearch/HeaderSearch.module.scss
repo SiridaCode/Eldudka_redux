@@ -1,0 +1,21 @@
+.headerSecond {
+  background: #bd1616;
+  color: #fff;
+
+  .headerSecondWrapper {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .logo {
+    display: none;
+  }
+}

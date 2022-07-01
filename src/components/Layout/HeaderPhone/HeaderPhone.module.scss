@@ -1,0 +1,41 @@
+.headerFirst {
+  background: #212121;
+
+  .headerFirstWrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 30px;
+
+    .contactsLink {
+      text-decoration: none;
+      color: #ffffff;
+      font-family: Roboto;
+      font-size: 11px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+
+    .headerIconContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 200px;
+
+      .call {
+        text-decoration: none;
+        color: #ffffff;
+        font-family: Roboto;
+        font-size: 11px;
+        font-weight: 400;
+        cursor: pointer;
+      }
+
+      a .mainIcon {
+        width: 23px;
+        height: 23px;
+      }
+    }
+  }
+}

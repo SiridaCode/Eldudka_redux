@@ -1,11 +1,11 @@
 import React from 'react';
-import './styles.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory, Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Container from '../../components/Container/Container';
 import MainPage from '../../components/MainPage/MainPage';
 import { setBreadcrumbs } from '../../redux/data/dataActions';
+import classes from './SelectCardPage.module.scss';
 
 const SelectCardPage = () => {
   let { card } = useParams();
@@ -23,26 +23,36 @@ const SelectCardPage = () => {
   const [eng, rus] = value.name.split('(');
 
   return (
-    <div className="cards-wrapper">
+    <div className={classes['cards-wrapper']}>
       <Container>
-        <div className="product-item-select">
-          <div>{eng + ' ' + rus}</div>
-          <div className="product-item-image-div">
+        <div className={classes['product-item-select']}>
+          <div className={classes['select-card-name']}>{eng + ' ' + rus}</div>
+          <div className={classes['product-item-image']}>
             {value.images.length > 0 ? (
-              <img src={value.images[0]} className="product-item-image-select" alt="Нет картинки" />
+              <img
+                src={value.images[0]}
+                className={classes['product-item-image-select']}
+                alt="Нет картинки"
+              />
             ) : (
-              <img src={'Нет картинки'} className="product-item-image-none" alt="Нет картинки" />
+              <img
+                src={'Нет картинки'}
+                className={classes['product-item-image-none']}
+                alt="Нет картинки"
+              />
             )}
           </div>
-          <div>{value.description ? value.description : 'Нет описания'}</div>
-          <div>
+          <div className={classes['select-card-description']}>
+            {value.description ? value.description : 'Нет описания'}
+          </div>
+          <div className={classes['value-price-container']}>
             {`Цена: `}
-            <span className="font-weight">{`${value.price} ₽`}</span>
+            <span className={classes['font-weight']}>{`${value.price} ₽`}</span>
           </div>
           {value.availability.map(({ shop, count }) => (
-            <div key={shop.id}>
-              {`${shop.name}: `}
-              <span className="font-weight">{count === 0 ? 'Нет' : count}</span>
+            <div className={classes['bottom-container']} key={shop.id}>
+              <span className={classes['select-card-shop-name']}>{`${shop.name}: `}</span>
+              <span className={classes['font-weight']}>{count === 0 ? 'Нет' : count}</span>
             </div>
           ))}
           <span style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
