@@ -50,7 +50,9 @@ export const setBreadcrumbs = payload => {
 };
 
 export const fetchData = () => async dispatch => {
-  const data = await fetch(process.env.REACT_APP_URL_CORE).then(response => response.json());
+  const data = await fetch('https://api.eldudka.ru/Product/GetList').then(response =>
+    response.json()
+  );
   dispatch(setFullData(data));
   dispatch(setFilterData(data));
   dispatch(setSearchData(data));
