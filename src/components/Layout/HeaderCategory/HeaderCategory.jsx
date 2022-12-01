@@ -5,13 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
 import Container from '../../Container/Container';
 import { NavLink } from 'react-router-dom';
-import {
-  setFilterData,
-  setActiveCategory,
-  setCurrentPage,
-  setSearchData,
-  setBreadcrumbs,
-} from '../../../redux/data/dataActions';
+import { setFilterData, setActiveCategory, setSearchData } from '../../../redux/data/dataActions';
 
 const categories = [
   { name: 'Жидкости', link: '/liquid' },
@@ -30,14 +24,7 @@ const HeaderCategory = () => {
     const filter = filteredProductsByCategory(fullData, category);
     dispatch(setActiveCategory(category));
     dispatch(setFilterData(filter));
-    dispatch(setCurrentPage(0));
     dispatch(setSearchData(fullData));
-    dispatch(
-      setBreadcrumbs([
-        { name: 'Главная', href: '/' },
-        { name: category, href: '/' },
-      ])
-    );
   };
 
   return (

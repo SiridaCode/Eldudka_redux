@@ -1,11 +1,5 @@
 import CardsBlock from './CardsBlock/CardsBlock';
-import Pagination from './Pagination/Pagination';
 
-const MainPage = () => (
-  <>
-    <CardsBlock />
-    <Pagination />
-  </>
-);
+const MainPage = () => <CardsBlock />;
 
 export default MainPage;

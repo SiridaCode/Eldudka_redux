@@ -1,11 +1,4 @@
-import {
-  SET_FILTER_DATA,
-  SET_FULL_DATA,
-  SET_ACTIVE_CATEGORY,
-  SET_CURRENT_PAGE,
-  SET_SEARCH_DATA,
-  SET_BREADCRUMBS,
-} from './dataTypes';
+import { SET_FILTER_DATA, SET_FULL_DATA, SET_ACTIVE_CATEGORY, SET_SEARCH_DATA } from './dataTypes';
 
 export const setFullData = payload => {
   return {
@@ -31,20 +24,6 @@ export const setSearchData = payload => {
 export const setActiveCategory = payload => {
   return {
     type: SET_ACTIVE_CATEGORY,
-    payload,
-  };
-};
-
-export const setCurrentPage = payload => {
-  return {
-    type: SET_CURRENT_PAGE,
-    payload,
-  };
-};
-
-export const setBreadcrumbs = payload => {
-  return {
-    type: SET_BREADCRUMBS,
     payload,
   };
 };

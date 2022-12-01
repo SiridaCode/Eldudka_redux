@@ -2,12 +2,7 @@ import * as React from 'react';
 import cn from 'classnames';
 import classes from './CustomSearch.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  setFilterData,
-  setCurrentPage,
-  setSearchData,
-  setBreadcrumbs,
-} from '../../redux/data/dataActions';
+import { setFilterData, setSearchData } from '../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
 import searchIcon from '../../image/search-icon.png';
 import { filteredProductsBySearch } from '../../utils/filter';
@@ -23,7 +18,6 @@ const SelectSearch = () => {
     dispatch(setSearchData(filteredProductsBySearch(fullData, target.value)));
     setSearchText(target.value);
     history.push('/');
-    dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]));
   };
 
   React.useEffect(() => {
@@ -35,14 +29,6 @@ const SelectSearch = () => {
     setSearchText('');
     setOpenSearch(false);
     history.push('search' + id);
-    dispatch(
-      setBreadcrumbs([
-        { name: 'Главная', href: '/' },
-        { name: eng, href: `/search${id}` },
-      ])
-    );
-
-    dispatch(setCurrentPage(0));
   };
 
   const onClickDeleteTarget = () => {
@@ -55,10 +41,8 @@ const SelectSearch = () => {
   const onClickSelectAll = () => {
     dispatch(setFilterData(searchData));
     setSearchText('');
-    dispatch(setCurrentPage(0));
     setOpenSearch(false);
     history.push('/');
-    dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]));
   };
 
   const onClickSearch = () => {
