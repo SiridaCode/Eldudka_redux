@@ -1,19 +1,10 @@
-import {
-  SET_FILTER_DATA,
-  SET_FULL_DATA,
-  SET_ACTIVE_CATEGORY,
-  SET_CURRENT_PAGE,
-  SET_SEARCH_DATA,
-  SET_BREADCRUMBS,
-} from './dataTypes';
+import { SET_FILTER_DATA, SET_FULL_DATA, SET_ACTIVE_CATEGORY, SET_SEARCH_DATA } from './dataTypes';
 
 const INITIAL_STATE = {
   filterData: [],
   fullData: [],
   searchData: [],
   activeCategory: 'default',
-  currentPage: 0,
-  breadcrumbs: [{ name: 'Главная', href: '/' }],
 };
 
 const dataReducer = (state = INITIAL_STATE, action) => {
@@ -26,10 +17,6 @@ const dataReducer = (state = INITIAL_STATE, action) => {
       return { ...state, searchData: action.payload };
     case SET_ACTIVE_CATEGORY:
       return { ...state, activeCategory: action.payload };
-    case SET_CURRENT_PAGE:
-      return { ...state, currentPage: action.payload };
-    case SET_BREADCRUMBS:
-      return { ...state, breadcrumbs: action.payload };
     default:
       return state;
   }

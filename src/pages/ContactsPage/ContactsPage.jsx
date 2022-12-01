@@ -3,13 +3,10 @@ import Button from '@mui/material/Button';
 import Container from '../../components/Container/Container';
 import { Link } from 'react-router-dom';
 import { src } from '../../utils/utils';
-import { useDispatch } from 'react-redux';
-import { setBreadcrumbs } from '../../redux/data/dataActions';
 import Paper from '@mui/material/Paper';
 import classes from './ContactsPage.module.scss';
 
 const ContactPage = () => {
-  const dispatch = useDispatch();
   return (
     <div className={classes['cards-wrapper']}>
       <Container>
@@ -47,7 +44,7 @@ const ContactPage = () => {
             ))}
           </Paper>
           <Paper>
-            <Link onClick={() => dispatch(setBreadcrumbs([{ name: 'Главная', href: '/' }]))} to="/">
+            <Link to="/">
               <Button color="error">Вернуться</Button>
             </Link>
           </Paper>
