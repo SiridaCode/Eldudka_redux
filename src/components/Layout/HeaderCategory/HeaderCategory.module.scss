@@ -1,13 +1,10 @@
 .headerThird {
   height: 63px;
-  background: #ffffff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
   .categories {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background: #ffffff;
 
     ::after {
       content: '';
@@ -22,19 +19,12 @@
       z-index: 1;
     }
 
-    :hover::after {
-      content: '';
-      display: block;
-      background-color: #ffe6e6;
-    }
-
     .categoriesItem {
       display: block;
       text-decoration: none;
       position: relative;
       width: 240px;
       height: 63px;
-      background: #ffffff;
       cursor: pointer;
 
       .categoriesItemName {
@@ -42,8 +32,8 @@
         margin-top: 25px;
         font-family: Roboto;
         font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
+        font-weight: 400;
+        font-size: 24px;
         line-height: 14px;
         color: #343434;
       }

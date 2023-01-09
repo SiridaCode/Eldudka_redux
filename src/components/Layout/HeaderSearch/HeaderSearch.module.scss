@@ -1,9 +1,8 @@
 .headerSecond {
-  background: #bd1616;
   color: #fff;
 
   .headerSecondWrapper {
-    height: 60px;
+    height: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,4 +17,27 @@
   .logo {
     display: none;
   }
+}
+
+a .mainIcon {
+  width: 23px;
+  height: 23px;
+}
+
+.flexBasket {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basketIcon {
+    margin-left: 35px;
+}
+
+.iconsContainer {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
 }
