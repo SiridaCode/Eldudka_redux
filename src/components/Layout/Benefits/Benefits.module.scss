@@ -1,0 +1,20 @@
+.benefitsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 60px 0px 0px 0px;
+}
+.benefitsText {
+    font-family: 'Roboto';
+    font-style: normal;
+    margin-left: 12px;
+    font-size: 15px;
+    color: #717171;
+}
+.benefitsElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 60px 0px 0px;
+}

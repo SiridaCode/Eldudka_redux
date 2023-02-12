@@ -4,7 +4,7 @@ import classes from './HeaderCategory.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
 import Container from '../../Container/Container';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { setFilterData, setActiveCategory, setSearchData } from '../../../redux/data/dataActions';
 
 const categories = [
@@ -19,8 +19,10 @@ const HeaderCategory = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
   const cssActive = category => cn({ selected: category === activeCategory });
+  const history = useHistory()
 
   const onClickActiveCategory = category => {
+    history.push('/categories')
     const filter = filteredProductsByCategory(fullData, category);
     dispatch(setActiveCategory(category));
     dispatch(setFilterData(filter));

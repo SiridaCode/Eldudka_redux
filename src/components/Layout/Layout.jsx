@@ -4,13 +4,13 @@ import HeaderSearch from './HeaderSearch/HeaderSearch';
 import HeaderCategory from './HeaderCategory/HeaderCategory';
 import Banner from './Banner/Banner';
 import Footer from './Footer/Footer';
+import Benefits from './Benefits/Benefits';
 
 const Header = ({ children }) => {
   return (
     <>
       <HeaderSearch />
       <HeaderCategory />
-      <Banner />
       {children}
       <Footer />
     </>
