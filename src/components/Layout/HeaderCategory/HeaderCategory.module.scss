@@ -10,7 +10,7 @@
 
   .categories {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     width: 965px;
     height: 45px;
@@ -32,7 +32,7 @@
       display: block;
       text-decoration: none;
       position: relative;
-      width: 127px;
+      width: 190px;
       height: 45px;
       cursor: pointer;
 
@@ -51,11 +51,12 @@
         position: relative;
         z-index: 2;
         width: 100%;
-        height: 4px;
+        height: 1px;
         background: #bd1616;
         margin-top: 20px;
         transition-property: background-color, color;
-        transition-duration: 1s;
+        transition-duration: 2s;
+        border-radius: 50%;
       }
     }
   }
