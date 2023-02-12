@@ -9,8 +9,22 @@ const Card = ({ data, id }) => {
 
   return (
     <Link to={`/${data.uuid}`} className={classes['product-item']}>
+      {/* <div className={classes['product-item-image']}>
+          {data.images.length > 0 ? (
+            <img
+              src={data.images[0]}
+              className={classes['product-item-image-select']}
+              alt="Нет картинки"
+            />
+          ) : (
+            <img
+              src={eldudkaIcon}
+              className={classes['product-item-image-none']}
+              alt="Нет картинки"
+            />
+          )}
+        </div> */}
       <div className={classes['product-item-main-info']}>
-        <div className={classes['product-item-name']}>{eng}</div>
         <div className={classes['product-item-image']}>
           {data.images.length > 0 ? (
             <img
@@ -26,7 +40,7 @@ const Card = ({ data, id }) => {
             />
           )}
         </div>
-        {data.availability.map((item, index) => (
+        {/* {data.availability.map((item, index) => (
           <div key={index} className={classes['product-item-availability']}>
             <div className={classes['shop-name']}>
               {`${item.shop.name}: ` + (item.count === 0 ? 'Нет' : item.count)}
@@ -35,8 +49,9 @@ const Card = ({ data, id }) => {
               <Battery item={item.count} />
             </div>
           </div>
-        ))}
+        ))} */}
         <p className={classes['product-item-price']}>{data.price + ' ₽'}</p>
+        <div className={classes['product-item-name']}>{eng}</div>
       </div>
     </Link>
   );

@@ -20,8 +20,13 @@
 }
 
 a .mainIcon {
-  width: 23px;
-  height: 23px;
+  width: 21px;
+  height: 21px;
+  margin: 0px 19.5px;
+  transition: all 0.2s ease-in-out;
+}
+.mainIcon:hover {
+  transform: scale(1.1);
 }
 
 .flexBasket {
@@ -37,7 +42,7 @@ a .mainIcon {
 .iconsContainer {
   width: 150px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
 }
