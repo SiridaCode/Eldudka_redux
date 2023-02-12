@@ -1,6 +1,8 @@
 .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 56px;
-    margin-bottom: 89px;
 }
 
 .bannerConteiner {
@@ -11,12 +13,18 @@
 
 .benefitsContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin: 70px;
+    margin: 90px 0px 90px 0px;
+    width: 1054px;
 }
 .benefitsText {
     margin-left: 12px;
     font-size: 15px;
     color: #717171;
+}
+.benefitsElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

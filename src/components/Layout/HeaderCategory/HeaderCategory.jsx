@@ -30,6 +30,7 @@ const HeaderCategory = () => {
   return (
     <header className={classes.headerThird}>
       <Container>
+        <div className={classes.categoriesWrapper}>
         <div className={classes.categories}>
           {categories.map((category, index) => {
             return (
@@ -45,6 +46,7 @@ const HeaderCategory = () => {
               </NavLink>
             );
           })}
+        </div>
         </div>
       </Container>
     </header>
