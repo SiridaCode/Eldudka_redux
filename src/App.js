@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Layout from './components/Layout/Layout';
+import { Layout } from './components/Layout/Layout';
 import './App.css';
 import { useDispatch } from 'react-redux';
 import { fetchData } from './redux/data/dataActions';

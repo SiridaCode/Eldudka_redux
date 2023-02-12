@@ -1,0 +1,23 @@
+.cart-button {
+  &:hover {
+    border: 3px solid #990424;
+    cursor: pointer;
+  }
+  transition: 30ms;
+  position: fixed;
+  top: 300px;
+  right: 47px;
+  background: #ffffff;
+  box-shadow: 0px 5px 29px -7px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  width: 128px;
+  height: 128px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .cart-button__icon {
+    width: 68px;
+    height: 68px;
+    background-image: url('../../../image/cart-icon.png');
+  }
+}

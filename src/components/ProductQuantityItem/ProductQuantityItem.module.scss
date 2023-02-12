@@ -1,0 +1,80 @@
+.product-quantity__item {
+  width: 421px;
+  height: 106px;
+  display: flex;
+  .image {
+    width: 106px;
+    height: 106px;
+    border-radius: 15px;
+    border: 1px solid #000000;
+    background-size: cover;
+    background-position: center;
+  }
+  .name-and-amount {
+    margin-left: 19px;
+    width: 171px;
+    .name {
+      margin-top: 14px;
+      color: #1f1f1f;
+      font-size: 20px;
+      font-family: Roboto;
+      max-height: 46px;
+      overflow: hidden;
+      font-weight: 500;
+    }
+    .amount {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      .change-amount-btn {
+        width: 22px;
+        height: 22px;
+        transition: 0.1s;
+        opacity: 0.5;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+      .down-btn {
+        background-image: url('../../image/minus-btn.png');
+      }
+      .value {
+        margin-left: 6px;
+        margin-right: 6px;
+        color: #000000;
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 13px;
+      }
+      .up-btn {
+        background-image: url('../../image/plus-btn.png');
+      }
+    }
+  }
+  .total-cost {
+    margin-left: 24px;
+    color: #868686;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+  }
+  .remove-btn-wrapper {
+    margin-left: 22px;
+    display: flex;
+    align-items: center;
+    .btn {
+      background-image: url('../../image/circle-remove-btn.png');
+      width: 26px;
+      height: 26px;
+      opacity: 0.5;
+      transition: 0.1s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+}
