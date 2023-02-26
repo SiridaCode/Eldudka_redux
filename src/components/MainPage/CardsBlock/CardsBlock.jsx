@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import Container from '../../Container/Container';
 import classes from './CardsBlock.module.scss';
+import ContentLoader from 'react-content-loader';
+import CatalogMagic from './CatalogMagicSkeleton';
 
 const CardsBlock = () => {
   const { filterData } = useSelector(({ data }) => data);
@@ -13,7 +15,7 @@ const CardsBlock = () => {
           {filterData && filterData.length > 0 ? (
             filterData.map((item, index) => <Card data={item} key={index} id={index} />)
           ) : (
-            <div className={classes['lds-dual-ring']}></div>
+          <CatalogMagic />
           )}
         </div>
       </Container>

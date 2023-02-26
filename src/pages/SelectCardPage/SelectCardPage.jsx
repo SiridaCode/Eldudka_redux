@@ -10,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/virtual';
+import ContentLoader from "react-content-loader"
 
 const SelectCardPage = () => {
   let [responseData, setResponseData] = useState(null);
@@ -27,7 +28,7 @@ const SelectCardPage = () => {
   const [eng, rus] = responseData ? responseData.name.split('(') : ['', ''];
 
   return (
-    responseData && (
+    responseData ? (
       <div className={classes['cards-wrapper']}>
         <Container>
         <div className={classes['flex-block']}>
@@ -73,6 +74,26 @@ const SelectCardPage = () => {
         </div>
         </Container>
       </div>
+    ) : (
+      <Container>
+          <div style={{margin: '100px 50px'}} className={classes['content-block']}>
+    <ContentLoader 
+    speed={2}
+    width={2500}
+    height={700}
+    viewBox="0 0 1300 400"
+    backgroundColor="#f3f3f3"
+    foregroundColor="#ecebeb"
+  >
+<rect x="374" y="156" rx="17" ry="17" width="101" height="30" /> 
+    <circle cx="502" cy="171" r="18" /> 
+    <rect x="357" y="68" rx="30" ry="30" width="188" height="36" /> 
+    <rect x="416" y="114" rx="29" ry="29" width="76" height="23" /> 
+    <rect x="317" y="18" rx="30" ry="30" width="264" height="41" /> 
+    <rect x="4" y="-4" rx="51" ry="51" width="262" height="318" />
+  </ContentLoader>
+    </div>
+  </Container>
     )
   );
 };
