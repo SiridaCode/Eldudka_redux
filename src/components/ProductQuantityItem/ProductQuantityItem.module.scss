@@ -2,16 +2,22 @@
   width: 421px;
   height: 106px;
   display: flex;
+  justify-content: space-between;
   .image {
     width: 106px;
     height: 106px;
-    border-radius: 15px;
     border: 1px solid #000000;
-    background-size: cover;
-    background-position: center;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+      max-width: 104px;
+      max-height: 104px;
+    }
   }
   .name-and-amount {
-    margin-left: 19px;
     width: 171px;
     .name {
       margin-top: 14px;
@@ -53,7 +59,6 @@
     }
   }
   .total-cost {
-    margin-left: 24px;
     color: #868686;
     font-family: Roboto;
     font-weight: 300;
@@ -62,7 +67,6 @@
     align-items: center;
   }
   .remove-btn-wrapper {
-    margin-left: 22px;
     display: flex;
     align-items: center;
     .btn {

@@ -29,7 +29,7 @@ export const setActiveCategory = payload => {
 };
 
 export const fetchData = () => async dispatch => {
-  const data = await fetch('https://api.eldudka.ru/Product/GetList').then(response =>
+  const data = await fetch('http://localhost:5195/Product/GetList').then(response =>
     response.json()
   );
   dispatch(setFullData(data));

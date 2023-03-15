@@ -28,6 +28,6 @@ const deleteArrayElementById = (key, id) => {
   return true;
 };
 
-const getArray = key => JSON.parse(localStorage.getItem('productCart')) ?? [];
+const getArray = key => JSON.parse(localStorage.getItem(key)) ?? [];
 
 export { updateArrayElementById, deleteArrayElementById, getArray };

@@ -64,5 +64,42 @@
     width: 421px;
     margin-top: 47px;
     margin-bottom: 66px;
+    .no-products {
+      font-size: 18px;
+      font-family: Roboto;
+      font-weight: 300;
+      color: #8d8d8d;
+    }
+  }
+  .footer {
+    width: 421px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .order-btn {
+      &:hover {
+        background: #990424;
+        color: white;
+        transition: 0.3s;
+      }
+      width: 174px;
+      height: 56px;
+      border: 2px solid #990424;
+      border-radius: 41px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Roboto;
+      font-weight: 300;
+      font-size: 24px;
+      color: #990424;
+      cursor: pointer;
+    }
+    .order-price {
+      font-family: 'Roboto';
+      font-weight: 300;
+      font-size: 32px;
+      color: #990424;
+    }
   }
 }

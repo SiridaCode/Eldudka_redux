@@ -10,7 +10,7 @@ const SelectCardPage = () => {
   let { card } = useParams();
 
   useEffect(() => {
-    fetch(`https://api.eldudka.ru/Product/GetById?id=${card}`)
+    fetch(`http://localhost:5195/Product/GetById?id=${card}`)
       .then(response => response.json())
       .then(data => {
         setResponseData(data);
