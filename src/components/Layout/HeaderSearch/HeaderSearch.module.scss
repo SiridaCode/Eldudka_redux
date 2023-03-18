@@ -14,12 +14,6 @@
   }
 }
 
-@media (max-width: 350px) {
-  .logo {
-    display: none;
-  }
-}
-
 a .mainIcon {
   margin: 0px 19.5px;
   transition: all 0.2s ease-in-out;
@@ -35,7 +29,7 @@ a .mainIcon {
 }
 
 .basketIcon {
-    margin-left: 35px;
+  margin-left: 35px;
 }
 
 .iconsContainer {
@@ -43,5 +37,50 @@ a .mainIcon {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
 
+.burgerMobile {
+  display: none;
+}
+
+.locationIcon {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .headerSecond {
+    color: #fff;
+    .headerSecondWrapper {
+      margin-top: 20px;
+      padding: 20px;
+      width: 100%;
+      height: 44px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .logo {
+        width: 133px;
+        height: 44px;
+      }
+    }
+    .burgerMobile {
+      display: block;
+    }
+    a .mainIcon {
+      display: none;
+    }
+    .flexBasket {
+      display: none;
+    }
+    .locationIcon {
+      display: block;
+    }
+  }
+  .iconsContainer {
+    width: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }

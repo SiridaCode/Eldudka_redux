@@ -4,65 +4,25 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 1199px) {
-  .header-first {
-    justify-content: space-around !important;
-    padding: 0px !important;
-    margin: 0px !important;
-  }
-  .header-first-bottom {
-    justify-content: space-around !important;
-    padding: 0px !important;
-    margin: 0px !important;
-  }
-
-  .header-second {
-    padding: 0px !important;
-    margin: 0px !important;
-  }
-
-  .header-third {
-    padding: 0px !important;
-    margin: 0px !important;
-  }
-
-  .categories-item-name {
-    font-size: 12px !important;
-  }
-
-  .pages {
-    justify-content: center !important;
-  }
-  .container {
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .cards-wrapper {
-    justify-content: center !important;
-  }
-
-  .js-data-example-ajax {
-    width: auto !important;
-  }
-  .categories-item {
-    width: auto !important;
-    height: auto !important;
-  }
-  .search {
-    width: 100% !important;
-  }
-  .element-search {
-    width: auto !important;
-  }
-  .delete-target {
-    width: 100% !important;
-  }
-}
-
 body {
   margin: 24px;
-  padding: 0;
+  padding: 0px;
   align-items: center;
   background: #FBFBFB
 }
+
+@media (max-width: 860px) {
+  body {
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+    background: #FBFBFB;
+    overflow-x: hidden;
+  }
+}
+
+#root {
+  overflow-x: hidden;
+}
+
+

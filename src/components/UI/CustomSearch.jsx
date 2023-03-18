@@ -51,7 +51,7 @@ const SelectSearch = () => {
 
   return (
     <div className={classes['input-wrapper']}>
-      <img className={classes['search-icon']} src='./find_icon.png' alt="Иконка поиска" />
+      <img className={classes['search-icon']} src="./find_icon.png" alt="Иконка поиска" />
       <input
         onClick={onClickSearch}
         onChange={onChangeSearch}
@@ -65,7 +65,7 @@ const SelectSearch = () => {
       <div className={classes[cn({ search: openSearch === true })]}>
         {openSearch &&
           searchData &&
-          searchData.map((value) => {
+          searchData.map(value => {
             const [eng] = value.name.split('(');
             return (
               <div

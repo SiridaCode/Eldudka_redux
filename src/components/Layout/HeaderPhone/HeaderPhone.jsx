@@ -1,8 +1,8 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import Container from '../../Container/Container';
-import { src } from '../../../utils/utils';
-import classes from './HeaderPhone.module.scss';
+import * as React from 'react'
+import { Link } from 'react-router-dom'
+import Container from '../../Container/Container'
+import { src } from '../../../utils/utils'
+import classes from './HeaderPhone.module.scss'
 
 const HeaderPhone = () => {
   return (
@@ -25,6 +25,6 @@ const HeaderPhone = () => {
         </div>
       </Container>
     </header>
-  );
-};
-export default HeaderPhone;
+  )
+}
+export default HeaderPhone

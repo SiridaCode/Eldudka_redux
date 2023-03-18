@@ -1,12 +1,22 @@
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
 }
 
 .bannerConteiner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .wrapper {
+    display: none;
+  }
+
+  .bannerConteiner {
+    display: none;
+  }
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import Container from '../../components/Container/Container';
-import { Link } from 'react-router-dom';
-import { src } from '../../utils/utils';
-import Paper from '@mui/material/Paper';
-import classes from './ContactsPage.module.scss';
+import React from 'react'
+import Button from '@mui/material/Button'
+import Container from '../../components/Container/Container'
+import { Link } from 'react-router-dom'
+import { src } from '../../utils/utils'
+import Paper from '@mui/material/Paper'
+import classes from './ContactsPage.module.scss'
 
 const ContactPage = () => {
   return (
@@ -51,7 +51,7 @@ const ContactPage = () => {
         </div>
       </Container>
     </div>
-  );
-};
+  )
+}
 
-export default ContactPage;
+export default ContactPage

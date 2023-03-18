@@ -1,9 +1,7 @@
-import CardsBlock from "../../components/MainPage/CardsBlock/CardsBlock"
+import CardsBlock from '../../components/MainPage/CardsBlock/CardsBlock'
 
 const CategoriesPage = () => {
-    return (
-        <CardsBlock />
-    )
+  return <CardsBlock />
 }
 
 export default CardsBlock

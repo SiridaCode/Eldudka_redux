@@ -36,9 +36,14 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 860px) {
   .lds-dual-ring {
     top: 30%;
     left: 40%;
+  }
+
+  .cards-block {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
