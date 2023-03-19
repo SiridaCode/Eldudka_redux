@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import Container from '../../components/Container/Container';
 import classes from './SelectCardPage.module.scss';
+import { API_URL } from '../../utils/constants';
 
 const SelectCardPage = () => {
   let [responseData, setResponseData] = useState(null);
@@ -10,7 +11,7 @@ const SelectCardPage = () => {
   let { card } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5195/Product/GetById?id=${card}`)
+    fetch(`${API_URL}/Product/GetById?id=${card}`)
       .then(response => response.json())
       .then(data => {
         setResponseData(data);
