@@ -1,0 +1,61 @@
+.footerContainer {
+  width: 100vw;
+  height: 225px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.elementContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.telephone {
+  margin-left: 15px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #990424;
+}
+
+.locationText {
+  margin-left: 20px;
+  font-size: 24px;
+  color: #8a8a8a;
+}
+
+@media (max-width: 860px) {
+  .footerContainer {
+    width: 100vw;
+    height: 88px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .elementContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    width: 133px;
+    height: 44px;
+  }
+  .telephone {
+    display: none;
+  }
+  .locationText {
+    display: none;
+  }
+  .telephoneIcon {
+    display: none;
+  }
+  .locationIcon {
+    display: none;
+  }
+}

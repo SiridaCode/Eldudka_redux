@@ -28,7 +28,7 @@ const SelectSearch = () => {
   const onClickElementSearch = (eng, id) => {
     setSearchText('');
     setOpenSearch(false);
-    history.push('search' + id);
+    history.push(`/${id}`);
   };
 
   const onClickDeleteTarget = () => {
@@ -51,7 +51,7 @@ const SelectSearch = () => {
 
   return (
     <div className={classes['input-wrapper']}>
-      <img className={classes['search-icon']} src={searchIcon} alt="Иконка поиска" />
+      <img className={classes['search-icon']} src="./find_icon.png" alt="Иконка поиска" />
       <input
         onClick={onClickSearch}
         onChange={onChangeSearch}
@@ -60,18 +60,18 @@ const SelectSearch = () => {
         className={classes['js-data-example-ajax']}
         name="state"
         autoComplete="off"
-        placeholder="Поиск..."
+        placeholder="Поиск"
       />
       <div className={classes[cn({ search: openSearch === true })]}>
         {openSearch &&
           searchData &&
-          searchData.map((value, id) => {
+          searchData.map(value => {
             const [eng] = value.name.split('(');
             return (
               <div
-                id={id}
-                key={id}
-                onClick={() => onClickElementSearch(eng, id)}
+                id={value.uuid}
+                key={value.uuid}
+                onClick={() => onClickElementSearch(eng, value.uuid)}
                 className={classes['element-search']}
               >
                 {eng}
