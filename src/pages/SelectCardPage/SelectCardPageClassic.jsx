@@ -11,6 +11,7 @@ import 'swiper/css/virtual';
 import ContentLoader from 'react-content-loader';
 import { insertElementInArray, getArray, updateArrayElementById } from '../../utils/localStorage';
 import { LOCALSTORAGE_KEYS } from '../../utils/constants';
+import { Button } from '../../components/Button/Button';
 
 const SelectCardPageClassic = ({ responseData }) => {
   return responseData ? (
@@ -37,7 +38,7 @@ const SelectCardPageClassic = ({ responseData }) => {
             <div className={classes['product-name']}>{responseData.name}</div>
             <div className={classes['product-price']}>{responseData.price} ₽</div>
             <div className={classes['flex-block-center']}>
-              <button
+              <Button
                 onClick={() => {
                   const shoppingCartProducts = getArray(LOCALSTORAGE_KEYS.shoppingCart);
 
@@ -56,10 +57,8 @@ const SelectCardPageClassic = ({ responseData }) => {
                     amount: 1,
                   });
                 }}
-                className={classes['button-basket']}
-              >
-                В корзину
-              </button>
+                text="В корзину"
+              ></Button>
               <button
                 onClick={() => {
                   const favorites = getArray(LOCALSTORAGE_KEYS.favorites);

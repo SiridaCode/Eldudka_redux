@@ -7,9 +7,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/virtual';
-import { localStorageKeyName } from '../../components/ShoppingCart/ShoppingCartModal/ShoppingCartModal';
 import { insertElementInArray, getArray, updateArrayElementById } from '../../utils/localStorage';
 import { LOCALSTORAGE_KEYS } from '../../utils/constants';
+import { Button } from '../../components/Button/Button';
 
 const SelectCardPageMobile = ({ responseData }) => {
   return (
@@ -37,8 +37,7 @@ const SelectCardPageMobile = ({ responseData }) => {
             <div className={classes['product-name']}>{responseData.name}</div>
             <div className={classes['product-price']}>{responseData.price} ₽</div>
             <div className={classes['flex-block']}>
-              <button
-                className={classes['button-basket']}
+              <Button
                 onClick={() => {
                   const shoppingCartProducts = getArray(LOCALSTORAGE_KEYS.shoppingCart);
 
@@ -57,9 +56,8 @@ const SelectCardPageMobile = ({ responseData }) => {
                     amount: 1,
                   });
                 }}
-              >
-                В корзину
-              </button>
+                text="В корзину"
+              ></Button>
               <button
                 onClick={() => {
                   const favorites = getArray(LOCALSTORAGE_KEYS.favorites);

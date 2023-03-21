@@ -50,21 +50,6 @@
   margin-bottom: 35px;
 }
 
-.button-basket {
-  display: block;
-  width: 110px;
-  height: 40px;
-  padding: 5px 5px;
-  border: 2px solid #990424;
-  border-radius: 41px;
-  color: #990424;
-  background-color: #fbfbfb;
-  font: 300 16px/1.2 'Roboto';
-  &:hover {
-    cursor: pointer;
-  }
-}
-
 .button-favorites {
   display: inline-flex;
   justify-content: center;

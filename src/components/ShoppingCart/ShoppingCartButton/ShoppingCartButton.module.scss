@@ -20,5 +20,22 @@
     width: 68px;
     height: 68px;
     background-image: url('../../../image/cart-icon.png');
+    background-size: cover;
+  }
+}
+
+@media (max-width: 581px) {
+  .cart-button {
+    &:hover {
+      border: 2px solid #990424;
+    }
+    top: 200px;
+    right: 7px;
+    width: 61px;
+    height: 61px;
+    .cart-button__icon {
+      width: 32px;
+      height: 32px;
+    }
   }
 }
