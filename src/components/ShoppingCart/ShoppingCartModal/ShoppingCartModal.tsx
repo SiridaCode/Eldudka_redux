@@ -9,6 +9,7 @@ import { RightModal } from '../../RightModal/RightModal';
 import { CONTACT_PHONE_NUMBER, API_URL, WHATSAPP_URL } from '../../../utils/constants';
 import styles from './ShoppingCartModal.module.scss';
 import { LOCALSTORAGE_KEYS } from '../../../utils/constants';
+import { Button } from '../../Button/Button';
 
 const getProductsByIds = async ids => {
   const response = await fetch(`${API_URL}/Product/GetByIds`, {
@@ -106,10 +107,7 @@ const ShoppingCartModal = ({ onClose }) => {
       )}
       {items.length > 0 && (
         <div className={styles['footer']}>
-          <div onClick={() => makeOrder()} className={styles['order-btn']}>
-            Заказать
-          </div>
-
+          <Button onClick={() => makeOrder()} text="Заказать"></Button>
           <div className={styles['order-price']}>
             <span className={styles['value']}>
               {items.length === 0
