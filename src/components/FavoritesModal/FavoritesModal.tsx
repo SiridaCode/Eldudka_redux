@@ -9,8 +9,7 @@ import {
   productMapping,
 } from '../ShoppingCart/ShoppingCartModal/ShoppingCartModal';
 import styles from './FavoritesModal.module.scss';
-
-const localStorageKeyName = 'favorites';
+import { LOCALSTORAGE_KEYS } from '../../utils/constants';
 
 const FavoritesModal = () => {
   const [items, setItems] = useState<any>([]);
@@ -19,7 +18,7 @@ const FavoritesModal = () => {
   const dispatch = useDispatch();
 
   const updateDataFromLocalStorage = useCallback(() => {
-    const lsItems = getArray(localStorageKeyName);
+    const lsItems = getArray(LOCALSTORAGE_KEYS.favorites);
 
     getProductsByIds(lsItems.map(i => i.id)).then(data =>
       setItems(
@@ -48,7 +47,7 @@ const FavoritesModal = () => {
                 isQuantityChange={false}
                 quantityItem={i}
                 removeItemHandler={item => {
-                  deleteArrayElementById(localStorageKeyName, item.id);
+                  deleteArrayElementById(LOCALSTORAGE_KEYS.favorites, item.id);
                   updateDataFromLocalStorage();
                 }}
               />

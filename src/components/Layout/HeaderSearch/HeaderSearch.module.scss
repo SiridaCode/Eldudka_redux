@@ -19,7 +19,7 @@ a .mainIcon {
   transition: all 0.2s ease-in-out;
 }
 .mainIcon:hover {
-  transform: scale(1.1);
+  cursor: pointer;
 }
 
 .flexBasket {
@@ -30,10 +30,12 @@ a .mainIcon {
 
 .basketIcon {
   margin-left: 35px;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .iconsContainer {
-  width: 150px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -75,6 +77,7 @@ a .mainIcon {
     }
     .locationIcon {
       display: block;
+      opacity: 0;
     }
   }
   .iconsContainer {

@@ -8,8 +8,7 @@ import { HorizontalProductCardWithQuantitySwitch } from '../../HorizontalProduct
 import { RightModal } from '../../RightModal/RightModal';
 import { CONTACT_PHONE_NUMBER, API_URL, WHATSAPP_URL } from '../../../utils/constants';
 import styles from './ShoppingCartModal.module.scss';
-
-const localStorageKeyName = 'shoppingCart';
+import { LOCALSTORAGE_KEYS } from '../../../utils/constants';
 
 const getProductsByIds = async ids => {
   const response = await fetch(`${API_URL}/Product/GetByIds`, {
@@ -45,7 +44,7 @@ const ShoppingCartModal = ({ onClose }) => {
   }, [items]);
 
   const updateDataFromLocalStorage = useCallback(() => {
-    const lsItems = getArray(localStorageKeyName);
+    const lsItems = getArray(LOCALSTORAGE_KEYS.shoppingCart);
 
     getProductsByIds(lsItems.map(i => i.id)).then(data =>
       setItems(
@@ -73,9 +72,9 @@ const ShoppingCartModal = ({ onClose }) => {
                 const modifiedItem = { ...item, amount: item.amount - 1 };
 
                 if (modifiedItem.amount < 1)
-                  deleteArrayElementById(localStorageKeyName, modifiedItem.id);
+                  deleteArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, modifiedItem.id);
                 else
-                  updateArrayElementById(localStorageKeyName, {
+                  updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
                     id: modifiedItem.id,
                     amount: modifiedItem.amount,
                   });
@@ -86,9 +85,9 @@ const ShoppingCartModal = ({ onClose }) => {
                 const modifiedItem = { ...item, amount: item.amount + 1 };
 
                 if (modifiedItem.amount < 1)
-                  deleteArrayElementById(localStorageKeyName, modifiedItem.id);
+                  deleteArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, modifiedItem.id);
                 else
-                  updateArrayElementById(localStorageKeyName, {
+                  updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
                     id: modifiedItem.id,
                     amount: modifiedItem.amount,
                   });
@@ -96,7 +95,7 @@ const ShoppingCartModal = ({ onClose }) => {
                 updateDataFromLocalStorage();
               }}
               removeItemHandler={item => {
-                deleteArrayElementById(localStorageKeyName, item.id);
+                deleteArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, item.id);
                 updateDataFromLocalStorage();
               }}
             />
