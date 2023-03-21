@@ -1,6 +1,6 @@
 const CONTACT_PHONE_NUMBER = { value: '79620100577', text: '8 (962) 010-05-77' };
 const WHATSAPP_URL = 'https://wa.me';
-const API_URL = 'http://localhost:5195';
+const API_URL = 'https://api.eldudka.ru';
 const SOCIAL_MEDIA = {
   instagram: {
     height: 21,
