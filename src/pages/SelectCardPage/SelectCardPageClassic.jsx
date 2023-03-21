@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Container from '../../components/Container/Container';
 import classes from './SelectCardPage.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,6 +9,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/virtual';
 import ContentLoader from 'react-content-loader';
+import { insertElementInArray, getArray, updateArrayElementById } from '../../utils/localStorage';
+import { LOCALSTORAGE_KEYS } from '../../utils/constants';
 
 const SelectCardPageClassic = ({ responseData }) => {
   return responseData ? (
@@ -21,11 +23,7 @@ const SelectCardPageClassic = ({ responseData }) => {
                 modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={50}
                 slidesPerView={1}
-                // navigation
                 pagination={{ clickable: true }}
-                // scrollbar={{ draggable: true }}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={swiper => console.log(swiper)}
               >
                 {responseData.images.map(item => (
                   <SwiperSlide style={{ display: 'flex', justifyContent: 'center' }} key={item}>
@@ -39,8 +37,43 @@ const SelectCardPageClassic = ({ responseData }) => {
             <div className={classes['product-name']}>{responseData.name}</div>
             <div className={classes['product-price']}>{responseData.price} ₽</div>
             <div className={classes['flex-block-center']}>
-              <button className={classes['button-basket']}>В корзину</button>
-              <button className={classes['button-favorites']}>
+              <button
+                onClick={() => {
+                  const shoppingCartProducts = getArray(LOCALSTORAGE_KEYS.shoppingCart);
+
+                  for (let p of shoppingCartProducts) {
+                    if (p.id == responseData.uuid) {
+                      updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
+                        id: p.id,
+                        amount: p.amount + 1,
+                      });
+                      return;
+                    }
+                  }
+
+                  insertElementInArray(LOCALSTORAGE_KEYS.shoppingCart, {
+                    id: responseData.uuid,
+                    amount: 1,
+                  });
+                }}
+                className={classes['button-basket']}
+              >
+                В корзину
+              </button>
+              <button
+                onClick={() => {
+                  const favorites = getArray(LOCALSTORAGE_KEYS.favorites);
+
+                  for (let f of favorites) {
+                    if (f.id == responseData.uuid) return;
+                  }
+
+                  insertElementInArray(LOCALSTORAGE_KEYS.favorites, {
+                    id: responseData.uuid,
+                  });
+                }}
+                className={classes['button-favorites']}
+              >
                 <img src="./heard-icon.png"></img>
               </button>
             </div>

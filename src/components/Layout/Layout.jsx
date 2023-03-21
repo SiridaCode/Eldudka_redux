@@ -1,20 +1,21 @@
-import * as React from 'react'
-import HeaderPhone from './HeaderPhone/HeaderPhone'
-import HeaderSearch from './HeaderSearch/HeaderSearch'
-import HeaderCategory from './HeaderCategory/HeaderCategory'
-import Banner from './Banner/Banner'
-import Footer from './Footer/Footer'
-import Benefits from './Benefits/Benefits'
+import * as React from 'react';
+import HeaderSearch from './HeaderSearch/HeaderSearch';
+import HeaderCategory from './HeaderCategory/HeaderCategory';
+import { ShoppingCart } from '../ShoppingCart/ShoppingCart';
+import { FavoritesModal } from '../FavoritesModal/FavoritesModal';
+import Footer from './Footer/Footer';
 
-const Header = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <HeaderSearch />
       <HeaderCategory />
+      <ShoppingCart />
+      <FavoritesModal />
       {children}
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default Header
+export { Layout };

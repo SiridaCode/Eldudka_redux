@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { API_URL } from '../../utils/constants';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -16,7 +17,7 @@ const SelectCardPage = () => {
   let { card } = useParams();
 
   useEffect(() => {
-    fetch(`https://api.eldudka.ru/Product/GetById?id=${card}`)
+    fetch(`${API_URL}/Product/GetById?id=${card}`)
       .then(response => response.json())
       .then(data => {
         setResponseData(data);

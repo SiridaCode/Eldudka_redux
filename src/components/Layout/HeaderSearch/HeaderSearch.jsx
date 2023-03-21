@@ -1,23 +1,26 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import Container from '../../Container/Container';
 import CustomSearch from '../../UI/CustomSearch';
 import classes from './HeaderSearch.module.scss';
 import { Link } from 'react-router-dom';
-import { src } from '../../../utils/utils';
+import { SOCIAL_MEDIA } from '../../../utils/constants';
 import BurgerMobileMenu from '../../BurgerMobileMenu/BurgerMobileMenu';
 import useWindowSize from '../../../hooks/UseWindowResize';
+import { SET_VISIBLE_MODAL } from '../../../redux/shoppingCart';
 
 const HeaderSearch = () => {
   const { width } = useWindowSize();
+  const dispatch = useDispatch();
   return (
     <header className={classes.headerSecond}>
       <Container>
         <div className={classes.headerSecondWrapper}>
           <div className={classes.iconsContainer}>
             {width < 860 && <BurgerMobileMenu />}
-            {src.map(({ href, mainSrc }, index) => (
-              <a key={index} href={href}>
-                <img className={classes.mainIcon} src={mainSrc} alt="icon" />
+            {Object.keys(SOCIAL_MEDIA).map((key, index) => (
+              <a key={index} href={SOCIAL_MEDIA[key].href}>
+                <img className={classes.mainIcon} src={SOCIAL_MEDIA[key].mainSrc} alt="icon" />
               </a>
             ))}
           </div>
@@ -29,7 +32,13 @@ const HeaderSearch = () => {
           </div>
           <div className={classes.flexBasket}>
             <CustomSearch />
-            <img className={classes.basketIcon} width="18" height="18" src="../basket.png" />
+            <img
+              onClick={() => dispatch({ type: SET_VISIBLE_MODAL, payload: true })}
+              className={classes.basketIcon}
+              width="18"
+              height="18"
+              src="../basket.png"
+            />
           </div>
         </div>
       </Container>

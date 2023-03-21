@@ -1,8 +1,9 @@
-import * as React from 'react'
-import { Link } from 'react-router-dom'
-import Container from '../../Container/Container'
-import { src } from '../../../utils/utils'
-import classes from './HeaderPhone.module.scss'
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import Container from '../../Container/Container';
+import { src } from '../../../utils/utils';
+import classes from './HeaderPhone.module.scss';
+import { CONTACT_PHONE_NUMBER } from '../../../utils/constants';
 
 const HeaderPhone = () => {
   return (
@@ -15,16 +16,16 @@ const HeaderPhone = () => {
                 <img className={classes.mainIcon} src={mainSrc} alt="icon" />
               </a>
             ))}
-            <a className={classes.call} href="tel:+79620100577">
-              8 (962) 010 05-77
+            <a className={classes.call} href={`tel:+${CONTACT_PHONE_NUMBER.value}`}>
+              {CONTACT_PHONE_NUMBER.text}
             </a>
           </div>
-          <Link className={classes.contactsLink} to="/contacts">
+          {/* <Link className={classes.contactsLink} to="/contacts">
             Контакты
-          </Link>
+          </Link> */}
         </div>
       </Container>
     </header>
-  )
-}
-export default HeaderPhone
+  );
+};
+export default HeaderPhone;

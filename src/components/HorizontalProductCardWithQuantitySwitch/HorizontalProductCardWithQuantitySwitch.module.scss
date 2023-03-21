@@ -1,0 +1,116 @@
+.product-quantity__item {
+  width: 421px;
+  display: flex;
+  justify-content: space-between;
+  .image {
+    width: 106px;
+    height: 106px;
+    border: 1px solid #000000;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+      max-width: 104px;
+      max-height: 104px;
+    }
+  }
+  .name-and-amount {
+    width: 171px;
+    .name {
+      margin-top: 14px;
+      color: #1f1f1f;
+      font-size: 20px;
+      font-family: Roboto;
+      max-height: 46px;
+      overflow: hidden;
+      font-weight: 500;
+    }
+    .amount {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      .change-amount-btn {
+        width: 20px;
+        height: 20px;
+        transition: 0.1s;
+        opacity: 0.5;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+      .down-btn {
+        background-image: url('../../image/minus-btn.png');
+        background-size: cover;
+      }
+      .value {
+        margin-left: 6px;
+        margin-right: 6px;
+        color: #000000;
+        font-family: Roboto;
+        font-weight: 300;
+        font-size: 13px;
+      }
+      .up-btn {
+        background-image: url('../../image/plus-btn.png');
+        background-size: cover;
+      }
+    }
+  }
+  .total-cost {
+    color: #868686;
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+  }
+  .remove-btn-wrapper {
+    display: flex;
+    align-items: center;
+    .btn {
+      background-image: url('../../image/circle-remove-btn.png');
+      background-size: cover;
+      width: 24px;
+      height: 24px;
+      opacity: 0.5;
+      transition: 0.1s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+@media (max-width: 581px) {
+  .product-quantity__item {
+    width: 310px;
+    .image {
+      width: 78px;
+      height: 78px;
+    }
+    .name-and-amount {
+      width: 126px;
+      .name {
+        margin-top: 10px;
+        font-size: 15px;
+        max-height: 34px;
+      }
+      .amount {
+        .change-amount-btn {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+    .remove-btn-wrapper {
+      .btn {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}
