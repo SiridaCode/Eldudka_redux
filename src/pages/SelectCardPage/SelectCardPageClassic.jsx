@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../../components/Container/Container';
 import classes from './SelectCardPage.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y, Virtual } from 'swiper';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -26,9 +26,9 @@ const SelectCardPageClassic = ({ responseData }) => {
                 slidesPerView={1}
                 pagination={{ clickable: true }}
               >
-                {responseData.images.map(item => (
-                  <SwiperSlide style={{ display: 'flex', justifyContent: 'center' }} key={item}>
-                    <img className={classes['image-card']} src={item}></img>
+                {responseData.images.map((item, index) => (
+                  <SwiperSlide style={{ display: 'flex', justifyContent: 'center' }} key={index}>
+                    <img className={classes['image-card']} src={item} alt="" />
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -43,7 +43,7 @@ const SelectCardPageClassic = ({ responseData }) => {
                   const shoppingCartProducts = getArray(LOCALSTORAGE_KEYS.shoppingCart);
 
                   for (let p of shoppingCartProducts) {
-                    if (p.id == responseData.uuid) {
+                    if (p.id === responseData.uuid) {
                       updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
                         id: p.id,
                         amount: p.amount + 1,
@@ -64,7 +64,7 @@ const SelectCardPageClassic = ({ responseData }) => {
                   const favorites = getArray(LOCALSTORAGE_KEYS.favorites);
 
                   for (let f of favorites) {
-                    if (f.id == responseData.uuid) return;
+                    if (f.id === responseData.uuid) return;
                   }
 
                   insertElementInArray(LOCALSTORAGE_KEYS.favorites, {
@@ -73,17 +73,17 @@ const SelectCardPageClassic = ({ responseData }) => {
                 }}
                 className={classes['button-favorites']}
               >
-                <img src="./heard-icon.png"></img>
+                <img src="./heard-icon.png" alt="" />
               </button>
             </div>
             <div className={classes['product-description']}>{responseData.description}</div>
             <div className={classes['location']}>
-              <img src="./Vector.png"></img>
+              <img src="./Vector.png" alt="" />
               <p className={classes['location-availability']}>Наличие в магазинах</p>
             </div>
             <div className={classes['product-availability']}>
-              {responseData.availability.map(item => (
-                <div>
+              {responseData.availability.map((item, index) => (
+                <div key={index}>
                   <span className={classes['availability-shop-name']}>{item.shop.name} </span>
                   <span className={classes['availability-shop-count']}>{item.count}</span>
                 </div>

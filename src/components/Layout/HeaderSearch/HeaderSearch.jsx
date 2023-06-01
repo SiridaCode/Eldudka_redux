@@ -5,19 +5,21 @@ import CustomSearch from '../../UI/CustomSearch';
 import classes from './HeaderSearch.module.scss';
 import { Link } from 'react-router-dom';
 import { SOCIAL_MEDIA } from '../../../utils/constants';
-import BurgerMobileMenu from '../../BurgerMobileMenu/BurgerMobileMenu';
-import useWindowSize from '../../../hooks/UseWindowResize';
 import { SET_VISIBLE_MODAL } from '../../../redux/shoppingCart';
+import { setVisibleModal } from '../../../redux/mobileMenu';
 
 const HeaderSearch = () => {
-  const { width } = useWindowSize();
   const dispatch = useDispatch();
+
   return (
     <header className={classes.headerSecond}>
       <Container>
         <div className={classes.headerSecondWrapper}>
+          <div
+            onClick={() => dispatch(setVisibleModal(true))}
+            className={classes['mobile-menu-icon']}
+          />
           <div className={classes.iconsContainer}>
-            {width < 860 && <BurgerMobileMenu />}
             {Object.keys(SOCIAL_MEDIA).map((key, index) => (
               <a key={index} href={SOCIAL_MEDIA[key].href}>
                 <img className={classes.mainIcon} src={SOCIAL_MEDIA[key].mainSrc} alt="icon" />

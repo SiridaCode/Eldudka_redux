@@ -46,10 +46,7 @@ const Footer = () => {
             <img className={classes.logo} src="../logo.png" />
           </div>
         </a>
-        <div className={classes.elementContainer}>
-          {/* <img className={classes.locationIcon} src="../location.png" />
-          <div className={classes.locationText}>Наши магазины</div> */}
-        </div>
+        <div className={classes.elementContainer}></div>
       </div>
     );
   };

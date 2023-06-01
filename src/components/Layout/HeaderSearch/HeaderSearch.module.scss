@@ -1,4 +1,5 @@
 .headerSecond {
+  padding-top: 24px;
   color: #fff;
 
   .headerSecondWrapper {
@@ -11,13 +12,12 @@
     .logo {
       display: block;
     }
+    .mobile-menu-icon {
+      display: none;
+    }
   }
 }
 
-a .mainIcon {
-  margin: 0px 19.5px;
-  transition: all 0.2s ease-in-out;
-}
 .mainIcon:hover {
   cursor: pointer;
 }
@@ -39,10 +39,9 @@ a .mainIcon {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-}
-
-.burgerMobile {
-  display: none;
+  a {
+    margin: 0px 19.5px;
+  }
 }
 
 .locationIcon {
@@ -52,10 +51,11 @@ a .mainIcon {
 @media (max-width: 860px) {
   .headerSecond {
     color: #fff;
+    margin-bottom: 40px;
+
     .headerSecondWrapper {
-      margin-top: 20px;
-      padding: 20px;
-      width: 100%;
+      padding: 0px 21px;
+      width: calc(100% - 42px);
       height: 44px;
       display: flex;
       justify-content: space-between;
@@ -65,9 +65,13 @@ a .mainIcon {
         width: 133px;
         height: 44px;
       }
-    }
-    .burgerMobile {
-      display: block;
+      .mobile-menu-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: cover;
+        background-image: url('../../../image/mobile-menu-icon.png');
+      }
     }
     a .mainIcon {
       display: none;
@@ -76,14 +80,10 @@ a .mainIcon {
       display: none;
     }
     .locationIcon {
-      display: block;
-      opacity: 0;
+      display: none;
     }
   }
   .iconsContainer {
-    width: 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    display: none;
   }
 }
