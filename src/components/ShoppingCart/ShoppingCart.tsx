@@ -8,14 +8,14 @@ const ShoppingCart = () => {
   const isVisible = useSelector((state: any) => state.shoppingCart.isVisibleModal);
   const dispatch = useDispatch();
 
-  return (
-    <>
+  if (isVisible)
+    return (
+      <ShoppingCartModal onClose={() => dispatch({ type: SET_VISIBLE_MODAL, payload: false })} />
+    );
+  else
+    return (
       <ShoppingCartButton onClick={() => dispatch({ type: SET_VISIBLE_MODAL, payload: true })} />
-      {isVisible && (
-        <ShoppingCartModal onClose={() => dispatch({ type: SET_VISIBLE_MODAL, payload: false })} />
-      )}
-    </>
-  );
+    );
 };
 
 export { ShoppingCart };

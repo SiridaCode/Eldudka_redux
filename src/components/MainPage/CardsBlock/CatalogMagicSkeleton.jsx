@@ -35,18 +35,15 @@ const CatalogMagic = ({
       const y3 = y2 + padding / 2 + height2;
 
       list.push(
-        <>
-          <rect
-            x={x}
-            y={y1}
-            rx={borderRadius}
-            ry={borderRadius}
-            width={itemWidth}
-            height={height1}
-          />
-          {/* <rect x={x} y={y2} rx={0} ry={0} width={itemWidth} height={height2} />
-          <rect x={x} y={y3} rx={0} ry={0} width={itemWidth * 0.6} height={height3} /> */}
-        </>
+        <rect
+          key={`${i}${j}`}
+          x={x}
+          y={y1}
+          rx={borderRadius}
+          ry={borderRadius}
+          width={itemWidth}
+          height={height1}
+        />
       );
 
       if (i === row) {
@@ -57,9 +54,6 @@ const CatalogMagic = ({
 
   return (
     <ContentLoader viewBox={`0 0 ${width} ${height}`} width={width} height={height} {...props}>
-      {/* {heading && (
-        <rect x={padding} y={padding} rx={0} ry={0} width={heading.width} height={heading.height} />
-      )} */}
       {list}
     </ContentLoader>
   );

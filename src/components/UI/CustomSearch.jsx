@@ -4,7 +4,6 @@ import classes from './CustomSearch.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilterData, setSearchData } from '../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
-import searchIcon from '../../image/search-icon.png';
 import { filteredProductsBySearch } from '../../utils/filter';
 
 const SelectSearch = () => {

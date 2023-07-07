@@ -1,5 +1,4 @@
 import * as React from 'react';
-import cn from 'classnames';
 import classes from './HeaderCategory.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { filteredProductsByCategory } from '../../../utils/filter';
@@ -18,7 +17,6 @@ const categories = [
 const HeaderCategory = () => {
   const { activeCategory, fullData } = useSelector(({ data }) => data);
   const dispatch = useDispatch();
-  const cssActive = category => cn({ selected: category === activeCategory });
   const history = useHistory();
 
   const onClickActiveCategory = category => {
@@ -33,22 +31,21 @@ const HeaderCategory = () => {
     <header className={classes.headerThird}>
       <Container>
         <div className={classes.categoriesWrapper}>
-          <div className={classes.categories}>
-            {categories.map((category, index) => {
-              return (
-                <NavLink
-                  to="/"
-                  onClick={() => onClickActiveCategory(category.name)}
-                  className={classes.categoriesItem}
-                  data-category-name={category.name}
-                  key={index}
-                >
-                  <p className={classes.categoriesItemName}>{category.name}</p>
-                  <div className={classes[cssActive(category.name)]}></div>
-                </NavLink>
-              );
-            })}
-          </div>
+          {categories.map((category, index) => {
+            return (
+              <NavLink
+                to="/"
+                onClick={() => onClickActiveCategory(category.name)}
+                className={`${classes.categoriesItem} ${
+                  activeCategory === category.name ? classes.active : ''
+                }`}
+                data-category-name={category.name}
+                key={index}
+              >
+                <p className={classes.categoriesItemName}>{category.name}</p>
+              </NavLink>
+            );
+          })}
         </div>
       </Container>
     </header>
