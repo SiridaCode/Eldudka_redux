@@ -12,15 +12,15 @@ const HeaderSearch = () => {
 
   return (
     <header className={classes.headerSecond}>
-      <div className={classes['mobile-logo']}>
+      <div className={classes['mobile-block']}>
         <Logo />
+        <div
+          onClick={() => dispatch(setVisibleModal(true))}
+          className={classes['mobile-menu-icon']}
+        />
       </div>
       <Container>
         <div className={classes.headerSecondWrapper}>
-          <div
-            onClick={() => dispatch(setVisibleModal(true))}
-            className={classes['mobile-menu-icon']}
-          />
           <CustomSearch />
           <div className={classes['desktop-logo']}>
             <Logo />
