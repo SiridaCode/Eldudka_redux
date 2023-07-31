@@ -2,7 +2,7 @@ import * as React from 'react';
 import cn from 'classnames';
 import classes from './CustomSearch.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilterData, setSearchData } from '../../redux/data/dataActions';
+import { setSearchData } from '../../redux/data/dataActions';
 import { useHistory } from 'react-router-dom';
 import { filteredProductsBySearch } from '../../utils/filter';
 
@@ -24,24 +24,10 @@ const SelectSearch = () => {
     setOpenSearch(isOpen);
   }, [searchText]);
 
-  const onClickElementSearch = (eng, id) => {
+  const onClickElementSearch = id => {
     setSearchText('');
     setOpenSearch(false);
     history.push(`/${id}`);
-  };
-
-  const onClickDeleteTarget = () => {
-    setSearchText('');
-    setOpenSearch(false);
-    dispatch(setFilterData(fullData));
-    dispatch(setSearchData(fullData));
-  };
-
-  const onClickSelectAll = () => {
-    dispatch(setFilterData(searchData));
-    setSearchText('');
-    setOpenSearch(false);
-    history.push('/');
   };
 
   const onClickSearch = () => {
@@ -50,7 +36,6 @@ const SelectSearch = () => {
 
   return (
     <div className={classes['input-wrapper']}>
-      <img className={classes['search-icon']} src="./find_icon.png" alt="Иконка поиска" />
       <input
         onClick={onClickSearch}
         onChange={onChangeSearch}
@@ -65,32 +50,18 @@ const SelectSearch = () => {
         {openSearch &&
           searchData &&
           searchData.map(value => {
-            const [eng] = value.name.split('(');
             return (
               <div
                 id={value.uuid}
                 key={value.uuid}
-                onClick={() => onClickElementSearch(eng, value.uuid)}
+                onClick={() => onClickElementSearch(value.uuid)}
                 className={classes['element-search']}
               >
-                {eng}
+                {value.name}
               </div>
             );
           })}
       </div>
-      {openSearch && (
-        <div onClick={onClickSelectAll} className={classes['delete-target']}>
-          Выбрать все
-        </div>
-      )}
-      {openSearch && searchText && (
-        <img
-          onClick={onClickDeleteTarget}
-          className={classes['vector']}
-          src="../Vector.png"
-          alt="Стереть поиск"
-        />
-      )}
     </div>
   );
 };
