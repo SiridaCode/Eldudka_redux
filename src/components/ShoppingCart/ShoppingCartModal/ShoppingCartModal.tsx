@@ -31,9 +31,7 @@ const productMapping = product => {
   };
 };
 
-const ShoppingCartModal = ({ onClose }) => {
-  const [items, setItems] = useState<any>([]);
-
+const ShoppingCartModal = ({ onClose, items, updateDataFromLocalStorage }) => {
   const makeOrder = useCallback(() => {
     let url = `${WHATSAPP_URL}/${CONTACT_PHONE_NUMBER.value}?text=`;
     items.forEach(
@@ -42,21 +40,6 @@ const ShoppingCartModal = ({ onClose }) => {
     );
 
     window.open(url);
-  }, [items]);
-
-  const updateDataFromLocalStorage = useCallback(() => {
-    const lsItems = getArray(LOCALSTORAGE_KEYS.shoppingCart);
-
-    getProductsByIds(lsItems.map(i => i.id)).then(data =>
-      setItems(
-        data.map(v => {
-          return productMapping({
-            ...v,
-            amount: lsItems.find(itm => itm.id === v.uuid).amount,
-          });
-        })
-      )
-    );
   }, [items]);
 
   useEffect(() => updateDataFromLocalStorage(), []);

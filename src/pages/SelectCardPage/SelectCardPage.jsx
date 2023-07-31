@@ -22,7 +22,8 @@ const SelectCardPage = () => {
       .then(data => {
         setResponseData(data);
       });
-  }, []);
+  }, [card]);
+
   return width > 860 ? (
     <SelectCardPageClassic responseData={responseData} />
   ) : (
