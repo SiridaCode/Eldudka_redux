@@ -21,10 +21,10 @@ const HeaderSearch = () => {
       </div>
       <Container>
         <div className={classes.headerSecondWrapper}>
-          <CustomSearch />
           <div className={classes['desktop-logo']}>
             <Logo />
           </div>
+          <CustomSearch />
           <div className={classes.iconsContainer}>
             {Object.keys(SOCIAL_MEDIA).map((key, index) => (
               <a key={index} href={SOCIAL_MEDIA[key].href}>
