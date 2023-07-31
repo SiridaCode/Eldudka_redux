@@ -16,24 +16,16 @@
     cursor: pointer;
     border-bottom: 2px solid transparent;
     text-decoration: none;
+    color: #4f4f4f;
+
+    &:hover {
+      color: #bd1616;
+    }
 
     .categoriesItemName {
       font-family: Roboto;
       font-weight: 400;
       font-size: 24px;
-      color: #4f4f4f;
-    }
-
-    .selected {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      height: 1px;
-      background: #bd1616;
-      margin-top: 20px;
-      transition-property: background-color, color;
-      transition-duration: 2s;
-      border-radius: 50%;
     }
   }
 
