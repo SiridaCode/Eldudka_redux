@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const ShoppingCartButton: React.FC<IProps> = ({ onClick, items, updateDataFromLocalStorage }) => {
-  useEffect(() => updateDataFromLocalStorage(), [items]);
+  useEffect(() => updateDataFromLocalStorage(), []);
 
   return (
     <div className={styles['cart-button']} onClick={onClick}>
