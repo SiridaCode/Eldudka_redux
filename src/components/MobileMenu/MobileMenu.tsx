@@ -48,7 +48,7 @@ const MobileMenu = () => {
           <li onClick={() => chooseCategory('Испарители')}>Испарители</li>
           <li onClick={() => chooseCategory('Жидкости')}>Жидкости</li>
           <li onClick={() => chooseCategory('Картриджи')}>Картриджи</li>
-          <li onClick={() => chooseCategory('Однаразки')}>Однаразки</li>
+          <li onClick={() => chooseCategory('Одноразки')}>Одноразки</li>
         </ul>
         <div className={styles['mobile-menu__social-networks']}>
           <a
