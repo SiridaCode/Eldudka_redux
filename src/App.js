@@ -4,7 +4,7 @@ import './App.css';
 import { useDispatch } from 'react-redux';
 import { fetchData } from './redux/data/dataActions';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import SelectCardPage from './pages/SelectCardPage/SelectCardPage';
+import { ProductCard } from './pages/ProductCard/ProductCard';
 import MainPage from './components/MainPage/MainPage';
 import CategoriesPage from './pages/CategoriesPage/CategoriesPage';
 
@@ -20,7 +20,7 @@ const App = () => {
       <Layout>
         <Switch>
           <Route path="/" exact component={MainPage} />
-          <Route path="/:card" exact component={SelectCardPage} />
+          <Route path="/:card" exact component={ProductCard} />
           <Route path="/categories" exact component={CategoriesPage} />
         </Switch>
       </Layout>

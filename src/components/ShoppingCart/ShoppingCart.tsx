@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { SET_VISIBLE_MODAL } from '../../redux/shoppingCart';
 import { ShoppingCartButton } from './ShoppingCartButton/ShoppingCartButton';
@@ -8,44 +8,41 @@ import {
   productMapping,
 } from './ShoppingCartModal/ShoppingCartModal';
 import { LOCALSTORAGE_KEYS } from '../../utils/constants';
-import { getArray } from '../../utils/localStorage';
+import { useLocalStorage } from 'usehooks-ts';
 
 const ShoppingCart = () => {
   const isVisible = useSelector((state: any) => state.shoppingCart.isVisibleModal);
-  const [items, setItems] = useState<any>([]);
   const dispatch = useDispatch();
+  const [shoppingCart, setShoppingCart] = useLocalStorage<any[]>(
+    LOCALSTORAGE_KEYS.shoppingCart,
+    []
+  );
+  const [items, setItems] = useState([]);
 
-  const updateDataFromLocalStorage = useCallback(() => {
-    const lsItems = getArray(LOCALSTORAGE_KEYS.shoppingCart);
-
-    getProductsByIds(lsItems.map(i => i.id)).then(data =>
+  useEffect(() => {
+    getProductsByIds(shoppingCart.map((p: any) => p.id)).then(data =>
       setItems(
         data.map(v => {
           return productMapping({
             ...v,
-            amount: lsItems.find(itm => itm.id === v.uuid).amount,
+            amount: shoppingCart.find((itm: any) => itm.id === v.uuid).amount,
           });
         })
       )
     );
-  }, [items]);
+  }, [shoppingCart]);
 
-  if (isVisible)
-    return (
-      <ShoppingCartModal
-        onClose={() => dispatch({ type: SET_VISIBLE_MODAL, payload: false })}
-        updateDataFromLocalStorage={updateDataFromLocalStorage}
-        items={items}
-      />
-    );
-  else
-    return (
-      <ShoppingCartButton
-        onClick={() => dispatch({ type: SET_VISIBLE_MODAL, payload: true })}
-        updateDataFromLocalStorage={updateDataFromLocalStorage}
-        items={items}
-      />
-    );
+  return isVisible ? (
+    <ShoppingCartModal
+      onClose={() => dispatch({ type: SET_VISIBLE_MODAL, payload: false })}
+      itemsOnChange={items => {
+        setShoppingCart(items);
+      }}
+      items={items}
+    />
+  ) : (
+    <ShoppingCartButton onClick={() => dispatch({ type: SET_VISIBLE_MODAL, payload: true })} />
+  );
 };
 
 export { ShoppingCart };

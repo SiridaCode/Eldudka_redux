@@ -1,79 +1,75 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from 'usehooks-ts';
+import { useParams } from 'react-router-dom';
+import { API_URL } from '../../utils/constants';
 import Container from '../../components/Container/Container';
-import classes from './SelectCardPage.module.scss';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/virtual';
 import ContentLoader from 'react-content-loader';
-import { insertElementInArray, getArray, updateArrayElementById } from '../../utils/localStorage';
 import { LOCALSTORAGE_KEYS } from '../../utils/constants';
 import { Button } from '../../components/Button/Button';
+import classes from './ProductCard.module.scss';
 
-const SelectCardPageClassic = ({ responseData }) => {
+const ProductCard = () => {
+  let [responseData, setResponseData] = useState(null);
+  const [shoppingCart, setShoppingCart] = useLocalStorage(LOCALSTORAGE_KEYS.shoppingCart, []);
+  const [favorites, setFavorites] = useLocalStorage(LOCALSTORAGE_KEYS.favorites, []);
+
+  let { card } = useParams();
+
+  useEffect(() => {
+    fetch(`${API_URL}/Product/GetById?id=${card}`)
+      .then(response => response.json())
+      .then(data => {
+        setResponseData(data);
+      });
+  }, [card]);
+
+  const existsCurrentProductInShoppingCart = () =>
+    shoppingCart.filter(p => p.id === responseData.uuid).length > 0;
+
+  const existsCurrentProductInFavorites = () =>
+    responseData ? favorites.filter(p => p.id === responseData.uuid).length > 0 : null;
+
   return responseData ? (
     <div className={classes['cards-wrapper']}>
       <Container>
         <div className={classes['flex-block']}>
-          <div className={classes['image-block']}>
-            <div className={classes['image-container']}>
-              <Swiper
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={50}
-                slidesPerView={1}
-                pagination={{ clickable: true }}
-              >
-                {responseData.images.map((item, index) => (
-                  <SwiperSlide style={{ display: 'flex', justifyContent: 'center' }} key={index}>
-                    <img className={classes['image-card']} src={item} alt="" />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-          </div>
+          {responseData.images.map((item, index) => (
+            <img key={index} className={classes['image-card']} src={item} alt="" />
+          ))}
           <div className={classes['content-block']}>
             <div className={classes['product-name']}>{responseData.name}</div>
             <div className={classes['product-price']}>{responseData.price} ₽</div>
             <div className={classes['flex-block-center']}>
               <Button
                 onClick={() => {
-                  const shoppingCartProducts = getArray(LOCALSTORAGE_KEYS.shoppingCart);
+                  const shoppingCartNewArray = shoppingCart.map(p => p);
 
-                  for (let p of shoppingCartProducts) {
-                    if (p.id === responseData.uuid) {
-                      updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
-                        id: p.id,
-                        amount: p.amount + 1,
-                      });
-                      return;
-                    }
+                  if (!existsCurrentProductInShoppingCart()) {
+                    shoppingCartNewArray.push({ id: responseData.uuid, amount: 1 });
+                    setShoppingCart(shoppingCartNewArray);
+                  } else {
+                    setShoppingCart(shoppingCartNewArray.filter(p => p.id !== responseData.uuid));
                   }
-
-                  insertElementInArray(LOCALSTORAGE_KEYS.shoppingCart, {
-                    id: responseData.uuid,
-                    amount: 1,
-                  });
                 }}
-                text="В корзину"
-              ></Button>
+                text={existsCurrentProductInShoppingCart() ? 'Добавлен' : 'В корзину'}
+                style={existsCurrentProductInShoppingCart() ? 'active' : 'default'}
+              />
               <button
                 onClick={() => {
-                  const favorites = getArray(LOCALSTORAGE_KEYS.favorites);
+                  const favoritesNewArray = favorites.map(p => p);
 
-                  for (let f of favorites) {
-                    if (f.id === responseData.uuid) return;
+                  if (!existsCurrentProductInFavorites()) {
+                    favoritesNewArray.push({ id: responseData.uuid });
+                    setFavorites(favoritesNewArray);
+                  } else {
+                    setFavorites(favoritesNewArray.filter(p => p.id !== responseData.uuid));
                   }
-
-                  insertElementInArray(LOCALSTORAGE_KEYS.favorites, {
-                    id: responseData.uuid,
-                  });
                 }}
-                className={classes['button-favorites']}
+                className={`${classes['button-favorites']} ${
+                  existsCurrentProductInFavorites() ? classes['active'] : ''
+                }`}
               >
-                <img src="./heard-icon.png" alt="" />
+                <img className={classes['heart-icon']} src="./heard-icon.png" alt="" />
               </button>
             </div>
             <div className={classes['product-description']}>{responseData.description}</div>
@@ -116,4 +112,4 @@ const SelectCardPageClassic = ({ responseData }) => {
   );
 };
 
-export default SelectCardPageClassic;
+export { ProductCard };
