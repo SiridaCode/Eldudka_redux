@@ -1,14 +1,8 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import {
-  getArray,
-  updateArrayElementById,
-  deleteArrayElementById,
-} from '../../../utils/localStorage';
+import React, { useCallback } from 'react';
 import { HorizontalProductCardWithQuantitySwitch } from '../../HorizontalProductCardWithQuantitySwitch/HorizontalProductCardWithQuantitySwitch';
 import { RightModal } from '../../RightModal/RightModal';
 import { CONTACT_PHONE_NUMBER, API_URL, WHATSAPP_URL } from '../../../utils/constants';
 import styles from './ShoppingCartModal.module.scss';
-import { LOCALSTORAGE_KEYS } from '../../../utils/constants';
 import { Button } from '../../Button/Button';
 
 const getProductsByIds = async ids => {
@@ -31,9 +25,7 @@ const productMapping = product => {
   };
 };
 
-const ShoppingCartModal = ({ onClose }) => {
-  const [items, setItems] = useState<any>([]);
-
+const ShoppingCartModal = ({ onClose, items, itemsOnChange }) => {
   const makeOrder = useCallback(() => {
     let url = `${WHATSAPP_URL}/${CONTACT_PHONE_NUMBER.value}?text=`;
     items.forEach(
@@ -44,23 +36,6 @@ const ShoppingCartModal = ({ onClose }) => {
     window.open(url);
   }, [items]);
 
-  const updateDataFromLocalStorage = useCallback(() => {
-    const lsItems = getArray(LOCALSTORAGE_KEYS.shoppingCart);
-
-    getProductsByIds(lsItems.map(i => i.id)).then(data =>
-      setItems(
-        data.map(v => {
-          return productMapping({
-            ...v,
-            amount: lsItems.find(itm => itm.id === v.uuid).amount,
-          });
-        })
-      )
-    );
-  }, [items]);
-
-  useEffect(() => updateDataFromLocalStorage(), []);
-
   return (
     <RightModal title="Корзина" onClose={onClose}>
       {items.length > 0 ? (
@@ -70,34 +45,19 @@ const ShoppingCartModal = ({ onClose }) => {
               isQuantityChange={true}
               quantityItem={i}
               downItemHandler={item => {
-                const modifiedItem = { ...item, amount: item.amount - 1 };
-
-                if (modifiedItem.amount < 1)
-                  deleteArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, modifiedItem.id);
-                else
-                  updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
-                    id: modifiedItem.id,
-                    amount: modifiedItem.amount,
-                  });
-
-                updateDataFromLocalStorage();
+                itemsOnChange(
+                  items
+                    .map(i => (i.id === item.id ? { ...item, amount: item.amount - 1 } : i))
+                    .filter(i => i.amount > 0)
+                );
               }}
               upItemHandler={item => {
-                const modifiedItem = { ...item, amount: item.amount + 1 };
-
-                if (modifiedItem.amount < 1)
-                  deleteArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, modifiedItem.id);
-                else
-                  updateArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, {
-                    id: modifiedItem.id,
-                    amount: modifiedItem.amount,
-                  });
-
-                updateDataFromLocalStorage();
+                itemsOnChange(
+                  items.map(i => (i.id === item.id ? { ...item, amount: item.amount + 1 } : i))
+                );
               }}
               removeItemHandler={item => {
-                deleteArrayElementById(LOCALSTORAGE_KEYS.shoppingCart, item.id);
-                updateDataFromLocalStorage();
+                itemsOnChange(items.filter(i => i.id !== item.id));
               }}
             />
           </div>

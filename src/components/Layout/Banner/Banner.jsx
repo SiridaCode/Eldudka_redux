@@ -6,7 +6,7 @@ const Banner = () => {
   return (
     <Container>
       <div className={classes.bannerConteiner}>
-        <img src="../banner.png" />
+        <img src="../logo2.png" />
       </div>
     </Container>
   );

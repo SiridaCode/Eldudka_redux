@@ -16,7 +16,6 @@ const SelectSearch = () => {
   const onChangeSearch = ({ target }) => {
     dispatch(setSearchData(filteredProductsBySearch(fullData, target.value)));
     setSearchText(target.value);
-    history.push('/');
   };
 
   React.useEffect(() => {
