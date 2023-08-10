@@ -1,8 +1,14 @@
+@media (max-width: 1200px) {
+  .js-data-example-ajax {
+    width: 260px !important;
+  }
+}
+
 .input-wrapper {
   position: relative;
 
   .js-data-example-ajax {
-    width: 306px;
+    width: 20vw;
     padding: 0 0 0 20px;
     display: block;
     border: 2px solid #990424;
@@ -24,7 +30,8 @@
     left: 0px;
     top: 44px;
     display: block;
-    width: 330px;
+    width: 100%;
+    box-shadow: 0px 5px 29px -7px rgba(0, 0, 0, 0.25);
     max-height: 327px;
     overflow-y: auto;
     background: #ffffff;

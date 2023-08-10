@@ -29,7 +29,7 @@ const FavoritesModal = () => {
         })
       )
     );
-  }, [items]);
+  }, []);
 
   if (isVisible)
     return (
