@@ -29,11 +29,7 @@ const FavoritesModal = () => {
         })
       )
     );
-<<<<<<< HEAD
-  }, []);
-=======
   }, [favorites]);
->>>>>>> master
 
   if (isVisible)
     return (
