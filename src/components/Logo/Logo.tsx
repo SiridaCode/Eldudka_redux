@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Logo = () => (
   <Link to="/">
-    <img src="../logo.png" alt="logo" style={{ width: '222px' }} />
+    <img src="../logo.png" alt="logo" style={{ height: '60px' }} />
   </Link>
 );
 
